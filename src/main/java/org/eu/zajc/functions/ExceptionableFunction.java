@@ -7,17 +7,10 @@ import java.util.function.Function;
  * exception.
  *
  * @author Marko Zajc
- * 
- * @param <I>
- *            input
- * @param <T>
- *            value
- * @param <E>
- *            exception
  */
 @FunctionalInterface
-public interface ExceptionableFunction<I, T, E extends Throwable> {
+public interface ExceptionableFunction<T, R, E extends Throwable> {
 
-	T apply(I value) throws E;
+	R apply(T value) throws E;
 
 }

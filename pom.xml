@@ -1,13 +1,18 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.eu.zajc</groupId>
 	<artifactId>extended-functions</artifactId>
-	<version>0.1</version>
+	<version>1.0</version>
 	<name>Extended Functions</name>
 	<description>Variations of consumers, functions, suppliers, and runnables that are missing from the stdlib</description>
 	<inceptionYear>2021</inceptionYear>
+
+	<licenses>
+		<license>
+			<name>The GNU Lesser General Public License, Version 3.0</name>
+			<url>https://www.gnu.org/licenses/lgpl-3.0.html</url>
+		</license>
+	</licenses>
 
 	<developers>
 		<developer>
@@ -16,6 +21,12 @@
 			<url>https://zajc.eu.org/</url>
 		</developer>
 	</developers>
+
+	<scm>
+		<url>https://git.zajc.eu.org/extended-functions.git/</url>
+		<connection>scm:git://git.zajc.eu.org/extended-functions.git</connection>
+		<developerConnection>scm:git:ssh://git.zajc.eu.org/extended-functions.git</developerConnection>
+	</scm>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -2,10 +2,10 @@ package org.eu.zajc.functions.exceptionable;
 
 import static org.eu.zajc.functions.exceptionable.Utilities.asUnchecked;
 
-import org.eu.zajc.functions.ObjObjIntFunction;
+import org.eu.zajc.functions.ObjObjBooleanFunction;
 
 /**
- * Variant of {@link ObjObjIntFunction} capable of throwing a generic
+ * Variant of {@link ObjObjBooleanFunction} capable of throwing a generic
  * {@link Throwable}.
  *
  * @author Marko Zajc
@@ -17,10 +17,10 @@ import org.eu.zajc.functions.ObjObjIntFunction;
  *            {@link Throwable} type
  */
 @FunctionalInterface
-public interface EObjObjIntFunction<T, U, R, E extends Throwable> extends ObjObjIntFunction<T, U, R> {
+public interface EObjObjBooleanFunction<T, U, R, E extends Throwable> extends ObjObjBooleanFunction<T, U, R> {
 
 	@Override
-	default R apply(T t, U u, int value) {
+	default R apply(T t, U u, boolean value) {
 		try {
 			return applyExceptionable(t, u, value);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
@@ -28,6 +28,6 @@ public interface EObjObjIntFunction<T, U, R, E extends Throwable> extends ObjObj
 		}
 	}
 
-	R applyExceptionable(T t, U u, int value) throws E;
+	R applyExceptionable(T t, U u, boolean value) throws E;
 
 }

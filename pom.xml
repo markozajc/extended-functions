@@ -2,15 +2,15 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.eu.zajc</groupId>
 	<artifactId>extended-functions</artifactId>
-	<version>1.0</version>
+	<version>1.1</version>
 	<name>Extended Functions</name>
-	<description>Variations of consumers, functions, suppliers, and runnables that are missing from the stdlib</description>
+	<description>Variants of consumers, functions, suppliers, and runnables that are missing from the stdlib</description>
 	<inceptionYear>2021</inceptionYear>
 
 	<licenses>
 		<license>
 			<name>The GNU Lesser General Public License, Version 3.0</name>
-			<url>https://www.gnu.org/licenses/lgpl-3.0.html</url>
+			<url>https://www.gnu.org/licenses/lgpl-3.0.txt</url>
 		</license>
 	</licenses>
 

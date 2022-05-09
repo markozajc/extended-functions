@@ -1,9 +1,18 @@
 package org.eu.zajc.functions.exceptionable;
 
-import static org.eu.zajc.functions.Utilities.asUnchecked;
+import static org.eu.zajc.functions.exceptionable.Utilities.asUnchecked;
 
 import java.util.function.Consumer;
 
+/**
+ * Variant of {@link Consumer} capable of throwing a generic {@link Throwable}.
+ *
+ * @author Marko Zajc
+ *
+ * @param <T>
+ * @param <E>
+ *            {@link Throwable} type
+ */
 @FunctionalInterface
 public interface EConsumer<T, E extends Throwable> extends Consumer<T> {
 

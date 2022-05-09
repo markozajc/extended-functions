@@ -1,7 +1,8 @@
 package org.eu.zajc.functions;
 
 /**
- * A function type that takes a generic type and a primitive byte, and returns a generic type.
+ * A function type that takes a generic type and a primitive integer, and returns a
+ * generic type.
  *
  * @author Marko Zajc
  *
@@ -11,8 +12,8 @@ package org.eu.zajc.functions;
  *            return type
  */
 @FunctionalInterface
-public interface ObjByteFunction<T, R> {
+public interface ObjIntFunction<T, R> {
 
-	R apply(T t, byte value);
+	R apply(T t, int value);
 
 }

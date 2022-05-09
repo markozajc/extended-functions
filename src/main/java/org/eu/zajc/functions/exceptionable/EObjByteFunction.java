@@ -2,10 +2,11 @@ package org.eu.zajc.functions.exceptionable;
 
 import static org.eu.zajc.functions.exceptionable.Utilities.asUnchecked;
 
-import org.eu.zajc.functions.ObjIntFunction;
+import org.eu.zajc.functions.ObjByteFunction;
 
 /**
- * Variant of {@link ObjIntFunction} capable of throwing a generic {@link Throwable}.
+ * Variant of {@link ObjByteFunction} capable of throwing a generic
+ * {@link Throwable}.
  *
  * @author Marko Zajc
  *
@@ -15,10 +16,10 @@ import org.eu.zajc.functions.ObjIntFunction;
  *            {@link Throwable} type
  */
 @FunctionalInterface
-public interface EObjIntFunction<T, R, E extends Throwable> extends ObjIntFunction<T, R> {
+public interface EObjByteFunction<T, R, E extends Throwable> extends ObjByteFunction<T, R> {
 
 	@Override
-	default R apply(T t, int value) {
+	default R apply(T t, byte value) {
 		try {
 			return applyExceptionable(t, value);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
@@ -26,6 +27,6 @@ public interface EObjIntFunction<T, R, E extends Throwable> extends ObjIntFuncti
 		}
 	}
 
-	R applyExceptionable(T t, int value) throws E;
+	R applyExceptionable(T t, byte value) throws E;
 
 }

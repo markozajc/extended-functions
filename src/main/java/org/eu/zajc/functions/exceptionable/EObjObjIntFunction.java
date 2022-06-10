@@ -22,12 +22,12 @@ public interface EObjObjIntFunction<T, U, R, E extends Throwable> extends ObjObj
 	@Override
 	default R apply(T t, U u, int value) {
 		try {
-			return applyExceptionable(t, u, value);
+			return applyChecked(t, u, value);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}
 	}
 
-	R applyExceptionable(T t, U u, int value) throws E;
+	R applyChecked(T t, U u, int value) throws E;
 
 }

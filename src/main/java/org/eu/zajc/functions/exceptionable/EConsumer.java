@@ -19,12 +19,12 @@ public interface EConsumer<T, E extends Throwable> extends Consumer<T> {
 	@Override
 	default void accept(T value) {
 		try {
-			acceptExceptionable(value);
+			acceptChecked(value);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}
 	}
 
-	void acceptExceptionable(T value) throws E;
+	void acceptChecked(T value) throws E;
 
 }

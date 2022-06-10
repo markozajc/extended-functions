@@ -19,12 +19,12 @@ public interface ESupplier<T, E extends Throwable> extends Supplier<T> {
 	@Override
 	default T get() {
 		try {
-			return getExceptionable();
+			return getChecked();
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}
 	}
 
-	T getExceptionable() throws E;
+	T getChecked() throws E;
 
 }

@@ -21,12 +21,12 @@ public interface EToBooleanBiFunction<T, U, E extends Throwable> extends ToBoole
 	@Override
 	default boolean apply(T t, U u) {
 		try {
-			return applyExceptionable(t, u);
+			return applyChecked(t, u);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}
 	}
 
-	boolean applyExceptionable(T t, U u) throws E;
+	boolean applyChecked(T t, U u) throws E;
 
 }

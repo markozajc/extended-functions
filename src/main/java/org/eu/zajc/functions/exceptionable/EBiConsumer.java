@@ -18,12 +18,12 @@ public interface EBiConsumer<T, U, E extends Throwable> extends BiConsumer<T, U>
 	@Override
 	default void accept(T t, U u) {
 		try {
-			acceptExceptionable(t, u);
+			acceptChecked(t, u);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw Utilities.asUnchecked(e);
 		}
 	}
 
-	void acceptExceptionable(T t, U u) throws E;
+	void acceptChecked(T t, U u) throws E;
 
 }

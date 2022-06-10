@@ -21,12 +21,12 @@ public interface EBiFunction<T, U, R, E extends Throwable> extends BiFunction<T,
 	@Override
 	default R apply(T t, U u) {
 		try {
-			return applyExceptionable(t, u);
+			return applyChecked(t, u);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}
 	}
 
-	R applyExceptionable(T t, U u) throws E;
+	R applyChecked(T t, U u) throws E;
 
 }

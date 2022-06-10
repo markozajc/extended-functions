@@ -21,12 +21,12 @@ public interface EObjByteFunction<T, R, E extends Throwable> extends ObjByteFunc
 	@Override
 	default R apply(T t, byte value) {
 		try {
-			return applyExceptionable(t, value);
+			return applyChecked(t, value);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}
 	}
 
-	R applyExceptionable(T t, byte value) throws E;
+	R applyChecked(T t, byte value) throws E;
 
 }

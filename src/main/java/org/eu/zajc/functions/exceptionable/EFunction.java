@@ -20,12 +20,12 @@ public interface EFunction<T, R, E extends Throwable> extends Function<T, R> {
 	@Override
 	default R apply(T value) {
 		try {
-			return applyExceptionable(value);
+			return applyChecked(value);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}
 	}
 
-	R applyExceptionable(T value) throws E;
+	R applyChecked(T value) throws E;
 
 }

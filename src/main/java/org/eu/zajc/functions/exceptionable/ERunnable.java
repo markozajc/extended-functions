@@ -16,12 +16,12 @@ public interface ERunnable<E extends Throwable> extends Runnable {
 	@Override
 	default void run() {
 		try {
-			runExceptionable();
+			runChecked();
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}
 	}
 
-	void runExceptionable() throws E;
+	void runChecked() throws E;
 
 }

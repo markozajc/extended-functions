@@ -21,12 +21,12 @@ public interface ETriConsumer<T, U, V, E extends Throwable> extends TriConsumer<
 	@Override
 	default void accept(T t, U u, V v) {
 		try {
-			acceptExceptionable(t, u, v);
+			acceptChecked(t, u, v);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}
 	}
 
-	void acceptExceptionable(T t, U u, V v) throws E;
+	void acceptChecked(T t, U u, V v) throws E;
 
 }

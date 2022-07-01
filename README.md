@@ -7,17 +7,31 @@ A small project providing extensions and additions to Java 8's built-in function
 Add the following to your pom.xml's dependencies:
 	
 ```xml
-<dependency>
-	<groupId>com.github.markozajc</groupId>
-	<artifactId>extended-functions</artifactId>
-	<version>1.0</version>
-</dependency>
+<dependencies>
+	...
+	<dependency>
+		<groupId>com.github.markozajc</groupId>
+		<artifactId>extended-functions</artifactId>
+		<version>1.0</version>
+	</dependency>
+	...
+</dependencies>
 ```
 
 or your build.gradle:
 
 ```groovy
-implementation group: 'com.github.markozajc', name: 'extended-functions', version: '1.0'
+repositories {
+	...
+	mavenCentral()
+	...
+}
+
+dependencies {
+	...
+	api 'com.github.markozajc:extended-functions:1.0'
+	...
+}
 ```
 	
 ## usage

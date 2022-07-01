@@ -10,6 +10,7 @@ import org.eu.zajc.functions.exceptionable.EConsumer;
  * @author Marko Zajc
  *
  * @param <T>
+ *            the type of the input to the operation
  */
 @FunctionalInterface
 public interface AEConsumer<T> extends EConsumer<T, Exception> {}

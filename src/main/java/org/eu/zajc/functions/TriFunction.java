@@ -1,22 +1,37 @@
 package org.eu.zajc.functions;
 
+import java.util.function.Function;
+
 /**
- * A function type that takes three generic types, and returns a generic type.
+ * A {@link Function} variant that takes three generic types, and returns a generic
+ * type.
  *
  * @author Marko Zajc
  *
  * @param <T>
- *            first input type
+ *            the type of the first argument to the function
  * @param <U>
- *            second input type
+ *            the type of the second argument to the function
  * @param <V>
- *            third input type
+ *            the type of the third argument to the function
  * @param <R>
- *            return type
+ *            the type of the result of the function
  */
 @FunctionalInterface
 public interface TriFunction<T, U, V, R> {
 
+	/**
+	 * Applies this function to the given arguments.
+	 *
+	 * @param t
+	 *            the first function argument
+	 * @param u
+	 *            the second function argument
+	 * @param v
+	 *            the third function argument
+	 *
+	 * @return the function result
+	 */
 	R apply(T t, U u, V v);
 
 }

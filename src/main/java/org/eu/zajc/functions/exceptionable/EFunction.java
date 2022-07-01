@@ -10,7 +10,9 @@ import java.util.function.Function;
  * @author Marko Zajc
  *
  * @param <T>
+ *            the type of the input to the function
  * @param <R>
+ *            the type of the result of the function
  * @param <E>
  *            {@link Throwable} type
  */
@@ -18,14 +20,25 @@ import java.util.function.Function;
 public interface EFunction<T, R, E extends Throwable> extends Function<T, R> {
 
 	@Override
-	default R apply(T value) {
+	default R apply(T t) {
 		try {
-			return applyChecked(value);
+			return applyChecked(t);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}
 	}
 
-	R applyChecked(T value) throws E;
+	/**
+	 * Same as {@link #apply(Object)}, but throws a checked exception.
+	 *
+	 * @param t
+	 *            the function argument
+	 *
+	 * @return the function result
+	 *
+	 * @throws E
+	 *             the defined exception type
+	 */
+	R applyChecked(T t) throws E;
 
 }

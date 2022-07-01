@@ -10,6 +10,7 @@ import java.util.function.Supplier;
  * @author Marko Zajc
  *
  * @param <T>
+ *            the type of results supplied by this supplier
  * @param <E>
  *            {@link Throwable} type
  */
@@ -25,6 +26,14 @@ public interface ESupplier<T, E extends Throwable> extends Supplier<T> {
 		}
 	}
 
+	/**
+	 * Same as {@link #get()}, but throws a checked exception.
+	 *
+	 * @return a result
+	 *
+	 * @throws E
+	 *             the defined exception type
+	 */
 	T getChecked() throws E;
 
 }

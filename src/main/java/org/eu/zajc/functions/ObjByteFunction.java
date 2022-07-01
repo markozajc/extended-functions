@@ -1,18 +1,31 @@
 package org.eu.zajc.functions;
 
+import java.util.function.Function;
+
 /**
- * A function type that takes a generic type and a primitive byte, and returns a generic type.
+ * A {@link Function} variant that takes a generic type and a primitive byte, and
+ * returns a generic type.
  *
  * @author Marko Zajc
  *
  * @param <T>
- *            input type
+ *            the type of the first argument to the function
  * @param <R>
- *            return type
+ *            the type of the result of the function
  */
 @FunctionalInterface
 public interface ObjByteFunction<T, R> {
 
-	R apply(T t, byte value);
+	/**
+	 * Applies this function to the given arguments.
+	 *
+	 * @param t
+	 *            the first function argument
+	 * @param b
+	 *            the second ({@code byte}) function argument
+	 *
+	 * @return the function result
+	 */
+	R apply(T t, byte b);
 
 }

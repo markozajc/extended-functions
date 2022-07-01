@@ -1,20 +1,32 @@
 package org.eu.zajc.functions;
 
+import java.util.function.Consumer;
+
 /**
- * A consumer type that takes three generic types.
+ * A {@link Consumer} variant that takes three generic types.
  *
  * @author Marko Zajc
  *
  * @param <T>
- *            first input type
+ *            the type of the first argument to the operation
  * @param <U>
- *            second input type
+ *            the type of the second argument to the operation
  * @param <V>
- *            third input type
+ *            the type of the third argument to the operation
  */
 @FunctionalInterface
 public interface TriConsumer<T, U, V> {
 
+	/**
+	 * Performs this operation on the given arguments.
+	 *
+	 * @param t
+	 *            the first input argument
+	 * @param u
+	 *            the second input argument
+	 * @param v
+	 *            the third input argument
+	 */
 	void accept(T t, U u, V v);
 
 }

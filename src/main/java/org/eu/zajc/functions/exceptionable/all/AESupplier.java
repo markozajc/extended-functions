@@ -10,6 +10,7 @@ import org.eu.zajc.functions.exceptionable.ESupplier;
  * @author Marko Zajc
  *
  * @param <T>
+ *            the type of results supplied by this supplier
  */
 @FunctionalInterface
 public interface AESupplier<T> extends ESupplier<T, Exception> {}

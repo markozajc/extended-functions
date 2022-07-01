@@ -10,8 +10,11 @@ import org.eu.zajc.functions.TriConsumer;
  * @author Marko Zajc
  *
  * @param <T>
+ *            the type of the first argument to the operation
  * @param <U>
+ *            the type of the second argument to the operation
  * @param <V>
+ *            the type of the third argument to the operation
  * @param <E>
  *            {@link Throwable} type
  */
@@ -27,6 +30,19 @@ public interface ETriConsumer<T, U, V, E extends Throwable> extends TriConsumer<
 		}
 	}
 
+	/**
+	 * Same as {@link #accept(Object, Object, Object)}, but throws a checked exception.
+	 *
+	 * @param t
+	 *            the first input argument
+	 * @param u
+	 *            the second input argument
+	 * @param v
+	 *            the third input argument
+	 *
+	 * @throws E
+	 *             the defined exception type
+	 */
 	void acceptChecked(T t, U u, V v) throws E;
 
 }

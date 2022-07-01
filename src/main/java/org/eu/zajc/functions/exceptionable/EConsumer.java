@@ -10,6 +10,7 @@ import java.util.function.Consumer;
  * @author Marko Zajc
  *
  * @param <T>
+ *            the type of the input to the operation
  * @param <E>
  *            {@link Throwable} type
  */
@@ -17,14 +18,23 @@ import java.util.function.Consumer;
 public interface EConsumer<T, E extends Throwable> extends Consumer<T> {
 
 	@Override
-	default void accept(T value) {
+	default void accept(T t) {
 		try {
-			acceptChecked(value);
+			acceptChecked(t);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}
 	}
 
-	void acceptChecked(T value) throws E;
+	/**
+	 * Same as {@link #accept(Object)}, but throws a checked exception.
+	 *
+	 * @param t
+	 *            the input argument
+	 *
+	 * @throws E
+	 *             the defined exception type
+	 */
+	void acceptChecked(T t) throws E;
 
 }

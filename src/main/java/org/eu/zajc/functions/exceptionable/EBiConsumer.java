@@ -8,7 +8,9 @@ import java.util.function.BiConsumer;
  * @author Marko Zajc
  *
  * @param <T>
+ *            the type of the first argument to the operation
  * @param <U>
+ *            the type of the second argument to the operation
  * @param <E>
  *            {@link Throwable} type
  */
@@ -24,6 +26,17 @@ public interface EBiConsumer<T, U, E extends Throwable> extends BiConsumer<T, U>
 		}
 	}
 
+	/**
+	 * Same as {@link #accept(Object, Object)}, but throws a checked exception.
+	 *
+	 * @param t
+	 *            the first input argument
+	 * @param u
+	 *            the second input argument
+	 *
+	 * @throws E
+	 *             the defined exception type
+	 */
 	void acceptChecked(T t, U u) throws E;
 
 }

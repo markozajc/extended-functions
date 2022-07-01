@@ -10,7 +10,9 @@ import org.eu.zajc.functions.exceptionable.EFunction;
  * @author Marko Zajc
  *
  * @param <T>
+ *            the type of the input to the function
  * @param <R>
+ *            the type of the result of the function
  */
 @FunctionalInterface
 public interface AEFunction<T, R> extends EFunction<T, R, Exception> {}

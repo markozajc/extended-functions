@@ -10,7 +10,9 @@ import org.eu.zajc.functions.exceptionable.EBiConsumer;
  * @author Marko Zajc
  *
  * @param <T>
+ *            the type of the first argument to the operation
  * @param <U>
+ *            the type of the second argument to the operation
  */
 @FunctionalInterface
 public interface AEBiConsumer<T, U> extends EBiConsumer<T, U, Exception> {}

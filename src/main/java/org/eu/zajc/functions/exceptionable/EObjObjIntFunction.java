@@ -11,8 +11,11 @@ import org.eu.zajc.functions.ObjObjIntFunction;
  * @author Marko Zajc
  *
  * @param <T>
+ *            the type of the first argument to the function
  * @param <U>
+ *            the type of the second argument to the function
  * @param <R>
+ *            the type of the result of the function
  * @param <E>
  *            {@link Throwable} type
  */
@@ -20,14 +23,29 @@ import org.eu.zajc.functions.ObjObjIntFunction;
 public interface EObjObjIntFunction<T, U, R, E extends Throwable> extends ObjObjIntFunction<T, U, R> {
 
 	@Override
-	default R apply(T t, U u, int value) {
+	default R apply(T t, U u, int i) {
 		try {
-			return applyChecked(t, u, value);
+			return applyChecked(t, u, i);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}
 	}
 
-	R applyChecked(T t, U u, int value) throws E;
+	/**
+	 * Same as {@link #apply(Object, Object, int)}, but throws a checked exception.
+	 *
+	 * @param t
+	 *            the first function argument
+	 * @param u
+	 *            the second function argument
+	 * @param i
+	 *            the third ({@code int}) function argument
+	 *
+	 * @return the function result
+	 *
+	 * @throws E
+	 *             the defined exception type
+	 */
+	R applyChecked(T t, U u, int i) throws E;
 
 }

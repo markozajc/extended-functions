@@ -22,6 +22,12 @@ public interface ERunnable<E extends Throwable> extends Runnable {
 		}
 	}
 
+	/**
+	 * Same as {@link #run()}, but throws a checked exception.
+	 *
+	 * @throws E
+	 *             the defined exception type
+	 */
 	void runChecked() throws E;
 
 }

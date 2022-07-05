@@ -23,9 +23,9 @@ import com.github.markozajc.functions.ObjObjIntFunction;
 public interface EObjObjIntFunction<T, U, R, E extends Throwable> extends ObjObjIntFunction<T, U, R> {
 
 	@Override
-	default R apply(T t, U u, int i) {
+	default R apply(T t, U u, int p) {
 		try {
-			return applyChecked(t, u, i);
+			return applyChecked(t, u, p);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}
@@ -38,7 +38,7 @@ public interface EObjObjIntFunction<T, U, R, E extends Throwable> extends ObjObj
 	 *            the first function argument
 	 * @param u
 	 *            the second function argument
-	 * @param i
+	 * @param p
 	 *            the third ({@code int}) function argument
 	 *
 	 * @return the function result
@@ -46,6 +46,6 @@ public interface EObjObjIntFunction<T, U, R, E extends Throwable> extends ObjObj
 	 * @throws E
 	 *             the defined exception type
 	 */
-	R applyChecked(T t, U u, int i) throws E;
+	R applyChecked(T t, U u, int p) throws E;
 
 }

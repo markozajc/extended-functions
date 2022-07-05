@@ -25,11 +25,11 @@ public interface ObjObjIntFunction<T, U, R> {
 	 *            the first function argument
 	 * @param u
 	 *            the second function argument
-	 * @param i
+	 * @param p
 	 *            the third ({@code int}) function argument
 	 *
 	 * @return the function result
 	 */
-	R apply(T t, U u, int i);
+	R apply(T t, U u, int p);
 
 }

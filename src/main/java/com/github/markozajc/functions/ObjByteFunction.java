@@ -21,11 +21,11 @@ public interface ObjByteFunction<T, R> {
 	 *
 	 * @param t
 	 *            the first function argument
-	 * @param b
+	 * @param p
 	 *            the second ({@code byte}) function argument
 	 *
 	 * @return the function result
 	 */
-	R apply(T t, byte b);
+	R apply(T t, byte p);
 
 }

@@ -25,11 +25,11 @@ public interface ObjObjBooleanFunction<T, U, R> {
 	 *            the first function argument
 	 * @param u
 	 *            the second function argument
-	 * @param b
+	 * @param p
 	 *            the third ({@code boolean}) function argument
 	 *
 	 * @return the function result
 	 */
-	R apply(T t, U u, boolean b);
+	R apply(T t, U u, boolean p);
 
 }

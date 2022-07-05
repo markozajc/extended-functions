@@ -20,9 +20,9 @@ import com.github.markozajc.functions.ObjIntFunction;
 public interface EObjIntFunction<T, R, E extends Throwable> extends ObjIntFunction<T, R> {
 
 	@Override
-	default R apply(T t, int i) {
+	default R apply(T t, int p) {
 		try {
-			return applyChecked(t, i);
+			return applyChecked(t, p);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}

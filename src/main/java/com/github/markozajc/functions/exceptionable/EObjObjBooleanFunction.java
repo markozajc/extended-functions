@@ -23,9 +23,9 @@ import com.github.markozajc.functions.ObjObjBooleanFunction;
 public interface EObjObjBooleanFunction<T, U, R, E extends Throwable> extends ObjObjBooleanFunction<T, U, R> {
 
 	@Override
-	default R apply(T t, U u, boolean b) {
+	default R apply(T t, U u, boolean p) {
 		try {
-			return applyChecked(t, u, b);
+			return applyChecked(t, u, p);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}
@@ -38,7 +38,7 @@ public interface EObjObjBooleanFunction<T, U, R, E extends Throwable> extends Ob
 	 *            the first function argument
 	 * @param u
 	 *            the second function argument
-	 * @param b
+	 * @param p
 	 *            the third ({@code boolean}) function argument
 	 *
 	 * @return the function result
@@ -46,6 +46,6 @@ public interface EObjObjBooleanFunction<T, U, R, E extends Throwable> extends Ob
 	 * @throws E
 	 *             the defined exception type
 	 */
-	R applyChecked(T t, U u, boolean b) throws E;
+	R applyChecked(T t, U u, boolean p) throws E;
 
 }

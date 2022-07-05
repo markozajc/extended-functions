@@ -21,9 +21,9 @@ import com.github.markozajc.functions.ObjByteFunction;
 public interface EObjByteFunction<T, R, E extends Throwable> extends ObjByteFunction<T, R> {
 
 	@Override
-	default R apply(T t, byte b) {
+	default R apply(T t, byte p) {
 		try {
-			return applyChecked(t, b);
+			return applyChecked(t, p);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}

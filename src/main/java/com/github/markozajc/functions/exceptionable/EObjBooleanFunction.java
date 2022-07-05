@@ -21,9 +21,9 @@ import com.github.markozajc.functions.ObjBooleanFunction;
 public interface EObjBooleanFunction<T, R, E extends Throwable> extends ObjBooleanFunction<T, R> {
 
 	@Override
-	default R apply(T t, boolean b) {
+	default R apply(T t, boolean p) {
 		try {
-			return applyChecked(t, b);
+			return applyChecked(t, p);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}

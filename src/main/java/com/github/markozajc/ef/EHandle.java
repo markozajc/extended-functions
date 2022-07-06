@@ -25,11 +25,11 @@ import com.github.markozajc.ef.trifunction.*;
 import com.github.markozajc.ef.tripredicate.*;
 
 /**
- * A class containing various helper utilities for extended-functions.
+ * A class containing various helper utilities for exceptionable (E*) functions.
  *
  * @author Marko Zajc
  */
-public class EFUtils {
+public class EHandle {
 
 	/*
 	 * ================== Consumers ==================
@@ -1114,26 +1114,6 @@ public class EFUtils {
 		};
 	}
 
-	/**
-	 * Rethrows a checked exception as unchecked using generics trickery (the exception
-	 * is not changed or wrapped in a {@link RuntimeException} - it is thrown as-is).
-	 *
-	 * @param <X>
-	 *            the exception type
-	 * @param ex
-	 *            the exception to throw as unchecked
-	 *
-	 * @return the exception itself to support {@code throws asUnchecked(e);}. Note that
-	 *         it is thrown in this method and nothing is ever returned
-	 *
-	 * @throws X
-	 *             the exception you provide. Always thrown.
-	 */
-	@SuppressWarnings("unchecked")
-	public static <X extends Throwable> RuntimeException asUnchecked(@Nonnull Throwable ex) throws X {
-		throw (X) ex;
-	}
-
-	private EFUtils() {}
+	private EHandle() {}
 
 }

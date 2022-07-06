@@ -29,7 +29,7 @@ public interface ELongFunction<R, E extends Throwable> extends LongFunction<R> {
 	/**
 	 * Same as {@link #apply(long)}, but throws a checked exception.
 	 *
-	 * @param value
+	 * @param p
 	 *            the function argument
 	 *
 	 * @return the function result
@@ -37,6 +37,6 @@ public interface ELongFunction<R, E extends Throwable> extends LongFunction<R> {
 	 * @throws E
 	 *             the defined exception type
 	 */
-	R applyChecked(long value) throws E;
+	R applyChecked(long p) throws E;
 
 }

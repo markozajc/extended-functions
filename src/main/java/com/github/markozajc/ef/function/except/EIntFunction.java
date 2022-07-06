@@ -29,7 +29,7 @@ public interface EIntFunction<R, E extends Throwable> extends IntFunction<R> {
 	/**
 	 * Same as {@link #apply(int)}, but throws a checked exception.
 	 *
-	 * @param value
+	 * @param p
 	 *            the function argument
 	 *
 	 * @return the function result
@@ -37,6 +37,6 @@ public interface EIntFunction<R, E extends Throwable> extends IntFunction<R> {
 	 * @throws E
 	 *             the defined exception type
 	 */
-	R applyChecked(int value) throws E;
+	R applyChecked(int p) throws E;
 
 }

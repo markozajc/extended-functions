@@ -19,9 +19,9 @@ import com.github.markozajc.ef.function.BooleanFunction;
 public interface EBooleanFunction<R, E extends Throwable> extends BooleanFunction<R> {
 
 	@Override
-	default R apply(boolean value) {
+	default R apply(boolean p) {
 		try {
-			return applyChecked(value);
+			return applyChecked(p);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}
@@ -30,7 +30,7 @@ public interface EBooleanFunction<R, E extends Throwable> extends BooleanFunctio
 	/**
 	 * Same as {@link #apply(boolean)}, but throws a checked exception.
 	 *
-	 * @param value
+	 * @param p
 	 *            the function argument
 	 *
 	 * @return the function result
@@ -38,6 +38,6 @@ public interface EBooleanFunction<R, E extends Throwable> extends BooleanFunctio
 	 * @throws E
 	 *             the defined exception type
 	 */
-	R applyChecked(boolean value) throws E;
+	R applyChecked(boolean p) throws E;
 
 }

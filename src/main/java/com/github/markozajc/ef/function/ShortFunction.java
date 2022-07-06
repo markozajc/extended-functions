@@ -17,11 +17,11 @@ public interface ShortFunction<R> {
 	/**
 	 * Applies this function to the given arguments.
 	 *
-	 * @param value
+	 * @param p
 	 *            value the function argument
 	 *
 	 * @return the function result
 	 */
-	R apply(short value);
+	R apply(short p);
 
 }

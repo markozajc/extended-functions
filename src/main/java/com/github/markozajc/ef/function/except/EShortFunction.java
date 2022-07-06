@@ -29,7 +29,7 @@ public interface EShortFunction<R, E extends Throwable> extends ShortFunction<R>
 	/**
 	 * Same as {@link #apply(short)}, but throws a checked exception.
 	 *
-	 * @param value
+	 * @param p
 	 *            the function argument
 	 *
 	 * @return the function result
@@ -37,6 +37,6 @@ public interface EShortFunction<R, E extends Throwable> extends ShortFunction<R>
 	 * @throws E
 	 *             the defined exception type
 	 */
-	R applyChecked(short value) throws E;
+	R applyChecked(short p) throws E;
 
 }

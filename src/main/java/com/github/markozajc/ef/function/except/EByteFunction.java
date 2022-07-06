@@ -18,9 +18,9 @@ import com.github.markozajc.ef.function.ByteFunction;
 public interface EByteFunction<R, E extends Throwable> extends ByteFunction<R> {
 
 	@Override
-	default R apply(byte value) {
+	default R apply(byte p) {
 		try {
-			return applyChecked(value);
+			return applyChecked(p);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}
@@ -29,7 +29,7 @@ public interface EByteFunction<R, E extends Throwable> extends ByteFunction<R> {
 	/**
 	 * Same as {@link #apply(byte)}, but throws a checked exception.
 	 *
-	 * @param value
+	 * @param p
 	 *            the function argument
 	 *
 	 * @return the function result
@@ -37,6 +37,6 @@ public interface EByteFunction<R, E extends Throwable> extends ByteFunction<R> {
 	 * @throws E
 	 *             the defined exception type
 	 */
-	R applyChecked(byte value) throws E;
+	R applyChecked(byte p) throws E;
 
 }

@@ -1,9 +1,9 @@
 package com.github.markozajc.ef.bifunction;
 
-import java.util.function.Function;
+import java.util.function.BiFunction;
 
 /**
- * A {@link Function} variant that takes a generic type and a primitive long, and
+ * A {@link BiFunction} variant that takes a generic type and a primitive long, and
  * returns a generic type.
  *
  * @author Marko Zajc

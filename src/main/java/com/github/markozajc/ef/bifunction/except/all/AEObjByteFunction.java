@@ -1,6 +1,6 @@
 package com.github.markozajc.ef.bifunction.except.all;
 
-import com.github.markozajc.ef.bifunction.*;
+import com.github.markozajc.ef.bifunction.ObjByteFunction;
 import com.github.markozajc.ef.bifunction.except.EObjByteFunction;
 
 /**

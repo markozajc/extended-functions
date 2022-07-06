@@ -1,10 +1,9 @@
 package com.github.markozajc.ef.predicate;
 
-import java.util.function.Function;
+import java.util.function.Predicate;
 
 /**
- * A {@link Function} variant that takes three generic types, and returns a generic
- * type.
+ * A {@link Predicate} variant that takes three generic types.
  *
  * @author Marko Zajc
  *

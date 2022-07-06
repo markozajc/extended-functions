@@ -12,7 +12,7 @@ Add the following to your pom.xml's dependencies:
 	<dependency>
 		<groupId>com.github.markozajc</groupId>
 		<artifactId>extended-functions</artifactId>
-		<version>1.0</version>
+		<version>1.2</version>
 	</dependency>
 	...
 </dependencies>

@@ -19,7 +19,7 @@ import com.github.markozajc.ef.bipredicate.ObjLongPredicate;
 public interface EObjLongPredicate<T, E extends Throwable> extends ObjLongPredicate<T> {
 
 	@Override
-	default long test(T t, long p) {
+	default boolean test(T t, long p) {
 		try {
 			return testChecked(t, p);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
@@ -41,6 +41,6 @@ public interface EObjLongPredicate<T, E extends Throwable> extends ObjLongPredic
 	 * @throws E
 	 *             the defined exception type
 	 */
-	long testChecked(T t, long p) throws E;
+	boolean testChecked(T t, long p) throws E;
 
 }

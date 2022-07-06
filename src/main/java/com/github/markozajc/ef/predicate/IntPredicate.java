@@ -18,6 +18,6 @@ public interface IntPredicate {
 	 * @return {@code true} if the input argument matches the predicate, otherwise
 	 *         {@code false}
 	 */
-	int test(int p);
+	boolean test(int p);
 
 }

@@ -26,6 +26,6 @@ public interface ObjObjLongPredicate<T, U> {
 	 * @return {@code true} if the input arguments match the predicate, otherwise
 	 *         {@code false}
 	 */
-	long test(T t, U u, long p);
+	boolean test(T t, U u, long p);
 
 }

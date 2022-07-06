@@ -17,7 +17,7 @@ import com.github.markozajc.ef.predicate.IntPredicate;
 public interface EIntPredicate<E extends Throwable> extends IntPredicate {
 
 	@Override
-	default int test(int p) {
+	default boolean test(int p) {
 		try {
 			return testChecked(p);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
@@ -37,6 +37,6 @@ public interface EIntPredicate<E extends Throwable> extends IntPredicate {
 	 * @throws E
 	 *             the defined exception type
 	 */
-	int testChecked(int p) throws E;
+	boolean testChecked(int p) throws E;
 
 }

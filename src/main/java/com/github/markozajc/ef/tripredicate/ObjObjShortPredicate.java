@@ -26,6 +26,6 @@ public interface ObjObjShortPredicate<T, U> {
 	 * @return {@code true} if the input arguments match the predicate, otherwise
 	 *         {@code false}
 	 */
-	short test(T t, U u, short p);
+	boolean test(T t, U u, short p);
 
 }

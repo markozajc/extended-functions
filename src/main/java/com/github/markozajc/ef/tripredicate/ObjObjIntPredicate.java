@@ -26,6 +26,6 @@ public interface ObjObjIntPredicate<T, U> {
 	 * @return {@code true} if the input arguments match the predicate, otherwise
 	 *         {@code false}
 	 */
-	int test(T t, U u, int p);
+	boolean test(T t, U u, int p);
 
 }

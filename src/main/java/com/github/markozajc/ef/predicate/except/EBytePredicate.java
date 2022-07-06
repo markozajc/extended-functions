@@ -17,7 +17,7 @@ import com.github.markozajc.ef.predicate.BytePredicate;
 public interface EBytePredicate<E extends Throwable> extends BytePredicate {
 
 	@Override
-	default byte test(byte p) {
+	default boolean test(byte p) {
 		try {
 			return testChecked(p);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
@@ -37,6 +37,6 @@ public interface EBytePredicate<E extends Throwable> extends BytePredicate {
 	 * @throws E
 	 *             the defined exception type
 	 */
-	byte testChecked(byte p) throws E;
+	boolean testChecked(byte p) throws E;
 
 }

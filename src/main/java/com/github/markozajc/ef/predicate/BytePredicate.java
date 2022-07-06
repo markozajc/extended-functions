@@ -18,6 +18,6 @@ public interface BytePredicate {
 	 * @return {@code true} if the input argument matches the predicate, otherwise
 	 *         {@code false}
 	 */
-	byte test(byte p);
+	boolean test(byte p);
 
 }

@@ -18,6 +18,6 @@ public interface ShortPredicate {
 	 * @return {@code true} if the input argument matches the predicate, otherwise
 	 *         {@code false}
 	 */
-	short test(short p);
+	boolean test(short p);
 
 }

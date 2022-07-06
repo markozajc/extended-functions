@@ -17,7 +17,7 @@ import com.github.markozajc.ef.predicate.ShortPredicate;
 public interface EShortPredicate<E extends Throwable> extends ShortPredicate {
 
 	@Override
-	default short test(short p) {
+	default boolean test(short p) {
 		try {
 			return testChecked(p);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
@@ -37,6 +37,6 @@ public interface EShortPredicate<E extends Throwable> extends ShortPredicate {
 	 * @throws E
 	 *             the defined exception type
 	 */
-	short testChecked(short p) throws E;
+	boolean testChecked(short p) throws E;
 
 }

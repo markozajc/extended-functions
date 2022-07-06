@@ -21,7 +21,7 @@ import com.github.markozajc.ef.tripredicate.ObjObjLongPredicate;
 public interface EObjObjLongPredicate<T, U, E extends Throwable> extends ObjObjLongPredicate<T, U> {
 
 	@Override
-	default long test(T t, U u, long p) {
+	default boolean test(T t, U u, long p) {
 		try {
 			return testChecked(t, u, p);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
@@ -45,6 +45,6 @@ public interface EObjObjLongPredicate<T, U, E extends Throwable> extends ObjObjL
 	 * @throws E
 	 *             the defined exception type
 	 */
-	long testChecked(T t, U u, long p) throws E;
+	boolean testChecked(T t, U u, long p) throws E;
 
 }

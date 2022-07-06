@@ -21,7 +21,7 @@ import com.github.markozajc.ef.tripredicate.ObjObjShortPredicate;
 public interface EObjObjShortPredicate<T, U, E extends Throwable> extends ObjObjShortPredicate<T, U> {
 
 	@Override
-	default short test(T t, U u, short p) {
+	default boolean test(T t, U u, short p) {
 		try {
 			return testChecked(t, u, p);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
@@ -45,6 +45,6 @@ public interface EObjObjShortPredicate<T, U, E extends Throwable> extends ObjObj
 	 * @throws E
 	 *             the defined exception type
 	 */
-	short testChecked(T t, U u, short p) throws E;
+	boolean testChecked(T t, U u, short p) throws E;
 
 }

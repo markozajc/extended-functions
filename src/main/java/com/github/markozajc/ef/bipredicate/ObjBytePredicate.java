@@ -22,6 +22,6 @@ public interface ObjBytePredicate<T> {
 	 * @return {@code true} if the input arguments match the predicate, otherwise
 	 *         {@code false}
 	 */
-	byte test(T t, byte p);
+	boolean test(T t, byte p);
 
 }

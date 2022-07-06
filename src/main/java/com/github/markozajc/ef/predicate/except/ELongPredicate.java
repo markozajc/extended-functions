@@ -17,7 +17,7 @@ import com.github.markozajc.ef.predicate.LongPredicate;
 public interface ELongPredicate<E extends Throwable> extends LongPredicate {
 
 	@Override
-	default long test(long p) {
+	default boolean test(long p) {
 		try {
 			return testChecked(p);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
@@ -37,6 +37,6 @@ public interface ELongPredicate<E extends Throwable> extends LongPredicate {
 	 * @throws E
 	 *             the defined exception type
 	 */
-	long testChecked(long p) throws E;
+	boolean testChecked(long p) throws E;
 
 }

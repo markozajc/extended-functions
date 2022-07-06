@@ -18,6 +18,6 @@ public interface LongPredicate {
 	 * @return {@code true} if the input argument matches the predicate, otherwise
 	 *         {@code false}
 	 */
-	long test(long p);
+	boolean test(long p);
 
 }

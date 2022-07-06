@@ -19,7 +19,7 @@ import com.github.markozajc.ef.bipredicate.ObjBytePredicate;
 public interface EObjBytePredicate<T, E extends Throwable> extends ObjBytePredicate<T> {
 
 	@Override
-	default byte test(T t, byte p) {
+	default boolean test(T t, byte p) {
 		try {
 			return testChecked(t, p);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
@@ -41,6 +41,6 @@ public interface EObjBytePredicate<T, E extends Throwable> extends ObjBytePredic
 	 * @throws E
 	 *             the defined exception type
 	 */
-	byte testChecked(T t, byte p) throws E;
+	boolean testChecked(T t, byte p) throws E;
 
 }

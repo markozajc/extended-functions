@@ -1,11 +1,11 @@
-package com.github.markozajc.ef.consumer.execp;
+package com.github.markozajc.ef.consumer.execpt;
 
 import static com.github.markozajc.ef.EFUtils.asUnchecked;
 
-import com.github.markozajc.ef.consumer.ShortConsumer;
+import com.github.markozajc.ef.consumer.ByteConsumer;
 
 /**
- * Variant of {@link ShortConsumer} capable of throwing a generic {@link Throwable}.
+ * Variant of {@link ByteConsumer} capable of throwing a generic {@link Throwable}.
  *
  * @author Marko Zajc
  *
@@ -13,10 +13,10 @@ import com.github.markozajc.ef.consumer.ShortConsumer;
  *            {@link Throwable} type
  */
 @FunctionalInterface
-public interface EShortConsumer<E extends Throwable> extends ShortConsumer {
+public interface EByteConsumer<E extends Throwable> extends ByteConsumer {
 
 	@Override
-	default void accept(short p) {
+	default void accept(byte p) {
 		try {
 			acceptChecked(p);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
@@ -25,7 +25,7 @@ public interface EShortConsumer<E extends Throwable> extends ShortConsumer {
 	}
 
 	/**
-	 * Same as {@link #accept(short)}, but throws a checked exception.
+	 * Same as {@link #accept(byte)}, but throws a checked exception.
 	 *
 	 * @param p
 	 *            the input argument
@@ -33,6 +33,6 @@ public interface EShortConsumer<E extends Throwable> extends ShortConsumer {
 	 * @throws E
 	 *             the defined exception type
 	 */
-	void acceptChecked(short p) throws E;
+	void acceptChecked(byte p) throws E;
 
 }

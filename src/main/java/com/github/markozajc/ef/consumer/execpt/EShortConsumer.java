@@ -1,11 +1,11 @@
-package com.github.markozajc.ef.consumer.execp;
+package com.github.markozajc.ef.consumer.execpt;
 
 import static com.github.markozajc.ef.EFUtils.asUnchecked;
 
-import com.github.markozajc.ef.consumer.BooleanConsumer;
+import com.github.markozajc.ef.consumer.ShortConsumer;
 
 /**
- * Variant of {@link BooleanConsumer} capable of throwing a generic {@link Throwable}.
+ * Variant of {@link ShortConsumer} capable of throwing a generic {@link Throwable}.
  *
  * @author Marko Zajc
  *
@@ -13,10 +13,10 @@ import com.github.markozajc.ef.consumer.BooleanConsumer;
  *            {@link Throwable} type
  */
 @FunctionalInterface
-public interface EBooleanConsumer<E extends Throwable> extends BooleanConsumer {
+public interface EShortConsumer<E extends Throwable> extends ShortConsumer {
 
 	@Override
-	default void accept(boolean p) {
+	default void accept(short p) {
 		try {
 			acceptChecked(p);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
@@ -25,7 +25,7 @@ public interface EBooleanConsumer<E extends Throwable> extends BooleanConsumer {
 	}
 
 	/**
-	 * Same as {@link #accept(boolean)}, but throws a checked exception.
+	 * Same as {@link #accept(short)}, but throws a checked exception.
 	 *
 	 * @param p
 	 *            the input argument
@@ -33,6 +33,6 @@ public interface EBooleanConsumer<E extends Throwable> extends BooleanConsumer {
 	 * @throws E
 	 *             the defined exception type
 	 */
-	void acceptChecked(boolean p) throws E;
+	void acceptChecked(short p) throws E;
 
 }

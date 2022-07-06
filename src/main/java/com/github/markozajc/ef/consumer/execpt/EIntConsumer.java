@@ -1,11 +1,11 @@
-package com.github.markozajc.ef.consumer.execp;
+package com.github.markozajc.ef.consumer.execpt;
 
 import static com.github.markozajc.ef.EFUtils.asUnchecked;
 
-import java.util.function.LongConsumer;
+import java.util.function.IntConsumer;
 
 /**
- * Variant of {@link LongConsumer} capable of throwing a generic {@link Throwable}.
+ * Variant of {@link IntConsumer} capable of throwing a generic {@link Throwable}.
  *
  * @author Marko Zajc
  *
@@ -13,10 +13,10 @@ import java.util.function.LongConsumer;
  *            {@link Throwable} type
  */
 @FunctionalInterface
-public interface ELongConsumer<E extends Throwable> extends LongConsumer {
+public interface EIntConsumer<E extends Throwable> extends IntConsumer {
 
 	@Override
-	default void accept(long p) {
+	default void accept(int p) {
 		try {
 			acceptChecked(p);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
@@ -25,7 +25,7 @@ public interface ELongConsumer<E extends Throwable> extends LongConsumer {
 	}
 
 	/**
-	 * Same as {@link #accept(long)}, but throws a checked exception.
+	 * Same as {@link #accept(int)}, but throws a checked exception.
 	 *
 	 * @param p
 	 *            the input argument
@@ -33,6 +33,6 @@ public interface ELongConsumer<E extends Throwable> extends LongConsumer {
 	 * @throws E
 	 *             the defined exception type
 	 */
-	void acceptChecked(long p) throws E;
+	void acceptChecked(int p) throws E;
 
 }

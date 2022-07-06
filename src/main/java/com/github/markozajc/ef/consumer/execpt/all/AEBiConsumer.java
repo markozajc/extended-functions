@@ -1,8 +1,8 @@
-package com.github.markozajc.ef.consumer.execp.all;
+package com.github.markozajc.ef.consumer.execpt.all;
 
 import java.util.function.BiConsumer;
 
-import com.github.markozajc.ef.consumer.execp.EBiConsumer;
+import com.github.markozajc.ef.consumer.execpt.EBiConsumer;
 
 /**
  * Variant of {@link BiConsumer} capable of throwing an {@link Exception}.

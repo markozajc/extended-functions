@@ -1,4 +1,4 @@
-package com.github.markozajc.ef.consumer.execp;
+package com.github.markozajc.ef.consumer.execpt;
 
 import static com.github.markozajc.ef.EFUtils.asUnchecked;
 

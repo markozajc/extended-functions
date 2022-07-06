@@ -1,11 +1,11 @@
-package com.github.markozajc.ef.consumer.execp;
+package com.github.markozajc.ef.consumer.execpt;
 
 import static com.github.markozajc.ef.EFUtils.asUnchecked;
 
-import java.util.function.IntConsumer;
+import com.github.markozajc.ef.consumer.BooleanConsumer;
 
 /**
- * Variant of {@link IntConsumer} capable of throwing a generic {@link Throwable}.
+ * Variant of {@link BooleanConsumer} capable of throwing a generic {@link Throwable}.
  *
  * @author Marko Zajc
  *
@@ -13,10 +13,10 @@ import java.util.function.IntConsumer;
  *            {@link Throwable} type
  */
 @FunctionalInterface
-public interface EIntConsumer<E extends Throwable> extends IntConsumer {
+public interface EBooleanConsumer<E extends Throwable> extends BooleanConsumer {
 
 	@Override
-	default void accept(int p) {
+	default void accept(boolean p) {
 		try {
 			acceptChecked(p);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
@@ -25,7 +25,7 @@ public interface EIntConsumer<E extends Throwable> extends IntConsumer {
 	}
 
 	/**
-	 * Same as {@link #accept(int)}, but throws a checked exception.
+	 * Same as {@link #accept(boolean)}, but throws a checked exception.
 	 *
 	 * @param p
 	 *            the input argument
@@ -33,6 +33,6 @@ public interface EIntConsumer<E extends Throwable> extends IntConsumer {
 	 * @throws E
 	 *             the defined exception type
 	 */
-	void acceptChecked(int p) throws E;
+	void acceptChecked(boolean p) throws E;
 
 }

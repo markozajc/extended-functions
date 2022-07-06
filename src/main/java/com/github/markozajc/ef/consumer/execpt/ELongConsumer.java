@@ -1,11 +1,11 @@
-package com.github.markozajc.ef.consumer.execp;
+package com.github.markozajc.ef.consumer.execpt;
 
 import static com.github.markozajc.ef.EFUtils.asUnchecked;
 
-import com.github.markozajc.ef.consumer.ByteConsumer;
+import java.util.function.LongConsumer;
 
 /**
- * Variant of {@link ByteConsumer} capable of throwing a generic {@link Throwable}.
+ * Variant of {@link LongConsumer} capable of throwing a generic {@link Throwable}.
  *
  * @author Marko Zajc
  *
@@ -13,10 +13,10 @@ import com.github.markozajc.ef.consumer.ByteConsumer;
  *            {@link Throwable} type
  */
 @FunctionalInterface
-public interface EByteConsumer<E extends Throwable> extends ByteConsumer {
+public interface ELongConsumer<E extends Throwable> extends LongConsumer {
 
 	@Override
-	default void accept(byte p) {
+	default void accept(long p) {
 		try {
 			acceptChecked(p);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
@@ -25,7 +25,7 @@ public interface EByteConsumer<E extends Throwable> extends ByteConsumer {
 	}
 
 	/**
-	 * Same as {@link #accept(byte)}, but throws a checked exception.
+	 * Same as {@link #accept(long)}, but throws a checked exception.
 	 *
 	 * @param p
 	 *            the input argument
@@ -33,6 +33,6 @@ public interface EByteConsumer<E extends Throwable> extends ByteConsumer {
 	 * @throws E
 	 *             the defined exception type
 	 */
-	void acceptChecked(byte p) throws E;
+	void acceptChecked(long p) throws E;
 
 }

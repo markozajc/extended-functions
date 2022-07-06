@@ -1,12 +1,11 @@
 package com.github.markozajc.ef.predicate.except;
 
-import static com.github.markozajc.ef.EFUtils.asUnchecked;
+import static com.github.markozajc.ef.Utilities.asUnchecked;
 
 import com.github.markozajc.ef.predicate.LongPredicate;
 
 /**
- * Variant of {@link LongPredicate} capable of throwing a generic
- * {@link Throwable}.
+ * Variant of {@link LongPredicate} capable of throwing a generic {@link Throwable}.
  *
  * @author Marko Zajc
  *

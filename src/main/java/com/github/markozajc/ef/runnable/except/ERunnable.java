@@ -1,6 +1,6 @@
 package com.github.markozajc.ef.runnable.except;
 
-import static com.github.markozajc.ef.EFUtils.asUnchecked;
+import static com.github.markozajc.ef.Utilities.asUnchecked;
 
 /**
  * Variant of {@link Runnable} capable of throwing a generic {@link Throwable}.

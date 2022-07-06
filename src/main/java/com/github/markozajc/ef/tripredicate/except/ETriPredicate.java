@@ -1,6 +1,6 @@
 package com.github.markozajc.ef.tripredicate.except;
 
-import static com.github.markozajc.ef.EFUtils.asUnchecked;
+import static com.github.markozajc.ef.Utilities.asUnchecked;
 
 import com.github.markozajc.ef.tripredicate.TriPredicate;
 

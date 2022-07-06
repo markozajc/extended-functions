@@ -1,6 +1,6 @@
 package com.github.markozajc.ef.supplier.except;
 
-import static com.github.markozajc.ef.EFUtils.asUnchecked;
+import static com.github.markozajc.ef.Utilities.asUnchecked;
 
 import java.util.function.BooleanSupplier;
 

@@ -1,6 +1,6 @@
 package com.github.markozajc.ef.consumer.execpt;
 
-import static com.github.markozajc.ef.EFUtils.asUnchecked;
+import static com.github.markozajc.ef.Utilities.asUnchecked;
 
 import java.util.function.IntConsumer;
 

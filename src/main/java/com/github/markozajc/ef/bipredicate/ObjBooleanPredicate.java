@@ -3,9 +3,11 @@ package com.github.markozajc.ef.bipredicate;
 import java.util.function.BiPredicate;
 
 /**
- * A variant of {@link BiPredicate} that takes a generic type and a primitive boolean.
+ * A variant of {@link BiPredicate} that takes a generic type and a primitive
+ * boolean.
  *
- * @param <T> the type of the first argument to the predicate
+ * @param <T>
+ *            the type of the first argument to the predicate
  *
  * @author Marko Zajc
  */

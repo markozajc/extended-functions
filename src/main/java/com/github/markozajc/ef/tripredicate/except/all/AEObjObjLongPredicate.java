@@ -4,8 +4,7 @@ import com.github.markozajc.ef.tripredicate.ObjObjLongPredicate;
 import com.github.markozajc.ef.tripredicate.except.EObjObjLongPredicate;
 
 /**
- * Variant of {@link ObjObjLongPredicate} capable of throwing an
- * {@link Exception}.
+ * Variant of {@link ObjObjLongPredicate} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

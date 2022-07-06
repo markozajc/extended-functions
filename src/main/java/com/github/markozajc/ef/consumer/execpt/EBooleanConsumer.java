@@ -1,11 +1,12 @@
 package com.github.markozajc.ef.consumer.execpt;
 
-import static com.github.markozajc.ef.EFUtils.asUnchecked;
+import static com.github.markozajc.ef.Utilities.asUnchecked;
 
 import com.github.markozajc.ef.consumer.BooleanConsumer;
 
 /**
- * Variant of {@link BooleanConsumer} capable of throwing a generic {@link Throwable}.
+ * Variant of {@link BooleanConsumer} capable of throwing a generic
+ * {@link Throwable}.
  *
  * @author Marko Zajc
  *

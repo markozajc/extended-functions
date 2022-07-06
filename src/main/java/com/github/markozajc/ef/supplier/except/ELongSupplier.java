@@ -1,12 +1,11 @@
 package com.github.markozajc.ef.supplier.except;
 
-import static com.github.markozajc.ef.EFUtils.asUnchecked;
+import static com.github.markozajc.ef.Utilities.asUnchecked;
 
 import java.util.function.LongSupplier;
 
 /**
- * Variant of {@link LongSupplier} capable of throwing a generic
- * {@link Throwable}.
+ * Variant of {@link LongSupplier} capable of throwing a generic {@link Throwable}.
  *
  * @author Marko Zajc
  *

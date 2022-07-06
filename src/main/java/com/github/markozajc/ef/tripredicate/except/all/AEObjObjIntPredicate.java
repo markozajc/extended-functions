@@ -4,8 +4,7 @@ import com.github.markozajc.ef.tripredicate.ObjObjIntPredicate;
 import com.github.markozajc.ef.tripredicate.except.EObjObjIntPredicate;
 
 /**
- * Variant of {@link ObjObjIntPredicate} capable of throwing an
- * {@link Exception}.
+ * Variant of {@link ObjObjIntPredicate} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

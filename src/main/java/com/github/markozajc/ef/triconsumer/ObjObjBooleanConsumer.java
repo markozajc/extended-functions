@@ -1,7 +1,8 @@
 package com.github.markozajc.ef.triconsumer;
 
 /**
- * A {@link TriConsumer} variant that takes two generic types and a primitive boolean.
+ * A {@link TriConsumer} variant that takes two generic types and a primitive
+ * boolean.
  *
  * @author Marko Zajc
  *

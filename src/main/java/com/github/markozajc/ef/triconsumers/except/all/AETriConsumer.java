@@ -1,7 +1,7 @@
-package com.github.markozajc.ef.consumer.execpt.all;
+package com.github.markozajc.ef.triconsumers.except.all;
 
-import com.github.markozajc.ef.consumer.TriConsumer;
-import com.github.markozajc.ef.consumer.execpt.ETriConsumer;
+import com.github.markozajc.ef.triconsumers.TriConsumer;
+import com.github.markozajc.ef.triconsumers.except.ETriConsumer;
 
 /**
  * Variant of {@link TriConsumer} capable of throwing an {@link Exception}.

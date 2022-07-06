@@ -39,7 +39,6 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled function with a provided
 	 * handler.
 	 *
-	 * @param <T>
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -194,8 +193,6 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled function with a provided
 	 * handler.
 	 *
-	 * @param <T>
-	 * @param <U>
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -221,7 +218,6 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled function with a provided
 	 * handler.
 	 *
-	 * @param <T>
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -247,7 +243,6 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled function with a provided
 	 * handler.
 	 *
-	 * @param <T>
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -273,7 +268,6 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled function with a provided
 	 * handler.
 	 *
-	 * @param <T>
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -299,7 +293,6 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled function with a provided
 	 * handler.
 	 *
-	 * @param <T>
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -325,7 +318,6 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled function with a provided
 	 * handler.
 	 *
-	 * @param <T>
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -355,7 +347,6 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled function with a provided
 	 * handler.
 	 *
-	 * @param <T>
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -510,7 +501,6 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled function with a provided
 	 * handler.
 	 *
-	 * @param <T>
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -536,7 +526,6 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled function with a provided
 	 * handler.
 	 *
-	 * @param <T>
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -562,7 +551,6 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled function with a provided
 	 * handler.
 	 *
-	 * @param <T>
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -588,7 +576,6 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled function with a provided
 	 * handler.
 	 *
-	 * @param <T>
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -614,7 +601,6 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled function with a provided
 	 * handler.
 	 *
-	 * @param <T>
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -640,7 +626,6 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled function with a provided
 	 * handler.
 	 *
-	 * @param <T>
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -670,7 +655,6 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled function with a provided
 	 * handler.
 	 *
-	 * @param <T>
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -850,7 +834,6 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled function with a provided
 	 * handler.
 	 *
-	 * @param <T>
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -876,7 +859,6 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled function with a provided
 	 * handler.
 	 *
-	 * @param <T>
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -902,7 +884,6 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled function with a provided
 	 * handler.
 	 *
-	 * @param <T>
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -928,7 +909,6 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled function with a provided
 	 * handler.
 	 *
-	 * @param <T>
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -954,7 +934,6 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled function with a provided
 	 * handler.
 	 *
-	 * @param <T>
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1013,7 +992,6 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled function with a provided
 	 * handler.
 	 *
-	 * @param <T>
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled

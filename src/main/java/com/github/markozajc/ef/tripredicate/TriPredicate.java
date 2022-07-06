@@ -1,4 +1,4 @@
-package com.github.markozajc.ef.predicate;
+package com.github.markozajc.ef.tripredicate;
 
 import java.util.function.Predicate;
 

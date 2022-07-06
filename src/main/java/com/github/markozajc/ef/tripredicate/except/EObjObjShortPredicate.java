@@ -1,11 +1,12 @@
-package com.github.markozajc.ef.predicate.except;
+package com.github.markozajc.ef.tripredicate.except;
 
 import static com.github.markozajc.ef.EFUtils.asUnchecked;
 
-import com.github.markozajc.ef.predicate.TriPredicate;
+import com.github.markozajc.ef.tripredicate.ObjObjShortPredicate;
 
 /**
- * Variant of {@link TriPredicate} capable of throwing a generic {@link Throwable}.
+ * Variant of {@link ObjObjShortPredicate} capable of throwing a generic
+ * {@link Throwable}.
  *
  * @author Marko Zajc
  *
@@ -13,32 +14,30 @@ import com.github.markozajc.ef.predicate.TriPredicate;
  *            the type of the first argument to the predicate
  * @param <U>
  *            the type of the second argument the predicate
- * @param <V>
- *            the type of the third argument the predicate
  * @param <E>
  *            {@link Throwable} type
  */
 @FunctionalInterface
-public interface ETriPredicate<T, U, V, E extends Throwable> extends TriPredicate<T, U, V> {
+public interface EObjObjShortPredicate<T, U, E extends Throwable> extends ObjObjShortPredicate<T, U> {
 
 	@Override
-	default boolean test(T t, U u, V v) {
+	default short test(T t, U u, short p) {
 		try {
-			return testChecked(t, u, v);
+			return testChecked(t, u, p);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}
 	}
 
 	/**
-	 * Same as {@link #test(Object, Object, Object)}, but throws a checked exception.
+	 * Same as {@link #test(Object, Object, short)}, but throws a checked exception.
 	 *
 	 * @param t
 	 *            the first input argument
 	 * @param u
 	 *            the second input argument
-	 * @param v
-	 *            the third input argument
+	 * @param p
+	 *            the third ({@code short}) input argument
 	 *
 	 * @return {@code true} if the input arguments match the predicate, otherwise
 	 *         {@code false}
@@ -46,6 +45,6 @@ public interface ETriPredicate<T, U, V, E extends Throwable> extends TriPredicat
 	 * @throws E
 	 *             the defined exception type
 	 */
-	boolean testChecked(T t, U u, V v) throws E;
+	short testChecked(T t, U u, short p) throws E;
 
 }

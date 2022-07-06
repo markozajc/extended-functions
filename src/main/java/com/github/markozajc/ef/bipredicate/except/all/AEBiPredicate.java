@@ -1,8 +1,8 @@
-package com.github.markozajc.ef.predicate.except.all;
+package com.github.markozajc.ef.bipredicate.except.all;
 
 import java.util.function.BiPredicate;
 
-import com.github.markozajc.ef.predicate.except.EBiPredicate;
+import com.github.markozajc.ef.bipredicate.except.EBiPredicate;
 
 /**
  * Variant of {@link BiPredicate} capable of throwing an {@link Exception}.

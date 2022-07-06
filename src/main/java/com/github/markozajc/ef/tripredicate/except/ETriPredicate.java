@@ -1,11 +1,11 @@
-package com.github.markozajc.ef.predicate.except;
+package com.github.markozajc.ef.tripredicate.except;
 
 import static com.github.markozajc.ef.EFUtils.asUnchecked;
 
-import java.util.function.BiPredicate;
+import com.github.markozajc.ef.tripredicate.TriPredicate;
 
 /**
- * Variant of {@link BiPredicate} capable of throwing a generic {@link Throwable}.
+ * Variant of {@link TriPredicate} capable of throwing a generic {@link Throwable}.
  *
  * @author Marko Zajc
  *
@@ -13,28 +13,32 @@ import java.util.function.BiPredicate;
  *            the type of the first argument to the predicate
  * @param <U>
  *            the type of the second argument the predicate
+ * @param <V>
+ *            the type of the third argument the predicate
  * @param <E>
  *            {@link Throwable} type
  */
 @FunctionalInterface
-public interface EBiPredicate<T, U, E extends Throwable> extends BiPredicate<T, U> {
+public interface ETriPredicate<T, U, V, E extends Throwable> extends TriPredicate<T, U, V> {
 
 	@Override
-	default boolean test(T t, U u) {
+	default boolean test(T t, U u, V v) {
 		try {
-			return testChecked(t, u);
+			return testChecked(t, u, v);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}
 	}
 
 	/**
-	 * Same as {@link #test(Object, Object)}, but throws a checked exception.
+	 * Same as {@link #test(Object, Object, Object)}, but throws a checked exception.
 	 *
 	 * @param t
 	 *            the first input argument
 	 * @param u
 	 *            the second input argument
+	 * @param v
+	 *            the third input argument
 	 *
 	 * @return {@code true} if the input arguments match the predicate, otherwise
 	 *         {@code false}
@@ -42,6 +46,6 @@ public interface EBiPredicate<T, U, E extends Throwable> extends BiPredicate<T, 
 	 * @throws E
 	 *             the defined exception type
 	 */
-	boolean testChecked(T t, U u) throws E;
+	boolean testChecked(T t, U u, V v) throws E;
 
 }

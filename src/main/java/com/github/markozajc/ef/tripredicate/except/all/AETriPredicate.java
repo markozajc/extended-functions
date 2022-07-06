@@ -1,7 +1,7 @@
-package com.github.markozajc.ef.predicate.except.all;
+package com.github.markozajc.ef.tripredicate.except.all;
 
-import com.github.markozajc.ef.predicate.TriPredicate;
-import com.github.markozajc.ef.predicate.except.ETriPredicate;
+import com.github.markozajc.ef.tripredicate.TriPredicate;
+import com.github.markozajc.ef.tripredicate.except.ETriPredicate;
 
 /**
  * Variant of {@link TriPredicate} capable of throwing an {@link Exception}.

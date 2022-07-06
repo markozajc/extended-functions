@@ -42,8 +42,8 @@ public class EFUtils {
 	 * @return An exception-proofed function
 	 */
 	@Nonnull
-	public <T, E extends Throwable> Consumer<T> handle(@Nonnull EConsumer<T, E> handled,
-													   @Nonnull BiConsumer<Throwable, T> handler) {
+	public static <T, E extends Throwable> Consumer<T> handle(@Nonnull EConsumer<T, E> handled,
+															  @Nonnull BiConsumer<Throwable, T> handler) {
 		return t -> {
 			try {
 				handled.acceptChecked(t);
@@ -68,8 +68,8 @@ public class EFUtils {
 	 * @return An exception-proofed function
 	 */
 	@Nonnull
-	public <T, U, E extends Throwable> BiConsumer<T, U> handle(@Nonnull EBiConsumer<T, U, E> handled,
-															   @Nonnull TriConsumer<Throwable, T, U> handler) {
+	public static <T, U, E extends Throwable> BiConsumer<T, U> handle(@Nonnull EBiConsumer<T, U, E> handled,
+																	  @Nonnull TriConsumer<Throwable, T, U> handler) {
 		return (t, u) -> {
 			try {
 				handled.acceptChecked(t, u);
@@ -98,8 +98,8 @@ public class EFUtils {
 	 * @return An exception-proofed function
 	 */
 	@Nonnull
-	public <T, R, E extends Throwable> Function<T, R> handle(@Nonnull EFunction<T, R, E> handled,
-															 @Nonnull BiFunction<Throwable, T, R> handler) {
+	public static <T, R, E extends Throwable> Function<T, R> handle(@Nonnull EFunction<T, R, E> handled,
+																	@Nonnull BiFunction<Throwable, T, R> handler) {
 		return t -> {
 			try {
 				return handled.applyChecked(t);
@@ -123,8 +123,8 @@ public class EFUtils {
 	 * @return An exception-proofed function
 	 */
 	@Nonnull
-	public <R, E extends Throwable> BooleanFunction<R> handle(@Nonnull EBooleanFunction<R, E> handled,
-															  @Nonnull ObjBooleanFunction<Throwable, R> handler) {
+	public static <R, E extends Throwable> BooleanFunction<R> handle(@Nonnull EBooleanFunction<R, E> handled,
+																	 @Nonnull ObjBooleanFunction<Throwable, R> handler) {
 		return p -> {
 			try {
 				return handled.applyChecked(p);
@@ -148,8 +148,8 @@ public class EFUtils {
 	 * @return An exception-proofed function
 	 */
 	@Nonnull
-	public <R, E extends Throwable> ByteFunction<R> handle(@Nonnull EByteFunction<R, E> handled,
-														   @Nonnull ObjByteFunction<Throwable, R> handler) {
+	public static <R, E extends Throwable> ByteFunction<R> handle(@Nonnull EByteFunction<R, E> handled,
+																  @Nonnull ObjByteFunction<Throwable, R> handler) {
 		return p -> {
 			try {
 				return handled.applyChecked(p);
@@ -173,8 +173,8 @@ public class EFUtils {
 	 * @return An exception-proofed function
 	 */
 	@Nonnull
-	public <R, E extends Throwable> IntFunction<R> handle(@Nonnull EIntFunction<R, E> handled,
-														  @Nonnull ObjIntFunction<Throwable, R> handler) {
+	public static <R, E extends Throwable> IntFunction<R> handle(@Nonnull EIntFunction<R, E> handled,
+																 @Nonnull ObjIntFunction<Throwable, R> handler) {
 		return p -> {
 			try {
 				return handled.applyChecked(p);
@@ -198,8 +198,8 @@ public class EFUtils {
 	 * @return An exception-proofed function
 	 */
 	@Nonnull
-	public <R, E extends Throwable> LongFunction<R> handle(@Nonnull ELongFunction<R, E> handled,
-														   @Nonnull ObjLongFunction<Throwable, R> handler) {
+	public static <R, E extends Throwable> LongFunction<R> handle(@Nonnull ELongFunction<R, E> handled,
+																  @Nonnull ObjLongFunction<Throwable, R> handler) {
 		return p -> {
 			try {
 				return handled.applyChecked(p);
@@ -223,8 +223,8 @@ public class EFUtils {
 	 * @return An exception-proofed function
 	 */
 	@Nonnull
-	public <R, E extends Throwable> ShortFunction<R> handle(@Nonnull EShortFunction<R, E> handled,
-															@Nonnull ObjShortFunction<Throwable, R> handler) {
+	public static <R, E extends Throwable> ShortFunction<R> handle(@Nonnull EShortFunction<R, E> handled,
+																   @Nonnull ObjShortFunction<Throwable, R> handler) {
 		return p -> {
 			try {
 				return handled.applyChecked(p);
@@ -253,8 +253,8 @@ public class EFUtils {
 	 * @return An exception-proofed function
 	 */
 	@Nonnull
-	public <T, U, R, E extends Throwable> BiFunction<T, U, R> handle(@Nonnull EBiFunction<T, U, R, E> handled,
-																	 @Nonnull TriFunction<Throwable, T, U, R> handler) {
+	public static <T, U, R, E extends Throwable> BiFunction<T, U, R> handle(@Nonnull EBiFunction<T, U, R, E> handled,
+																			@Nonnull TriFunction<Throwable, T, U, R> handler) {
 		return (t, u) -> {
 			try {
 				return handled.applyChecked(t, u);
@@ -279,8 +279,8 @@ public class EFUtils {
 	 * @return An exception-proofed function
 	 */
 	@Nonnull
-	public <T, R, E extends Throwable> ObjBooleanFunction<T, R> handle(@Nonnull EObjBooleanFunction<T, R, E> handled,
-																	   @Nonnull ObjObjBooleanFunction<Throwable, T, R> handler) {
+	public static <T, R, E extends Throwable> ObjBooleanFunction<T, R> handle(@Nonnull EObjBooleanFunction<T, R, E> handled,
+																			  @Nonnull ObjObjBooleanFunction<Throwable, T, R> handler) {
 		return (t, p) -> {
 			try {
 				return handled.applyChecked(t, p);
@@ -305,8 +305,8 @@ public class EFUtils {
 	 * @return An exception-proofed function
 	 */
 	@Nonnull
-	public <T, R, E extends Throwable> ObjByteFunction<T, R> handle(@Nonnull EObjByteFunction<T, R, E> handled,
-																	@Nonnull ObjObjByteFunction<Throwable, T, R> handler) {
+	public static <T, R, E extends Throwable> ObjByteFunction<T, R> handle(@Nonnull EObjByteFunction<T, R, E> handled,
+																		   @Nonnull ObjObjByteFunction<Throwable, T, R> handler) {
 		return (t, p) -> {
 			try {
 				return handled.applyChecked(t, p);
@@ -331,8 +331,8 @@ public class EFUtils {
 	 * @return An exception-proofed function
 	 */
 	@Nonnull
-	public <T, R, E extends Throwable> ObjIntFunction<T, R> handle(@Nonnull EObjIntFunction<T, R, E> handled,
-																   @Nonnull ObjObjIntFunction<Throwable, T, R> handler) {
+	public static <T, R, E extends Throwable> ObjIntFunction<T, R> handle(@Nonnull EObjIntFunction<T, R, E> handled,
+																		  @Nonnull ObjObjIntFunction<Throwable, T, R> handler) {
 		return (t, p) -> {
 			try {
 				return handled.applyChecked(t, p);
@@ -357,8 +357,8 @@ public class EFUtils {
 	 * @return An exception-proofed function
 	 */
 	@Nonnull
-	public <T, R, E extends Throwable> ObjLongFunction<T, R> handle(@Nonnull EObjLongFunction<T, R, E> handled,
-																	@Nonnull ObjObjLongFunction<Throwable, T, R> handler) {
+	public static <T, R, E extends Throwable> ObjLongFunction<T, R> handle(@Nonnull EObjLongFunction<T, R, E> handled,
+																		   @Nonnull ObjObjLongFunction<Throwable, T, R> handler) {
 		return (t, p) -> {
 			try {
 				return handled.applyChecked(t, p);
@@ -383,8 +383,8 @@ public class EFUtils {
 	 * @return An exception-proofed function
 	 */
 	@Nonnull
-	public <T, R, E extends Throwable> ObjShortFunction<T, R> handle(@Nonnull EObjShortFunction<T, R, E> handled,
-																	 @Nonnull ObjObjShortFunction<Throwable, T, R> handler) {
+	public static <T, R, E extends Throwable> ObjShortFunction<T, R> handle(@Nonnull EObjShortFunction<T, R, E> handled,
+																			@Nonnull ObjObjShortFunction<Throwable, T, R> handler) {
 		return (t, p) -> {
 			try {
 				return handled.applyChecked(t, p);
@@ -413,8 +413,8 @@ public class EFUtils {
 	 * @return An exception-proofed function
 	 */
 	@Nonnull
-	public <T, E extends Throwable> Predicate<T> handle(@Nonnull EPredicate<T, E> handled,
-														@Nonnull BiPredicate<Throwable, T> handler) {
+	public static <T, E extends Throwable> Predicate<T> handle(@Nonnull EPredicate<T, E> handled,
+															   @Nonnull BiPredicate<Throwable, T> handler) {
 		return t -> {
 			try {
 				return handled.testChecked(t);
@@ -439,8 +439,8 @@ public class EFUtils {
 	 * @return An exception-proofed function
 	 */
 	@Nonnull
-	public <T, U, E extends Throwable> BiPredicate<T, U> handle(@Nonnull EBiPredicate<T, U, E> handled,
-																@Nonnull TriPredicate<Throwable, T, U> handler) {
+	public static <T, U, E extends Throwable> BiPredicate<T, U> handle(@Nonnull EBiPredicate<T, U, E> handled,
+																	   @Nonnull TriPredicate<Throwable, T, U> handler) {
 		return (t, u) -> {
 			try {
 				return handled.testChecked(t, u);
@@ -468,7 +468,8 @@ public class EFUtils {
 	 * @return An exception-proofed function
 	 */
 	@Nonnull
-	public <E extends Throwable> Runnable handle(@Nonnull ERunnable<E> handled, @Nonnull Consumer<Throwable> handler) {
+	public static <E extends Throwable> Runnable handle(@Nonnull ERunnable<E> handled,
+														@Nonnull Consumer<Throwable> handler) {
 		return () -> {
 			try {
 				handled.runChecked();
@@ -497,8 +498,8 @@ public class EFUtils {
 	 * @return An exception-proofed function
 	 */
 	@Nonnull
-	public <T, E extends Throwable> Supplier<T> handle(@Nonnull ESupplier<T, E> handled,
-													   @Nonnull Function<Throwable, T> handler) {
+	public static <T, E extends Throwable> Supplier<T> handle(@Nonnull ESupplier<T, E> handled,
+															  @Nonnull Function<Throwable, T> handler) {
 		return () -> {
 			try {
 				return handled.getChecked();
@@ -522,8 +523,8 @@ public class EFUtils {
 	 * @return An exception-proofed function
 	 */
 	@Nonnull
-	public <E extends Throwable> BooleanSupplier handle(@Nonnull EBooleanSupplier<E> handled,
-														@Nonnull Predicate<Throwable> handler) {
+	public static <E extends Throwable> BooleanSupplier handle(@Nonnull EBooleanSupplier<E> handled,
+															   @Nonnull Predicate<Throwable> handler) {
 		return () -> {
 			try {
 				return handled.getAsBoolean();
@@ -549,8 +550,8 @@ public class EFUtils {
 	 * @return An exception-proofed function
 	 */
 	@Nonnull
-	public <E extends Throwable> IntSupplier handle(@Nonnull EIntSupplier<E> handled,
-													@Nonnull ToIntFunction<Throwable> handler) {
+	public static <E extends Throwable> IntSupplier handle(@Nonnull EIntSupplier<E> handled,
+														   @Nonnull ToIntFunction<Throwable> handler) {
 		return () -> {
 			try {
 				return handled.getAsInt();
@@ -576,8 +577,8 @@ public class EFUtils {
 	 * @return An exception-proofed function
 	 */
 	@Nonnull
-	public <E extends Throwable> LongSupplier handle(@Nonnull ELongSupplier<E> handled,
-													 @Nonnull ToLongFunction<Throwable> handler) {
+	public static <E extends Throwable> LongSupplier handle(@Nonnull ELongSupplier<E> handled,
+															@Nonnull ToLongFunction<Throwable> handler) {
 		return () -> {
 			try {
 				return handled.getAsLong();

@@ -1,8 +1,8 @@
-package com.github.markozajc.ef.triconsumers.except;
+package com.github.markozajc.ef.triconsumer.except;
 
 import static com.github.markozajc.ef.EFUtils.asUnchecked;
 
-import com.github.markozajc.ef.triconsumers.TriConsumer;
+import com.github.markozajc.ef.triconsumer.TriConsumer;
 
 /**
  * Variant of {@link TriConsumer} capable of throwing a generic {@link Throwable}.

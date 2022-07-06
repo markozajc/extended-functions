@@ -1,4 +1,4 @@
-package com.github.markozajc.ef.triconsumers;
+package com.github.markozajc.ef.triconsumer;
 
 import java.util.function.Consumer;
 

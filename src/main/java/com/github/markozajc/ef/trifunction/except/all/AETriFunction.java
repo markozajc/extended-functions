@@ -1,10 +1,10 @@
 package com.github.markozajc.ef.trifunction.except.all;
 
-import com.github.markozajc.ef.consumer.TriConsumer;
+import com.github.markozajc.ef.trifunction.TriFunction;
 import com.github.markozajc.ef.trifunction.except.ETriFunction;
 
 /**
- * Variant of {@link TriConsumer} capable of throwing an {@link Exception}.
+ * Variant of {@link TriFunction} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

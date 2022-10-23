@@ -3,7 +3,7 @@
 
 	<groupId>com.github.markozajc</groupId>
 	<artifactId>extended-functions</artifactId>
-	<version>1.2</version>
+	<version>1.2.1</version>
 
 	<name>Extended Functions</name>
 	<description>Variants of consumers, functions, suppliers, and runnables that are missing from the stdlib</description>

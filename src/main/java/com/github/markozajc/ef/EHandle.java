@@ -1,5 +1,6 @@
 package com.github.markozajc.ef;
 
+import java.util.concurrent.Callable;
 import java.util.function.*;
 import java.util.function.IntPredicate;
 import java.util.function.LongPredicate;
@@ -25,7 +26,8 @@ import com.github.markozajc.ef.trifunction.*;
 import com.github.markozajc.ef.tripredicate.*;
 
 /**
- * A class containing various helper utilities for exceptionable (E*) functions.
+ * A class containing various helper utilities for exceptionable (E*) functions and
+ * {@link Callable} ({@link ESupplier}).
  *
  * @author Marko Zajc
  */
@@ -985,8 +987,30 @@ public class EHandle {
 	}
 
 	/*
-	 * ================== Suppliers ==================
+	 * ================== Suppliers & Callable ==================
 	 */
+
+	/**
+	 * Handles any exception types that may occur in the handled function with a provided
+	 * handler.
+	 *
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed function
+	 */
+	@Nonnull
+	public static <T> Supplier<T> handle(@Nonnull Callable<T> handled, @Nonnull Function<Exception, T> handler) {
+		return () -> {
+			try {
+				return handled.call();
+			} catch (Exception e) {
+				return handler.apply(e);
+			}
+		};
+	}
 
 	/**
 	 * Handles any exception types that may occur in the handled function with a provided

@@ -1,6 +1,7 @@
 package com.github.markozajc.ef.predicate.except.all;
 
-import com.github.markozajc.ef.predicate.IntPredicate;
+import java.util.function.IntPredicate;
+
 import com.github.markozajc.ef.predicate.except.EIntPredicate;
 
 /**

@@ -2,7 +2,7 @@ package com.github.markozajc.ef.predicate.except;
 
 import static com.github.markozajc.ef.Utilities.asUnchecked;
 
-import com.github.markozajc.ef.predicate.IntPredicate;
+import java.util.function.IntPredicate;
 
 /**
  * Variant of {@link IntPredicate} capable of throwing a generic {@link Throwable}.

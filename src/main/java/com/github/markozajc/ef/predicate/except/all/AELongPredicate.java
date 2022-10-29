@@ -1,6 +1,7 @@
 package com.github.markozajc.ef.predicate.except.all;
 
-import com.github.markozajc.ef.predicate.LongPredicate;
+import java.util.function.LongPredicate;
+
 import com.github.markozajc.ef.predicate.except.ELongPredicate;
 
 /**

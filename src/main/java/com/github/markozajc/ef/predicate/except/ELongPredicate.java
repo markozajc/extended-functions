@@ -2,7 +2,7 @@ package com.github.markozajc.ef.predicate.except;
 
 import static com.github.markozajc.ef.Utilities.asUnchecked;
 
-import com.github.markozajc.ef.predicate.LongPredicate;
+import java.util.function.LongPredicate;
 
 /**
  * Variant of {@link LongPredicate} capable of throwing a generic {@link Throwable}.

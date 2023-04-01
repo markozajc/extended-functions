@@ -5,16 +5,16 @@ A small project providing extensions and additions to Java 8's built-in function
 ## Installation
 
 Add the following to your pom.xml's dependencies:
-	
+    
 ```xml
 <dependencies>
-	...
-	<dependency>
-		<groupId>com.github.markozajc</groupId>
-		<artifactId>extended-functions</artifactId>
-		<version>1.3</version>
-	</dependency>
-	...
+    ...
+    <dependency>
+        <groupId>com.github.markozajc</groupId>
+        <artifactId>extended-functions</artifactId>
+        <version>1.3</version>
+    </dependency>
+    ...
 </dependencies>
 ```
 
@@ -22,18 +22,18 @@ or your build.gradle:
 
 ```groovy
 repositories {
-	...
-	mavenCentral()
-	...
+    ...
+    mavenCentral()
+    ...
 }
 
 dependencies {
-	...
-	api 'com.github.markozajc:extended-functions:1.3'
-	...
+    ...
+    api 'com.github.markozajc:extended-functions:1.3'
+    ...
 }
 ```
-	
+    
 ## Usage
 
 Some of this project's additions do not extend Java 8's built-in functions and can therefore not be used directly with Java's APIs. However, those that do (specifically certain E\* and AE\* ones) can be through casting. For example, one can use:
@@ -52,11 +52,11 @@ rather than the vanilla way of doing it:
 
 ```java
 files.forEach(t -> {
-	try {
-		Files.delete(t);
-	} catch (IOException e) {
-		// the error handling logic
-	}
+    try {
+        Files.delete(t);
+    } catch (IOException e) {
+        // the error handling logic
+    }
 });
 ```
 
@@ -68,7 +68,7 @@ It's also possible to handle exceptions in-line with `EHandle`:
 
 ```java
 files.forEach(EHandle.handle(Files::delete, (f, t) -> {
-	// error handling logic
+    // error handling logic
 }));
 ```
 

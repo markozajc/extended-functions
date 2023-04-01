@@ -1,9 +1,9 @@
 package com.github.markozajc.ef;
 
+import static com.github.markozajc.ef.Utilities.asUnchecked;
+
 import java.util.concurrent.Callable;
 import java.util.function.*;
-import java.util.function.IntPredicate;
-import java.util.function.LongPredicate;
 
 import javax.annotation.Nonnull;
 
@@ -20,6 +20,7 @@ import com.github.markozajc.ef.function.except.*;
 import com.github.markozajc.ef.predicate.*;
 import com.github.markozajc.ef.predicate.except.*;
 import com.github.markozajc.ef.runnable.except.ERunnable;
+import com.github.markozajc.ef.supplier.*;
 import com.github.markozajc.ef.supplier.except.*;
 import com.github.markozajc.ef.triconsumer.*;
 import com.github.markozajc.ef.trifunction.*;
@@ -38,8 +39,8 @@ public class EHandle {
 	 */
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled consumer with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -48,7 +49,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed consumer
 	 */
 	@Nonnull
 	public static <T, E extends Throwable> Consumer<T> handle(@Nonnull EConsumer<T, E> handled,
@@ -63,8 +64,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled consumer by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed consumer
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, E extends Throwable, X extends Throwable> Consumer<T> handleThrowing(@Nonnull EConsumer<T, E> handled,
+																						   @Nonnull Function<Throwable, X> handler) throws X {
+		return t -> {
+			try {
+				handled.acceptChecked(t);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled consumer by
+	 * throwing a different exception.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -73,7 +105,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed consumer
 	 */
 	@Nonnull
 	public static <E extends Throwable> BooleanConsumer handle(@Nonnull EBooleanConsumer<E> handled,
@@ -88,8 +120,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled consumer by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed consumer
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <E extends Throwable, X extends Throwable> BooleanConsumer handleThrowing(@Nonnull EBooleanConsumer<E> handled,
+																							@Nonnull Function<Throwable, X> handler) throws X {
+		return p -> {
+			try {
+				handled.acceptChecked(p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled consumer with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -98,7 +161,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed consumer
 	 */
 	@Nonnull
 	public static <E extends Throwable> ByteConsumer handle(@Nonnull EByteConsumer<E> handled,
@@ -113,8 +176,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled consumer by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed consumer
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <E extends Throwable, X extends Throwable> ByteConsumer handleThrowing(@Nonnull EByteConsumer<E> handled,
+																						 @Nonnull Function<Throwable, X> handler) throws X {
+		return p -> {
+			try {
+				handled.acceptChecked(p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled consumer with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -123,7 +217,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed consumer
 	 */
 	@Nonnull
 	public static <E extends Throwable> IntConsumer handle(@Nonnull EIntConsumer<E> handled,
@@ -138,8 +232,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled consumer by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed consumer
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <E extends Throwable, X extends Throwable> IntConsumer handleThrowing(@Nonnull EIntConsumer<E> handled,
+																						@Nonnull Function<Throwable, X> handler) throws X {
+		return p -> {
+			try {
+				handled.acceptChecked(p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled consumer with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -148,7 +273,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed consumer
 	 */
 	@Nonnull
 	public static <E extends Throwable> LongConsumer handle(@Nonnull ELongConsumer<E> handled,
@@ -163,8 +288,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled consumer by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed consumer
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <E extends Throwable, X extends Throwable> LongConsumer handleThrowing(@Nonnull ELongConsumer<E> handled,
+																						 @Nonnull Function<Throwable, X> handler) throws X {
+		return p -> {
+			try {
+				handled.acceptChecked(p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled consumer with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -173,7 +329,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed consumer
 	 */
 	@Nonnull
 	public static <E extends Throwable> ShortConsumer handle(@Nonnull EShortConsumer<E> handled,
@@ -187,13 +343,44 @@ public class EHandle {
 		};
 	}
 
+	/**
+	 * Handles a generic exception type that may occur in the handled consumer by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed consumer
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <E extends Throwable, X extends Throwable> ShortConsumer handleThrowing(@Nonnull EShortConsumer<E> handled,
+																						  @Nonnull Function<Throwable, X> handler) throws X {
+		return p -> {
+			try {
+				handled.acceptChecked(p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
 	/*
 	 * ================== BiConsumers ==================
 	 */
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled consumer with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -202,7 +389,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed consumer
 	 */
 	@Nonnull
 	public static <T, U, E extends Throwable> BiConsumer<T, U> handle(@Nonnull EBiConsumer<T, U, E> handled,
@@ -217,8 +404,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled consumer by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed consumer
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, U, E extends Throwable, X extends Throwable> BiConsumer<T, U> handleThrowing(@Nonnull EBiConsumer<T, U, E> handled,
+																								   @Nonnull Function<Throwable, X> handler) throws X {
+		return (t, u) -> {
+			try {
+				handled.acceptChecked(t, u);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled consumer with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -227,7 +445,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed consumer
 	 */
 	@Nonnull
 	public static <T, E extends Throwable> ObjBooleanConsumer<T> handle(@Nonnull EObjBooleanConsumer<T, E> handled,
@@ -242,8 +460,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled consumer by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed consumer
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, E extends Throwable, X extends Throwable> ObjBooleanConsumer<T> handleThrowing(@Nonnull EObjBooleanConsumer<T, E> handled,
+																									 @Nonnull Function<Throwable, X> handler) throws X {
+		return (t, p) -> {
+			try {
+				handled.acceptChecked(t, p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled consumer with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -252,7 +501,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed consumer
 	 */
 	@Nonnull
 	public static <T, E extends Throwable> ObjByteConsumer<T> handle(@Nonnull EObjByteConsumer<T, E> handled,
@@ -267,8 +516,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled consumer by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed consumer
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, E extends Throwable, X extends Throwable> ObjByteConsumer<T> handleThrowing(@Nonnull EObjByteConsumer<T, E> handled,
+																								  @Nonnull Function<Throwable, X> handler) throws X {
+		return (t, p) -> {
+			try {
+				handled.acceptChecked(t, p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled consumer with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -277,7 +557,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed consumer
 	 */
 	@Nonnull
 	public static <T, E extends Throwable> ObjIntConsumer<T> handle(@Nonnull EObjIntConsumer<T, E> handled,
@@ -292,8 +572,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled consumer by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed consumer
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, E extends Throwable, X extends Throwable> ObjIntConsumer<T> handleThrowing(@Nonnull EObjIntConsumer<T, E> handled,
+																								 @Nonnull Function<Throwable, X> handler) throws X {
+		return (t, p) -> {
+			try {
+				handled.acceptChecked(t, p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled consumer with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -302,7 +613,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed consumer
 	 */
 	@Nonnull
 	public static <T, E extends Throwable> ObjLongConsumer<T> handle(@Nonnull EObjLongConsumer<T, E> handled,
@@ -317,8 +628,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled consumer by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed consumer
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, E extends Throwable, X extends Throwable> ObjLongConsumer<T> handleThrowing(@Nonnull EObjLongConsumer<T, E> handled,
+																								  @Nonnull Function<Throwable, X> handler) throws X {
+		return (t, p) -> {
+			try {
+				handled.acceptChecked(t, p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled consumer with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -327,7 +669,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed consumer
 	 */
 	@Nonnull
 	public static <T, E extends Throwable> ObjShortConsumer<T> handle(@Nonnull EObjShortConsumer<T, E> handled,
@@ -341,13 +683,44 @@ public class EHandle {
 		};
 	}
 
+	/**
+	 * Handles a generic exception type that may occur in the handled consumer by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed consumer
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, E extends Throwable, X extends Throwable> ObjShortConsumer<T> handleThrowing(@Nonnull EObjShortConsumer<T, E> handled,
+																								   @Nonnull Function<Throwable, X> handler) throws X {
+		return (t, p) -> {
+			try {
+				handled.acceptChecked(t, p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
 	/*
 	 * ================== Functions ==================
 	 */
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled function with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -371,8 +744,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled function by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed function
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, R, E extends Throwable, X extends Throwable> Function<T, R> handleThrowing(@Nonnull EFunction<T, R, E> handled,
+																								 @Nonnull Function<Throwable, X> handler) throws X {
+		return t -> {
+			try {
+				return handled.applyChecked(t);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled function with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -396,8 +800,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled function by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed function
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <R, E extends Throwable, X extends Throwable> BooleanFunction<R> handleThrowing(@Nonnull EBooleanFunction<R, E> handled,
+																								  @Nonnull Function<Throwable, X> handler) throws X {
+		return p -> {
+			try {
+				return handled.applyChecked(p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled function with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -421,8 +856,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled function by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed function
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <R, E extends Throwable, X extends Throwable> ByteFunction<R> handleThrowing(@Nonnull EByteFunction<R, E> handled,
+																							   @Nonnull Function<Throwable, X> handler) throws X {
+		return p -> {
+			try {
+				return handled.applyChecked(p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled function with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -446,8 +912,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled function by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed function
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <R, E extends Throwable, X extends Throwable> IntFunction<R> handleThrowing(@Nonnull EIntFunction<R, E> handled,
+																							  @Nonnull Function<Throwable, X> handler) throws X {
+		return p -> {
+			try {
+				return handled.applyChecked(p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled function with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -471,8 +968,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled function by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed function
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <R, E extends Throwable, X extends Throwable> LongFunction<R> handleThrowing(@Nonnull ELongFunction<R, E> handled,
+																							   @Nonnull Function<Throwable, X> handler) throws X {
+		return p -> {
+			try {
+				return handled.applyChecked(p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled function with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -495,13 +1023,44 @@ public class EHandle {
 		};
 	}
 
+	/**
+	 * Handles a generic exception type that may occur in the handled function by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed function
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <R, E extends Throwable, X extends Throwable> ShortFunction<R> handleThrowing(@Nonnull EShortFunction<R, E> handled,
+																								@Nonnull Function<Throwable, X> handler) throws X {
+		return p -> {
+			try {
+				return handled.applyChecked(p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
 	/*
 	 * ================== BiFunctions ==================
 	 */
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled function with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -525,8 +1084,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled function by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed function
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, U, R, E extends Throwable, X extends Throwable> BiFunction<T, U, R> handleThrowing(@Nonnull EBiFunction<T, U, R, E> handled,
+																										 @Nonnull Function<Throwable, X> handler) throws X {
+		return (t, u) -> {
+			try {
+				return handled.applyChecked(t, u);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled function with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -550,8 +1140,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled function by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed function
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, R, E extends Throwable, X extends Throwable> ObjBooleanFunction<T, R> handleThrowing(@Nonnull EObjBooleanFunction<T, R, E> handled,
+																										   @Nonnull Function<Throwable, X> handler) throws X {
+		return (t, p) -> {
+			try {
+				return handled.applyChecked(t, p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled function with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -575,8 +1196,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled function by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed function
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, R, E extends Throwable, X extends Throwable> ObjByteFunction<T, R> handleThrowing(@Nonnull EObjByteFunction<T, R, E> handled,
+																										@Nonnull Function<Throwable, X> handler) throws X {
+		return (t, p) -> {
+			try {
+				return handled.applyChecked(t, p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled function with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -600,8 +1252,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled function by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed function
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, R, E extends Throwable, X extends Throwable> ObjIntFunction<T, R> handleThrowing(@Nonnull EObjIntFunction<T, R, E> handled,
+																									   @Nonnull Function<Throwable, X> handler) throws X {
+		return (t, p) -> {
+			try {
+				return handled.applyChecked(t, p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled function with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -625,8 +1308,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled function by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed function
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, R, E extends Throwable, X extends Throwable> ObjLongFunction<T, R> handleThrowing(@Nonnull EObjLongFunction<T, R, E> handled,
+																										@Nonnull Function<Throwable, X> handler) throws X {
+		return (t, p) -> {
+			try {
+				return handled.applyChecked(t, p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled function with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -649,13 +1363,44 @@ public class EHandle {
 		};
 	}
 
+	/**
+	 * Handles a generic exception type that may occur in the handled function by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed function
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, R, E extends Throwable, X extends Throwable> ObjShortFunction<T, R> handleThrowing(@Nonnull EObjShortFunction<T, R, E> handled,
+																										 @Nonnull Function<Throwable, X> handler) throws X {
+		return (t, p) -> {
+			try {
+				return handled.applyChecked(t, p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
 	/*
 	 * ================== Predicates ==================
 	 */
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled predicate with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -664,7 +1409,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed predicate
 	 */
 	@Nonnull
 	public static <T, E extends Throwable> Predicate<T> handle(@Nonnull EPredicate<T, E> handled,
@@ -679,8 +1424,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled predicate by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed predicate
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, E extends Throwable, X extends Throwable> Predicate<T> handleThrowing(@Nonnull EPredicate<T, E> handled,
+																							@Nonnull Function<Throwable, X> handler) throws X {
+		return t -> {
+			try {
+				return handled.testChecked(t);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled predicate with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -689,7 +1465,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed predicate
 	 */
 	@Nonnull
 	public static <E extends Throwable> BooleanPredicate handle(@Nonnull EBooleanPredicate<E> handled,
@@ -704,8 +1480,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled predicate by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed predicate
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <E extends Throwable, X extends Throwable> BooleanPredicate handleThrowing(@Nonnull EBooleanPredicate<E> handled,
+																							 @Nonnull Function<Throwable, X> handler) throws X {
+		return p -> {
+			try {
+				return handled.testChecked(p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled predicate with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -714,7 +1521,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed predicate
 	 */
 	@Nonnull
 	public static <E extends Throwable> BytePredicate handle(@Nonnull EBytePredicate<E> handled,
@@ -729,8 +1536,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled predicate by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed predicate
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <E extends Throwable, X extends Throwable> BytePredicate handleThrowing(@Nonnull EBytePredicate<E> handled,
+																						  @Nonnull Function<Throwable, X> handler) throws X {
+		return p -> {
+			try {
+				return handled.testChecked(p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled predicate with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -739,7 +1577,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed predicate
 	 */
 	@Nonnull
 	public static <E extends Throwable> IntPredicate handle(@Nonnull EIntPredicate<E> handled,
@@ -754,8 +1592,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled predicate by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed predicate
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <E extends Throwable, X extends Throwable> IntPredicate handleThrowing(@Nonnull EIntPredicate<E> handled,
+																						 @Nonnull Function<Throwable, X> handler) throws X {
+		return p -> {
+			try {
+				return handled.testChecked(p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled predicate with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -764,7 +1633,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed predicate
 	 */
 	@Nonnull
 	public static <E extends Throwable> LongPredicate handle(@Nonnull ELongPredicate<E> handled,
@@ -779,8 +1648,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled predicate by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed predicate
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <E extends Throwable, X extends Throwable> LongPredicate handleThrowing(@Nonnull ELongPredicate<E> handled,
+																						  @Nonnull Function<Throwable, X> handler) throws X {
+		return p -> {
+			try {
+				return handled.testChecked(p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled predicate with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -789,7 +1689,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed predicate
 	 */
 	@Nonnull
 	public static <E extends Throwable> ShortPredicate handle(@Nonnull EShortPredicate<E> handled,
@@ -803,13 +1703,44 @@ public class EHandle {
 		};
 	}
 
+	/**
+	 * Handles a generic exception type that may occur in the handled predicate by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed predicate
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <E extends Throwable, X extends Throwable> ShortPredicate handleThrowing(@Nonnull EShortPredicate<E> handled,
+																						   @Nonnull Function<Throwable, X> handler) throws X {
+		return p -> {
+			try {
+				return handled.testChecked(p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
 	/*
 	 * ================== BiPredicates ==================
 	 */
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled predicate with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -818,7 +1749,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed predicate
 	 */
 	@Nonnull
 	public static <T, U, E extends Throwable> BiPredicate<T, U> handle(@Nonnull EBiPredicate<T, U, E> handled,
@@ -833,8 +1764,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled predicate by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed predicate
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, U, E extends Throwable, X extends Throwable> BiPredicate<T, U> handleThrowing(@Nonnull EBiPredicate<T, U, E> handled,
+																									@Nonnull Function<Throwable, X> handler) throws X {
+		return (t, u) -> {
+			try {
+				return handled.testChecked(t, u);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled predicate with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -843,7 +1805,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed predicate
 	 */
 	@Nonnull
 	public static <T, E extends Throwable> ObjBooleanPredicate<T> handle(@Nonnull EObjBooleanPredicate<T, E> handled,
@@ -858,8 +1820,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled predicate by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed predicate
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, E extends Throwable, X extends Throwable> ObjBooleanPredicate<T> handleThrowing(@Nonnull EObjBooleanPredicate<T, E> handled,
+																									  @Nonnull Function<Throwable, X> handler) throws X {
+		return (t, p) -> {
+			try {
+				return handled.testChecked(t, p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled predicate with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -868,7 +1861,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed predicate
 	 */
 	@Nonnull
 	public static <T, E extends Throwable> ObjBytePredicate<T> handle(@Nonnull EObjBytePredicate<T, E> handled,
@@ -883,8 +1876,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled predicate by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed predicate
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, E extends Throwable, X extends Throwable> ObjBytePredicate<T> handleThrowing(@Nonnull EObjBytePredicate<T, E> handled,
+																								   @Nonnull Function<Throwable, X> handler) throws X {
+		return (t, p) -> {
+			try {
+				return handled.testChecked(t, p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled predicate with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -893,7 +1917,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed predicate
 	 */
 	@Nonnull
 	public static <T, E extends Throwable> ObjIntPredicate<T> handle(@Nonnull EObjIntPredicate<T, E> handled,
@@ -908,8 +1932,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled predicate by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed predicate
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, E extends Throwable, X extends Throwable> ObjIntPredicate<T> handleThrowing(@Nonnull EObjIntPredicate<T, E> handled,
+																								  @Nonnull Function<Throwable, X> handler) throws X {
+		return (t, p) -> {
+			try {
+				return handled.testChecked(t, p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled predicate with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -918,7 +1973,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed predicate
 	 */
 	@Nonnull
 	public static <T, E extends Throwable> ObjLongPredicate<T> handle(@Nonnull EObjLongPredicate<T, E> handled,
@@ -933,8 +1988,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled predicate by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed predicate
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, E extends Throwable, X extends Throwable> ObjLongPredicate<T> handleThrowing(@Nonnull EObjLongPredicate<T, E> handled,
+																								   @Nonnull Function<Throwable, X> handler) throws X {
+		return (t, p) -> {
+			try {
+				return handled.testChecked(t, p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled predicate with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -943,7 +2029,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed predicate
 	 */
 	@Nonnull
 	public static <T, E extends Throwable> ObjShortPredicate<T> handle(@Nonnull EObjShortPredicate<T, E> handled,
@@ -957,13 +2043,44 @@ public class EHandle {
 		};
 	}
 
+	/**
+	 * Handles a generic exception type that may occur in the handled predicate by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed predicate
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, E extends Throwable, X extends Throwable> ObjShortPredicate<T> handleThrowing(@Nonnull EObjShortPredicate<T, E> handled,
+																									@Nonnull Function<Throwable, X> handler) throws X {
+		return (t, p) -> {
+			try {
+				return handled.testChecked(t, p);
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
 	/*
 	 * ================== Runnables ==================
 	 */
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles a generic exception type that may occur in the handled runnable with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -972,7 +2089,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed runnable
 	 */
 	@Nonnull
 	public static <E extends Throwable> Runnable handle(@Nonnull ERunnable<E> handled,
@@ -986,12 +2103,43 @@ public class EHandle {
 		};
 	}
 
+	/**
+	 * Handles a generic exception type that may occur in the handled runnable by
+	 * throwing a different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed runnable
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <E extends Throwable, X extends Throwable> Runnable handleThrowing(@Nonnull ERunnable<E> handled,
+																					 @Nonnull Function<Throwable, X> handler) throws X {
+		return () -> {
+			try {
+				handled.runChecked();
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
 	/*
 	 * ================== Suppliers & Callable ==================
 	 */
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
+	 * Handles any exception type that may occur in the handled callable with a provided
 	 * handler.
 	 *
 	 * @param handled
@@ -999,7 +2147,7 @@ public class EHandle {
 	 * @param handler
 	 *            The function handling exceptions
 	 *
-	 * @return An exception-proofed function
+	 * @return An exception-proofed callable
 	 */
 	@Nonnull
 	public static <T> Supplier<T> handle(@Nonnull Callable<T> handled, @Nonnull Function<Exception, T> handler) {
@@ -1013,8 +2161,37 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles any exception type that may occur in the handled callable by throwing a
+	 * different exception.
+	 *
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed callable
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, X extends Throwable> Supplier<T> handleThrowing(@Nonnull Callable<T> handled,
+																	  @Nonnull Function<Throwable, X> handler) throws X {
+		return () -> {
+			try {
+				return handled.call();
+			} catch (Exception e) {
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled function with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -1038,8 +2215,39 @@ public class EHandle {
 	}
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles any exception types that may occur in the handled supplier by throwing a
+	 * different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed supplier
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, E extends Throwable, X extends Throwable> Supplier<T> handleThrowing(@Nonnull ESupplier<T, E> handled,
+																						   @Nonnull Function<Throwable, X> handler) throws X {
+		return () -> {
+			try {
+				return handled.getChecked();
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled function with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -1062,11 +2270,73 @@ public class EHandle {
 		};
 	}
 
-	// missing: EByteSupplier, blocked by: ToByteFunction
+	/**
+	 * Handles any exception types that may occur in the handled supplier by throwing a
+	 * different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed supplier
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, E extends Throwable, X extends Throwable> BooleanSupplier handleThrowing(@Nonnull EBooleanSupplier<E> handled,
+																							   @Nonnull Function<Throwable, X> handler) throws X {
+		return () -> {
+			try {
+				return handled.getAsBoolean();
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	// missing: handle EByteSupplier, blocked by: missing ToByteFunction
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles any exception types that may occur in the handled supplier by throwing a
+	 * different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed supplier
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, E extends Throwable, X extends Throwable> ByteSupplier handleThrowing(@Nonnull EByteSupplier<E> handled,
+																							@Nonnull Function<Throwable, X> handler) throws X {
+		return () -> {
+			try {
+				return handled.getAsByte();
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled function with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -1089,11 +2359,73 @@ public class EHandle {
 		};
 	}
 
-	// missing: EShortSupplier, blocked by: ToShortFunction
+	/**
+	 * Handles any exception types that may occur in the handled supplier by throwing a
+	 * different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed supplier
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, E extends Throwable, X extends Throwable> IntSupplier handleThrowing(@Nonnull EIntSupplier<E> handled,
+																						   @Nonnull Function<Throwable, X> handler) throws X {
+		return () -> {
+			try {
+				return handled.getAsInt();
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	// missing: handle EShortSupplier, blocked by: missing ToShortFunction
 
 	/**
-	 * Handles any exception types that may occur in the handled function with a provided
-	 * handler.
+	 * Handles any exception types that may occur in the handled supplier by throwing a
+	 * different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed supplier
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, E extends Throwable, X extends Throwable> ShortSupplier handleThrowing(@Nonnull EShortSupplier<E> handled,
+																							 @Nonnull Function<Throwable, X> handler) throws X {
+		return () -> {
+			try {
+				return handled.getAsShort();
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
+			}
+		};
+	}
+
+	/**
+	 * Handles a generic exception type that may occur in the handled function with a
+	 * provided handler.
 	 *
 	 * @param <E>
 	 *            The handled function's exception type
@@ -1112,6 +2444,37 @@ public class EHandle {
 				return handled.getAsLong();
 			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 				return handler.applyAsLong(e);
+			}
+		};
+	}
+
+	/**
+	 * Handles any exception types that may occur in the handled supplier by throwing a
+	 * different exception.
+	 *
+	 * @param <E>
+	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
+	 * @param handled
+	 *            The function that may throw an exception
+	 * @param handler
+	 *            The function handling exceptions
+	 *
+	 * @return An exception-proofed supplier
+	 *
+	 * @throws X
+	 *             The exception returned by the handler
+	 */
+	@Nonnull
+	@SuppressWarnings({ "null", "unused" })
+	public static <T, E extends Throwable, X extends Throwable> LongSupplier handleThrowing(@Nonnull ELongSupplier<E> handled,
+																							@Nonnull Function<Throwable, X> handler) throws X {
+		return () -> {
+			try {
+				return handled.getAsLong();
+			} catch (Throwable e) { // NOSONAR can't catch generic exceptions
+				throw asUnchecked(handler.apply(e));
 			}
 		};
 	}

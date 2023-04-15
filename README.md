@@ -12,7 +12,7 @@ Add the following to your pom.xml's dependencies:
     <dependency>
         <groupId>com.github.markozajc</groupId>
         <artifactId>extended-functions</artifactId>
-        <version>1.3</version>
+        <version>1.4</version>
     </dependency>
     ...
 </dependencies>
@@ -29,7 +29,7 @@ repositories {
 
 dependencies {
     ...
-    api 'com.github.markozajc:extended-functions:1.3'
+    api 'com.github.markozajc:extended-functions:1.4'
     ...
 }
 ```

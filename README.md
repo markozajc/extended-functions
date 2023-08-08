@@ -1,3 +1,10 @@
+> **Warning**\
+> **Relocation notice for 1.4.2 and above:**\
+> extended-functions's artifact has relocated from `com.github.markozajc:extended-functions` to
+> `org.eu.zajc:extended-functions`. Additionally, the same change has been made on the base package name. You will need
+> to change extended-functions's dependency's `groupId` in your pom.xml or build.gradle (as shown in the installation
+> section) and you will need to replace `com.github.markozajc.ef` with `org.eu.zajc.ef` in your imports.
+
 # extended-functions
 
 A small project providing extensions and additions to Java 8's built-in functions.
@@ -10,9 +17,9 @@ Add the following to your pom.xml's dependencies:
 <dependencies>
     ...
     <dependency>
-        <groupId>com.github.markozajc</groupId>
+        <groupId>org.eu.zajc</groupId>
         <artifactId>extended-functions</artifactId>
-        <version>1.4</version>
+        <version>1.4.2</version>
     </dependency>
     ...
 </dependencies>
@@ -29,7 +36,7 @@ repositories {
 
 dependencies {
     ...
-    api 'com.github.markozajc:extended-functions:1.4'
+    api 'org.eu.zajc:extended-functions:1.4.2'
     ...
 }
 ```

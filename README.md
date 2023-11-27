@@ -1,4 +1,4 @@
-> **Warning**\
+> [!WARNING]
 > **Relocation notice for 1.4.2 and above:**\
 > extended-functions's artifact has relocated from `com.github.markozajc:extended-functions` to
 > `org.eu.zajc:extended-functions`. Additionally, the same change has been made on the base package name. You will need

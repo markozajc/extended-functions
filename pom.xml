@@ -9,7 +9,7 @@
 
 	<name>Extended Functions</name>
 	<description>Variants of consumers, functions, suppliers, and runnables that are missing from the stdlib</description>
-	<url>https://git.zajc.eu.org/extended-functions.git</url>
+	<url>https://git.zajc.tel/extended-functions.git</url>
 
 	<inceptionYear>2021</inceptionYear>
 
@@ -23,15 +23,15 @@
 	<developers>
 		<developer>
 			<name>Marko Zajc</name>
-			<email>marko@zajc.eu.org</email>
-			<url>https://zajc.eu.org/</url>
+			<email>marko@zajc.tel</email>
+			<url>https://zajc.tel/</url>
 		</developer>
 	</developers>
 
 	<scm>
-		<url>https://git.zajc.eu.org/extended-functions.git</url>
-		<connection>scm:git:git://git.zajc.eu.org/extended-functions.git</connection>
-		<developerConnection>scm:git:ssh://git.zajc.eu.org/extended-functions.git</developerConnection>
+		<url>https://git.zajc.tel/extended-functions.git</url>
+		<connection>scm:git:git://git.zajc.tel/extended-functions.git</connection>
+		<developerConnection>scm:git:ssh://git.zajc.tel/extended-functions.git</developerConnection>
 	</scm>
 
 	<properties>

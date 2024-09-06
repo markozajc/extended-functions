@@ -23,7 +23,7 @@ import org.eu.zajc.ef.predicate.BooleanPredicate;
 import org.eu.zajc.ef.unary.except.EBooleanUnaryOperator;
 
 /**
- * Variant of {@link BooleanPredicate} capable of throwing a generic
+ * A variant of {@link BooleanPredicate} capable of throwing a generic
  * {@link Throwable}.
  *
  * This is equivalent to {@link EBooleanUnaryOperator}

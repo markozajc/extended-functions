@@ -21,7 +21,7 @@ import org.eu.zajc.ef.triconsumer.ObjObjByteConsumer;
 import org.eu.zajc.ef.triconsumer.except.EObjObjByteConsumer;
 
 /**
- * Variant of {@link ObjObjByteConsumer} capable of throwing an {@link Exception}.
+ * A variant of {@link ObjObjByteConsumer} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

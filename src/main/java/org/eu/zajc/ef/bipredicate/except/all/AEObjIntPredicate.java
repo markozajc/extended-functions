@@ -21,7 +21,7 @@ import org.eu.zajc.ef.bipredicate.ObjIntPredicate;
 import org.eu.zajc.ef.bipredicate.except.EObjIntPredicate;
 
 /**
- * Variant of {@link ObjIntPredicate} capable of throwing an {@link Exception}.
+ * A variant of {@link ObjIntPredicate} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

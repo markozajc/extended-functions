@@ -22,7 +22,7 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 import org.eu.zajc.ef.bifunction.ObjBooleanFunction;
 
 /**
- * Variant of {@link ObjBooleanFunction} capable of throwing a generic
+ * A variant of {@link ObjBooleanFunction} capable of throwing a generic
  * {@link Throwable}.
  *
  * @author Marko Zajc

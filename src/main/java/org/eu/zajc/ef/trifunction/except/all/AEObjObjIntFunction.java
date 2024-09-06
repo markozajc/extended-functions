@@ -21,7 +21,7 @@ import org.eu.zajc.ef.trifunction.ObjObjIntFunction;
 import org.eu.zajc.ef.trifunction.except.EObjObjIntFunction;
 
 /**
- * Variant of {@link ObjObjIntFunction} capable of throwing an {@link Exception}.
+ * A variant of {@link ObjObjIntFunction} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

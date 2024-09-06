@@ -21,7 +21,7 @@ import org.eu.zajc.ef.bifunction.ObjShortFunction;
 import org.eu.zajc.ef.bifunction.except.EObjShortFunction;
 
 /**
- * Variant of {@link ObjShortFunction} capable of throwing an {@link Exception}.
+ * A variant of {@link ObjShortFunction} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

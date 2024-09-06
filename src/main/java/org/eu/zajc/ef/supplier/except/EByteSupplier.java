@@ -22,7 +22,7 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 import org.eu.zajc.ef.supplier.ByteSupplier;
 
 /**
- * Variant of {@link ByteSupplier} capable of throwing a generic {@link Throwable}.
+ * A variant of {@link ByteSupplier} capable of throwing a generic {@link Throwable}.
  *
  * @author Marko Zajc
  *

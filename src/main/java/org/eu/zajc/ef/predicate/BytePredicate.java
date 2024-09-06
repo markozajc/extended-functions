@@ -20,7 +20,7 @@ package org.eu.zajc.ef.predicate;
 import java.util.function.Predicate;
 
 /**
- * A variant of {@link Predicate} that takes a primitive byte.
+ * A variant of {@link Predicate} that takes a primitive {@code byte}.
  *
  * @author Marko Zajc
  */

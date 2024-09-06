@@ -21,7 +21,7 @@ import org.eu.zajc.ef.biconsumer.ObjBooleanConsumer;
 import org.eu.zajc.ef.biconsumer.except.EObjBooleanConsumer;
 
 /**
- * Variant of {@link ObjBooleanConsumer} capable of throwing an {@link Exception}.
+ * A variant of {@link ObjBooleanConsumer} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

@@ -22,7 +22,7 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 import java.util.function.Predicate;
 
 /**
- * Variant of {@link Predicate} capable of throwing a generic {@link Throwable}.
+ * A variant of {@link Predicate} capable of throwing a generic {@link Throwable}.
  *
  * @author Marko Zajc
  *

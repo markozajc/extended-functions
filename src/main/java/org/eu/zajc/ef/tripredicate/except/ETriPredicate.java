@@ -22,7 +22,7 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 import org.eu.zajc.ef.tripredicate.TriPredicate;
 
 /**
- * Variant of {@link TriPredicate} capable of throwing a generic {@link Throwable}.
+ * A variant of {@link TriPredicate} capable of throwing a generic {@link Throwable}.
  *
  * @author Marko Zajc
  *

@@ -20,7 +20,8 @@ package org.eu.zajc.ef.biconsumer;
 import java.util.function.BiConsumer;
 
 /**
- * A {@link BiConsumer} variant that takes a generic type and a primitive boolean.
+ * A {@link BiConsumer} variant that takes a generic type and a primitive
+ * {@code boolean}.
  *
  * @author Marko Zajc
  *

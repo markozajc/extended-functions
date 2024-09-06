@@ -21,7 +21,7 @@ import org.eu.zajc.ef.tripredicate.ObjObjLongPredicate;
 import org.eu.zajc.ef.tripredicate.except.EObjObjLongPredicate;
 
 /**
- * Variant of {@link ObjObjLongPredicate} capable of throwing an {@link Exception}.
+ * A variant of {@link ObjObjLongPredicate} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

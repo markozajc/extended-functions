@@ -22,7 +22,7 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 import org.eu.zajc.ef.trifunction.TriFunction;
 
 /**
- * Variant of {@link TriFunction} capable of throwing a generic {@link Throwable}.
+ * A variant of {@link TriFunction} capable of throwing a generic {@link Throwable}.
  *
  * @author Marko Zajc
  *

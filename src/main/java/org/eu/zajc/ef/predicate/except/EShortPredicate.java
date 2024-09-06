@@ -22,7 +22,8 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 import org.eu.zajc.ef.predicate.ShortPredicate;
 
 /**
- * Variant of {@link ShortPredicate} capable of throwing a generic {@link Throwable}.
+ * A variant of {@link ShortPredicate} capable of throwing a generic
+ * {@link Throwable}.
  *
  * @author Marko Zajc
  *

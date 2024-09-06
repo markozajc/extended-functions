@@ -23,7 +23,7 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 import org.eu.zajc.ef.trifunction.ObjObjByteFunction;
 
 /**
- * Variant of {@link ObjObjByteFunction} capable of throwing a generic
+ * A variant of {@link ObjObjByteFunction} capable of throwing a generic
  * {@link Throwable}.
  *
  * @author Marko Zajc

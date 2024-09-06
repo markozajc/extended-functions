@@ -22,7 +22,7 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 import org.eu.zajc.ef.tripredicate.ObjObjShortPredicate;
 
 /**
- * Variant of {@link ObjObjShortPredicate} capable of throwing a generic
+ * A variant of {@link ObjObjShortPredicate} capable of throwing a generic
  * {@link Throwable}.
  *
  * @author Marko Zajc

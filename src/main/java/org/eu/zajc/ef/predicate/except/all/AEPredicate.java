@@ -22,7 +22,7 @@ import java.util.function.Predicate;
 import org.eu.zajc.ef.predicate.except.EPredicate;
 
 /**
- * Variant of {@link Predicate} capable of throwing an {@link Exception}.
+ * A variant of {@link Predicate} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

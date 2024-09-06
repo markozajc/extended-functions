@@ -21,7 +21,7 @@ import org.eu.zajc.ef.bifunction.ObjLongFunction;
 import org.eu.zajc.ef.bifunction.except.EObjLongFunction;
 
 /**
- * Variant of {@link ObjLongFunction} capable of throwing an {@link Exception}.
+ * A variant of {@link ObjLongFunction} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

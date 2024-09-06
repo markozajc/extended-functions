@@ -21,7 +21,7 @@ import org.eu.zajc.ef.trifunction.ObjObjLongFunction;
 import org.eu.zajc.ef.trifunction.except.EObjObjLongFunction;
 
 /**
- * Variant of {@link ObjObjLongFunction} capable of throwing an {@link Exception}.
+ * A variant of {@link ObjObjLongFunction} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

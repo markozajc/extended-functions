@@ -22,7 +22,8 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 import org.eu.zajc.ef.consumer.ShortConsumer;
 
 /**
- * Variant of {@link ShortConsumer} capable of throwing a generic {@link Throwable}.
+ * A variant of {@link ShortConsumer} capable of throwing a generic
+ * {@link Throwable}.
  *
  * @author Marko Zajc
  *

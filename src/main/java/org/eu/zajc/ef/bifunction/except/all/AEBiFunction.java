@@ -22,7 +22,7 @@ import java.util.function.BiFunction;
 import org.eu.zajc.ef.bifunction.except.EBiFunction;
 
 /**
- * Variant of {@link BiFunction} capable of throwing an {@link Exception}.
+ * A variant of {@link BiFunction} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

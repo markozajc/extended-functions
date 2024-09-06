@@ -21,7 +21,7 @@ import org.eu.zajc.ef.trifunction.TriFunction;
 import org.eu.zajc.ef.trifunction.except.ETriFunction;
 
 /**
- * Variant of {@link TriFunction} capable of throwing an {@link Exception}.
+ * A variant of {@link TriFunction} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

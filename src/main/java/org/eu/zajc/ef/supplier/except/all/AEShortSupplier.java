@@ -21,7 +21,7 @@ import org.eu.zajc.ef.supplier.ShortSupplier;
 import org.eu.zajc.ef.supplier.except.EShortSupplier;
 
 /**
- * Variant of {@link ShortSupplier} capable of throwing an {@link Exception}.
+ * A variant of {@link ShortSupplier} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

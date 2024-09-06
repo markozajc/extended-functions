@@ -22,7 +22,8 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 import org.eu.zajc.ef.supplier.ShortSupplier;
 
 /**
- * Variant of {@link ShortSupplier} capable of throwing a generic {@link Throwable}.
+ * A variant of {@link ShortSupplier} capable of throwing a generic
+ * {@link Throwable}.
  *
  * @author Marko Zajc
  *

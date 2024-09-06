@@ -22,7 +22,8 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 import org.eu.zajc.ef.predicate.BytePredicate;
 
 /**
- * Variant of {@link BytePredicate} capable of throwing a generic {@link Throwable}.
+ * A variant of {@link BytePredicate} capable of throwing a generic
+ * {@link Throwable}.
  *
  * @author Marko Zajc
  *

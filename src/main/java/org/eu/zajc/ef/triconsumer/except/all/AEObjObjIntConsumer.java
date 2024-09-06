@@ -21,7 +21,7 @@ import org.eu.zajc.ef.triconsumer.ObjObjIntConsumer;
 import org.eu.zajc.ef.triconsumer.except.EObjObjIntConsumer;
 
 /**
- * Variant of {@link ObjObjIntConsumer} capable of throwing an {@link Exception}.
+ * A variant of {@link ObjObjIntConsumer} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

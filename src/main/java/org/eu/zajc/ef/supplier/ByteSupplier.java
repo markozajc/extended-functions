@@ -20,7 +20,7 @@ package org.eu.zajc.ef.supplier;
 import java.util.function.Supplier;
 
 /**
- * A {@link Supplier} variant that and returns a primitive byte.
+ * A {@link Supplier} variant that and returns a primitive {@code byte}.
  *
  * @author Marko Zajc
  */

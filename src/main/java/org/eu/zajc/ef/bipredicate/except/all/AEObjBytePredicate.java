@@ -21,7 +21,7 @@ import org.eu.zajc.ef.bipredicate.ObjBytePredicate;
 import org.eu.zajc.ef.bipredicate.except.EObjBytePredicate;
 
 /**
- * Variant of {@link ObjBytePredicate} capable of throwing an {@link Exception}.
+ * A variant of {@link ObjBytePredicate} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

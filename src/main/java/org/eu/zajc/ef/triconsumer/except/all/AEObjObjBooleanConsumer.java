@@ -21,7 +21,8 @@ import org.eu.zajc.ef.triconsumer.ObjObjBooleanConsumer;
 import org.eu.zajc.ef.triconsumer.except.EObjObjBooleanConsumer;
 
 /**
- * Variant of {@link ObjObjBooleanConsumer} capable of throwing an {@link Exception}.
+ * A variant of {@link ObjObjBooleanConsumer} capable of throwing an
+ * {@link Exception}.
  *
  * @author Marko Zajc
  *

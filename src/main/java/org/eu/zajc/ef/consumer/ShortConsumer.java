@@ -20,7 +20,7 @@ package org.eu.zajc.ef.consumer;
 import java.util.function.Consumer;
 
 /**
- * A {@link Consumer} variant that takes a primitive short type.
+ * A {@link Consumer} variant that takes a primitive {@code short} type.
  *
  * @author Marko Zajc
  */

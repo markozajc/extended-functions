@@ -21,7 +21,7 @@ import org.eu.zajc.ef.bipredicate.ObjBooleanPredicate;
 import org.eu.zajc.ef.bipredicate.except.EObjBooleanPredicate;
 
 /**
- * Variant of {@link ObjBooleanPredicate} capable of throwing an {@link Exception}.
+ * A variant of {@link ObjBooleanPredicate} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

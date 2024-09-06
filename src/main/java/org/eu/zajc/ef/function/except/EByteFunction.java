@@ -22,7 +22,7 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 import org.eu.zajc.ef.function.ByteFunction;
 
 /**
- * Variant of {@link ByteFunction} capable of throwing a generic {@link Throwable}.
+ * A variant of {@link ByteFunction} capable of throwing a generic {@link Throwable}.
  *
  * @author Marko Zajc
  *

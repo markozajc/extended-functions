@@ -20,7 +20,7 @@ package org.eu.zajc.ef.consumer;
 import java.util.function.Consumer;
 
 /**
- * A {@link Consumer} variant that takes a primitive byte type.
+ * A {@link Consumer} variant that takes a primitive {@code byte} type.
  *
  * @author Marko Zajc
  */

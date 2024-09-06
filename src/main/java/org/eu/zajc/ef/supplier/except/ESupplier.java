@@ -23,7 +23,7 @@ import java.util.concurrent.Callable;
 import java.util.function.Supplier;
 
 /**
- * Variant of {@link Supplier} capable of throwing a generic {@link Throwable}.
+ * A variant of {@link Supplier} capable of throwing a generic {@link Throwable}.
  *
  * @author Marko Zajc
  *

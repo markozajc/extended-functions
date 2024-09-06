@@ -20,7 +20,7 @@ package org.eu.zajc.ef.supplier;
 import java.util.function.Supplier;
 
 /**
- * A {@link Supplier} variant that and returns a primitive short.
+ * A {@link Supplier} variant that and returns a primitive {@code short}.
  *
  * @author Marko Zajc
  */

@@ -22,7 +22,7 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 import java.util.function.BooleanSupplier;
 
 /**
- * Variant of {@link BooleanSupplier} capable of throwing a generic
+ * A variant of {@link BooleanSupplier} capable of throwing a generic
  * {@link Throwable}.
  *
  * @author Marko Zajc

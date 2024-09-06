@@ -21,7 +21,7 @@ import org.eu.zajc.ef.bifunction.ObjBooleanFunction;
 import org.eu.zajc.ef.bifunction.except.EObjBooleanFunction;
 
 /**
- * Variant of {@link ObjBooleanFunction} capable of throwing an {@link Exception}.
+ * A variant of {@link ObjBooleanFunction} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

@@ -20,8 +20,8 @@ package org.eu.zajc.ef.bifunction;
 import java.util.function.BiFunction;
 
 /**
- * A {@link BiFunction} variant that takes a generic type and a primitive short, and
- * returns a generic type.
+ * A {@link BiFunction} variant that takes a generic type and a primitive
+ * {@code short}, and returns a generic type.
  *
  * @author Marko Zajc
  *

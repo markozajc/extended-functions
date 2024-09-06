@@ -22,7 +22,7 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 import java.util.function.BiPredicate;
 
 /**
- * Variant of {@link BiPredicate} capable of throwing a generic {@link Throwable}.
+ * A variant of {@link BiPredicate} capable of throwing a generic {@link Throwable}.
  *
  * @author Marko Zajc
  *

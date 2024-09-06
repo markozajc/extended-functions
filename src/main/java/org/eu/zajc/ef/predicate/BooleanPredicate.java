@@ -22,7 +22,7 @@ import java.util.function.Predicate;
 import org.eu.zajc.ef.unary.BooleanUnaryOperator;
 
 /**
- * A variant of {@link Predicate} that takes a primitive boolean.
+ * A variant of {@link Predicate} that takes a primitive {@code boolean}.
  *
  * This is equivalent to {@link BooleanUnaryOperator}
  *

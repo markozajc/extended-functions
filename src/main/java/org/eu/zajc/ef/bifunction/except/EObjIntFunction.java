@@ -22,7 +22,8 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 import org.eu.zajc.ef.bifunction.ObjIntFunction;
 
 /**
- * Variant of {@link ObjIntFunction} capable of throwing a generic {@link Throwable}.
+ * A variant of {@link ObjIntFunction} capable of throwing a generic
+ * {@link Throwable}.
  *
  * @author Marko Zajc
  *

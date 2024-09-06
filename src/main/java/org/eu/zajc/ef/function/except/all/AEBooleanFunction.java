@@ -21,7 +21,7 @@ import org.eu.zajc.ef.function.BooleanFunction;
 import org.eu.zajc.ef.function.except.EBooleanFunction;
 
 /**
- * Variant of {@link BooleanFunction} capable of throwing an {@link Exception}.
+ * A variant of {@link BooleanFunction} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

@@ -20,8 +20,8 @@ package org.eu.zajc.ef.function;
 import java.util.function.Function;
 
 /**
- * A {@link Function} variant that takes a primitive boolean, and returns a generic
- * type.
+ * A {@link Function} variant that takes a primitive {@code boolean}, and returns a
+ * generic type.
  *
  * @author Marko Zajc
  *

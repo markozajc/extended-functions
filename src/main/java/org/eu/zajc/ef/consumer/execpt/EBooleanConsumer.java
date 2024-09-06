@@ -22,7 +22,7 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 import org.eu.zajc.ef.consumer.BooleanConsumer;
 
 /**
- * Variant of {@link BooleanConsumer} capable of throwing a generic
+ * A variant of {@link BooleanConsumer} capable of throwing a generic
  * {@link Throwable}.
  *
  * @author Marko Zajc

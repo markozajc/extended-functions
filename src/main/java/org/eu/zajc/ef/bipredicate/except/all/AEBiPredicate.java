@@ -22,7 +22,7 @@ import java.util.function.BiPredicate;
 import org.eu.zajc.ef.bipredicate.except.EBiPredicate;
 
 /**
- * Variant of {@link BiPredicate} capable of throwing an {@link Exception}.
+ * A variant of {@link BiPredicate} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

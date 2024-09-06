@@ -22,7 +22,7 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 import java.util.function.LongSupplier;
 
 /**
- * Variant of {@link LongSupplier} capable of throwing a generic {@link Throwable}.
+ * A variant of {@link LongSupplier} capable of throwing a generic {@link Throwable}.
  *
  * @author Marko Zajc
  *

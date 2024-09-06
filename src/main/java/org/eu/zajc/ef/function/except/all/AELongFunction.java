@@ -22,7 +22,7 @@ import java.util.function.LongFunction;
 import org.eu.zajc.ef.function.except.ELongFunction;
 
 /**
- * Variant of {@link LongFunction} capable of throwing an {@link Exception}.
+ * A variant of {@link LongFunction} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

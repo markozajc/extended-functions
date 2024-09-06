@@ -20,7 +20,8 @@ package org.eu.zajc.ef.bipredicate;
 import java.util.function.BiPredicate;
 
 /**
- * A variant of {@link BiPredicate} that takes a generic type and a primitive long.
+ * A variant of {@link BiPredicate} that takes a generic type and a primitive
+ * {@code long}.
  *
  * @param <T>
  *            the type of the first argument to the predicate

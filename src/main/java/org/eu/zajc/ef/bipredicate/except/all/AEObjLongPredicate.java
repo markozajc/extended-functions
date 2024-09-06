@@ -21,7 +21,7 @@ import org.eu.zajc.ef.bipredicate.ObjLongPredicate;
 import org.eu.zajc.ef.bipredicate.except.EObjLongPredicate;
 
 /**
- * Variant of {@link ObjLongPredicate} capable of throwing an {@link Exception}.
+ * A variant of {@link ObjLongPredicate} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

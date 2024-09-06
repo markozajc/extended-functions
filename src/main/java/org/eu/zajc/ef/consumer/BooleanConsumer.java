@@ -20,7 +20,7 @@ package org.eu.zajc.ef.consumer;
 import java.util.function.Consumer;
 
 /**
- * A {@link Consumer} variant that takes a primitive boolean type.
+ * A {@link Consumer} variant that takes a primitive {@code boolean} type.
  *
  * @author Marko Zajc
  */

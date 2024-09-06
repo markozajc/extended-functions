@@ -19,7 +19,7 @@ package org.eu.zajc.ef.tripredicate;
 
 /**
  * A variant of {@link TriPredicate} that takes two generic types and a primitive
- * long.
+ * {@code long}.
  *
  * @param <T>
  *            the type of the first argument to the predicate

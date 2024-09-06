@@ -22,7 +22,7 @@ import java.util.function.Consumer;
 import org.eu.zajc.ef.consumer.execpt.ELongConsumer;
 
 /**
- * Variant of {@link Consumer} capable of throwing an {@link Exception}.
+ * A variant of {@link Consumer} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  */

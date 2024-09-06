@@ -22,7 +22,7 @@ import java.util.function.LongPredicate;
 import org.eu.zajc.ef.predicate.except.ELongPredicate;
 
 /**
- * Variant of {@link LongPredicate} capable of throwing an {@link Exception}.
+ * A variant of {@link LongPredicate} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  */

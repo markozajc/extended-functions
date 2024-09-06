@@ -21,7 +21,7 @@ import org.eu.zajc.ef.function.ByteFunction;
 import org.eu.zajc.ef.function.except.EByteFunction;
 
 /**
- * Variant of {@link ByteFunction} capable of throwing an {@link Exception}.
+ * A variant of {@link ByteFunction} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

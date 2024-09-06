@@ -22,7 +22,8 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 import java.util.function.ObjIntConsumer;
 
 /**
- * Variant of {@link ObjIntConsumer} capable of throwing a generic {@link Throwable}.
+ * A variant of {@link ObjIntConsumer} capable of throwing a generic
+ * {@link Throwable}.
  *
  * @author Marko Zajc
  *

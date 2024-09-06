@@ -20,7 +20,7 @@ package org.eu.zajc.ef.runnable.except;
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
 /**
- * Variant of {@link Runnable} capable of throwing a generic {@link Throwable}.
+ * A variant of {@link Runnable} capable of throwing a generic {@link Throwable}.
  *
  * @author Marko Zajc
  *

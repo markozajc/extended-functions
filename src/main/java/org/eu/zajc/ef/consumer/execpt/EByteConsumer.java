@@ -22,7 +22,7 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 import org.eu.zajc.ef.consumer.ByteConsumer;
 
 /**
- * Variant of {@link ByteConsumer} capable of throwing a generic {@link Throwable}.
+ * A variant of {@link ByteConsumer} capable of throwing a generic {@link Throwable}.
  *
  * @author Marko Zajc
  *

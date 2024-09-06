@@ -21,7 +21,7 @@ import org.eu.zajc.ef.bipredicate.ObjShortPredicate;
 import org.eu.zajc.ef.bipredicate.except.EObjShortPredicate;
 
 /**
- * Variant of {@link ObjShortPredicate} capable of throwing an {@link Exception}.
+ * A variant of {@link ObjShortPredicate} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

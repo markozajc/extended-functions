@@ -22,7 +22,7 @@ import java.util.function.ObjLongConsumer;
 import org.eu.zajc.ef.biconsumer.except.EObjLongConsumer;
 
 /**
- * Variant of {@link ObjLongConsumer} capable of throwing an {@link Exception}.
+ * A variant of {@link ObjLongConsumer} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

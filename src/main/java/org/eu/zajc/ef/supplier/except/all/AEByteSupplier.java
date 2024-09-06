@@ -21,7 +21,7 @@ import org.eu.zajc.ef.supplier.ByteSupplier;
 import org.eu.zajc.ef.supplier.except.EByteSupplier;
 
 /**
- * Variant of {@link ByteSupplier} capable of throwing an {@link Exception}.
+ * A variant of {@link ByteSupplier} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

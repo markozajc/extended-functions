@@ -22,7 +22,7 @@ import java.util.function.BooleanSupplier;
 import org.eu.zajc.ef.supplier.except.EBooleanSupplier;
 
 /**
- * Variant of {@link BooleanSupplier} capable of throwing an {@link Exception}.
+ * A variant of {@link BooleanSupplier} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

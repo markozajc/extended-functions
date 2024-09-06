@@ -21,7 +21,7 @@ import org.eu.zajc.ef.tripredicate.ObjObjIntPredicate;
 import org.eu.zajc.ef.tripredicate.except.EObjObjIntPredicate;
 
 /**
- * Variant of {@link ObjObjIntPredicate} capable of throwing an {@link Exception}.
+ * A variant of {@link ObjObjIntPredicate} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

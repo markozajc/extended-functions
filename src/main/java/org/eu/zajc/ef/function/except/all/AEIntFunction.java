@@ -22,7 +22,7 @@ import java.util.function.IntFunction;
 import org.eu.zajc.ef.function.except.EIntFunction;
 
 /**
- * Variant of {@link IntFunction} capable of throwing an {@link Exception}.
+ * A variant of {@link IntFunction} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

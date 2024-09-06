@@ -22,7 +22,7 @@ import java.util.function.BiConsumer;
 import org.eu.zajc.ef.biconsumer.except.EBiConsumer;
 
 /**
- * Variant of {@link BiConsumer} capable of throwing an {@link Exception}.
+ * A variant of {@link BiConsumer} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

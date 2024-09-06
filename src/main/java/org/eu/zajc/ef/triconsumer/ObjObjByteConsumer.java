@@ -18,7 +18,8 @@
 package org.eu.zajc.ef.triconsumer;
 
 /**
- * A {@link TriConsumer} variant that takes two generic types and a primitive byte.
+ * A {@link TriConsumer} variant that takes two generic types and a primitive
+ * {@code byte}.
  *
  * @author Marko Zajc
  *

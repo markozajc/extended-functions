@@ -21,7 +21,7 @@ import org.eu.zajc.ef.tripredicate.TriPredicate;
 import org.eu.zajc.ef.tripredicate.except.ETriPredicate;
 
 /**
- * Variant of {@link TriPredicate} capable of throwing an {@link Exception}.
+ * A variant of {@link TriPredicate} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

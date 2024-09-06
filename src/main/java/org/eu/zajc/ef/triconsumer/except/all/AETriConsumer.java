@@ -21,7 +21,7 @@ import org.eu.zajc.ef.triconsumer.TriConsumer;
 import org.eu.zajc.ef.triconsumer.except.ETriConsumer;
 
 /**
- * Variant of {@link TriConsumer} capable of throwing an {@link Exception}.
+ * A variant of {@link TriConsumer} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

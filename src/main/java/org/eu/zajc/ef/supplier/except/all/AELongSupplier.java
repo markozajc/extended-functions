@@ -22,7 +22,7 @@ import java.util.function.LongSupplier;
 import org.eu.zajc.ef.supplier.except.ELongSupplier;
 
 /**
- * Variant of {@link LongSupplier} capable of throwing an {@link Exception}.
+ * A variant of {@link LongSupplier} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

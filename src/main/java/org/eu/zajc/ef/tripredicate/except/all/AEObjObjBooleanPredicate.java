@@ -21,7 +21,7 @@ import org.eu.zajc.ef.tripredicate.ObjObjBooleanPredicate;
 import org.eu.zajc.ef.tripredicate.except.EObjObjBooleanPredicate;
 
 /**
- * Variant of {@link ObjObjBooleanPredicate} capable of throwing an
+ * A variant of {@link ObjObjBooleanPredicate} capable of throwing an
  * {@link Exception}.
  *
  * @author Marko Zajc

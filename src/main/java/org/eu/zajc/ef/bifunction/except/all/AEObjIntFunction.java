@@ -21,7 +21,7 @@ import org.eu.zajc.ef.bifunction.ObjIntFunction;
 import org.eu.zajc.ef.bifunction.except.EObjIntFunction;
 
 /**
- * Variant of {@link ObjIntFunction} capable of throwing an {@link Exception}.
+ * A variant of {@link ObjIntFunction} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

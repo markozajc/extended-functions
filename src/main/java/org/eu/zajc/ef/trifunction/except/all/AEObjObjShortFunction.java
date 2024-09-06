@@ -21,7 +21,7 @@ import org.eu.zajc.ef.trifunction.ObjObjShortFunction;
 import org.eu.zajc.ef.trifunction.except.EObjObjShortFunction;
 
 /**
- * Variant of {@link ObjObjShortFunction} capable of throwing an {@link Exception}.
+ * A variant of {@link ObjObjShortFunction} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

@@ -20,8 +20,8 @@ package org.eu.zajc.ef.trifunction;
 import java.util.function.Function;
 
 /**
- * A {@link Function} variant that takes two generic types and a primitive long, and
- * returns a generic type.
+ * A {@link Function} variant that takes two generic types and a primitive
+ * {@code long}, and returns a generic type.
  *
  * @author Marko Zajc
  *

@@ -21,7 +21,7 @@ import org.eu.zajc.ef.trifunction.ObjObjByteFunction;
 import org.eu.zajc.ef.trifunction.except.EObjObjByteFunction;
 
 /**
- * Variant of {@link ObjObjByteFunction} capable of throwing an {@link Exception}.
+ * A variant of {@link ObjObjByteFunction} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

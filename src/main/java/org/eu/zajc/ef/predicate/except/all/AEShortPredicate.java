@@ -21,7 +21,7 @@ import org.eu.zajc.ef.predicate.ShortPredicate;
 import org.eu.zajc.ef.predicate.except.EShortPredicate;
 
 /**
- * Variant of {@link ShortPredicate} capable of throwing an {@link Exception}.
+ * A variant of {@link ShortPredicate} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  */

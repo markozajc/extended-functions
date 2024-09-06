@@ -22,7 +22,7 @@ import org.eu.zajc.ef.predicate.except.EBooleanPredicate;
 import org.eu.zajc.ef.unary.except.all.AEBooleanUnaryOperator;
 
 /**
- * Variant of {@link BooleanPredicate} capable of throwing an {@link Exception}.
+ * A variant of {@link BooleanPredicate} capable of throwing an {@link Exception}.
  *
  * This is equivalent to {@link AEBooleanUnaryOperator}
  *

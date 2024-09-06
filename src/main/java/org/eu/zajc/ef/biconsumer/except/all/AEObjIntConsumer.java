@@ -22,7 +22,7 @@ import java.util.function.ObjIntConsumer;
 import org.eu.zajc.ef.biconsumer.except.EObjIntConsumer;
 
 /**
- * Variant of {@link ObjIntConsumer} capable of throwing an {@link Exception}.
+ * A variant of {@link ObjIntConsumer} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  *

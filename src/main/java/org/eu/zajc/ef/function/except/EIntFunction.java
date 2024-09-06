@@ -22,7 +22,7 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 import java.util.function.IntFunction;
 
 /**
- * Variant of {@link IntFunction} capable of throwing a generic {@link Throwable}.
+ * A variant of {@link IntFunction} capable of throwing a generic {@link Throwable}.
  *
  * @author Marko Zajc
  *

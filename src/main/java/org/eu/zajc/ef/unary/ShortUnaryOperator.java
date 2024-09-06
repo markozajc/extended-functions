@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: LGPL-3.0-only
 /*
  * extended-functions
- * Copyright (C) 2021-2023 Marko Zajc
+ * Copyright (C) 2021-2024 Marko Zajc
  *
  * This library is free software; you can redistribute it and/or modify it under the
  * terms of the GNU Lesser General Public License as published by the Free Software

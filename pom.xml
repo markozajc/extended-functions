@@ -8,7 +8,7 @@
 	<version>1.4.2</version>
 
 	<name>Extended Functions</name>
-	<description>Variants of consumers, functions, suppliers, and runnables that are missing from the stdlib</description>
+	<description>Variants and support utilities for functional interfaces that are missing from the standard library</description>
 	<url>https://git.zajc.tel/extended-functions.git</url>
 
 	<inceptionYear>2021</inceptionYear>

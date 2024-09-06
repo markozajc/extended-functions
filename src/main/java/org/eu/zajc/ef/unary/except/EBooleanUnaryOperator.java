@@ -14,18 +14,18 @@
  * You should have received a copy of the GNU General Public License along with this
  * program. If not, see <https://www.gnu.org/licenses/>.
  */
-package org.eu.zajc.ef.predicate.except;
+package org.eu.zajc.ef.unary.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
-import org.eu.zajc.ef.predicate.BooleanPredicate;
-import org.eu.zajc.ef.unary.except.EBooleanUnaryOperator;
+import org.eu.zajc.ef.predicate.except.EBooleanPredicate;
+import org.eu.zajc.ef.unary.BooleanUnaryOperator;
 
 /**
- * Variant of {@link BooleanPredicate} capable of throwing a generic
+ * A variant of {@link BooleanUnaryOperator} capable of throwing a generic
  * {@link Throwable}.
  *
- * This is equivalent to {@link EBooleanUnaryOperator}
+ * This is equivalent to {@link EBooleanPredicate}
  *
  * @author Marko Zajc
  *
@@ -33,29 +33,28 @@ import org.eu.zajc.ef.unary.except.EBooleanUnaryOperator;
  *            {@link Throwable} type
  */
 @FunctionalInterface
-public interface EBooleanPredicate<E extends Throwable> extends BooleanPredicate {
+public interface EBooleanUnaryOperator<E extends Throwable> extends BooleanUnaryOperator {
 
 	@Override
-	default boolean test(boolean p) {
+	default boolean applyAsBoolean(boolean operand) {
 		try {
-			return testChecked(p);
+			return applyCheckedAsBoolean(operand);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}
 	}
 
 	/**
-	 * Same as {@link #test(boolean)}, but throws a checked exception.
+	 * Same as {@link #applyAsBoolean(boolean)}, but throws a checked exception.
 	 *
-	 * @param p
-	 *            the input argument
+	 * @param operand
+	 *            the operand
 	 *
-	 * @return {@code true} if the input argument matches the predicate, otherwise
-	 *         {@code false}
+	 * @return the operator result
 	 *
 	 * @throws E
 	 *             the defined exception type
 	 */
-	boolean testChecked(boolean p) throws E;
+	boolean applyCheckedAsBoolean(boolean operand) throws E;
 
 }

@@ -14,18 +14,16 @@
  * You should have received a copy of the GNU General Public License along with this
  * program. If not, see <https://www.gnu.org/licenses/>.
  */
-package org.eu.zajc.ef.predicate.except.all;
+package org.eu.zajc.ef.unary.except.all;
 
-import org.eu.zajc.ef.predicate.BooleanPredicate;
-import org.eu.zajc.ef.predicate.except.EBooleanPredicate;
-import org.eu.zajc.ef.unary.except.all.AEBooleanUnaryOperator;
+import java.util.function.LongUnaryOperator;
+
+import org.eu.zajc.ef.unary.except.ELongUnaryOperator;
 
 /**
- * Variant of {@link BooleanPredicate} capable of throwing an {@link Exception}.
- *
- * This is equivalent to {@link AEBooleanUnaryOperator}
+ * A variant of {@link LongUnaryOperator} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  */
 @FunctionalInterface
-public interface AEBooleanPredicate extends EBooleanPredicate<Exception> {}
+public interface AELongUnaryOperator extends ELongUnaryOperator<Exception> {}

@@ -14,18 +14,15 @@
  * You should have received a copy of the GNU General Public License along with this
  * program. If not, see <https://www.gnu.org/licenses/>.
  */
-package org.eu.zajc.ef.predicate.except;
+package org.eu.zajc.ef.unary.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
-import org.eu.zajc.ef.predicate.BooleanPredicate;
-import org.eu.zajc.ef.unary.except.EBooleanUnaryOperator;
+import org.eu.zajc.ef.unary.ByteUnaryOperator;
 
 /**
- * Variant of {@link BooleanPredicate} capable of throwing a generic
+ * A variant of {@link ByteUnaryOperator} capable of throwing a generic
  * {@link Throwable}.
- *
- * This is equivalent to {@link EBooleanUnaryOperator}
  *
  * @author Marko Zajc
  *
@@ -33,29 +30,28 @@ import org.eu.zajc.ef.unary.except.EBooleanUnaryOperator;
  *            {@link Throwable} type
  */
 @FunctionalInterface
-public interface EBooleanPredicate<E extends Throwable> extends BooleanPredicate {
+public interface EByteUnaryOperator<E extends Throwable> extends ByteUnaryOperator {
 
 	@Override
-	default boolean test(boolean p) {
+	default byte applyAsByte(byte operand) {
 		try {
-			return testChecked(p);
+			return applyCheckedAsByte(operand);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}
 	}
 
 	/**
-	 * Same as {@link #test(boolean)}, but throws a checked exception.
+	 * Same as {@link #applyAsByte(byte)}, but throws a checked exception.
 	 *
-	 * @param p
-	 *            the input argument
+	 * @param operand
+	 *            the operand
 	 *
-	 * @return {@code true} if the input argument matches the predicate, otherwise
-	 *         {@code false}
+	 * @return the operator result
 	 *
 	 * @throws E
 	 *             the defined exception type
 	 */
-	boolean testChecked(boolean p) throws E;
+	byte applyCheckedAsByte(byte operand) throws E;
 
 }

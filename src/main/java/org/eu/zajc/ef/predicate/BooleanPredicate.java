@@ -18,8 +18,12 @@ package org.eu.zajc.ef.predicate;
 
 import java.util.function.Predicate;
 
+import org.eu.zajc.ef.unary.BooleanUnaryOperator;
+
 /**
  * A variant of {@link Predicate} that takes a primitive boolean.
+ *
+ * This is equivalent to {@link BooleanUnaryOperator}
  *
  * @author Marko Zajc
  */

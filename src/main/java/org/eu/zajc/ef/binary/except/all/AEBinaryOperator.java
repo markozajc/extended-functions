@@ -17,12 +17,12 @@
  */
 package org.eu.zajc.ef.binary.except.all;
 
-import java.util.function.UnaryOperator;
+import java.util.function.BinaryOperator;
 
 import org.eu.zajc.ef.binary.except.EBinaryOperator;
 
 /**
- * A variant of {@link UnaryOperator} capable of throwing an {@link Exception}.
+ * A variant of {@link BinaryOperator} capable of throwing an {@link Exception}.
  *
  * @param <T>
  *            the type of the operands and result of the operator

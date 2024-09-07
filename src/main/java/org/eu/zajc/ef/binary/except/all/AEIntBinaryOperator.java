@@ -17,12 +17,12 @@
  */
 package org.eu.zajc.ef.binary.except.all;
 
-import java.util.function.IntUnaryOperator;
+import java.util.function.IntBinaryOperator;
 
 import org.eu.zajc.ef.binary.except.EIntBinaryOperator;
 
 /**
- * A variant of {@link IntUnaryOperator} capable of throwing an {@link Exception}.
+ * A variant of {@link IntBinaryOperator} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  */

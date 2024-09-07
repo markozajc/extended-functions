@@ -20,10 +20,9 @@ package org.eu.zajc.ef.binary.except;
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
 import org.eu.zajc.ef.binary.BooleanBinaryOperator;
-import org.eu.zajc.ef.unary.BooleanUnaryOperator;
 
 /**
- * A variant of {@link BooleanUnaryOperator} capable of throwing a generic
+ * A variant of {@link BooleanBinaryOperator} capable of throwing a generic
  * {@link Throwable}.
  *
  * @author Marko Zajc

@@ -19,12 +19,12 @@ package org.eu.zajc.ef.binary.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
-import java.util.function.*;
+import java.util.function.BinaryOperator;
 
 import org.eu.zajc.ef.bifunction.except.EBiFunction;
 
 /**
- * A variant of {@link UnaryOperator} capable of throwing a generic
+ * A variant of {@link BinaryOperator} capable of throwing a generic
  * {@link Throwable}.
  *
  * @author Marko Zajc

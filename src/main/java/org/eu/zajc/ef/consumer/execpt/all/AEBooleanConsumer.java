@@ -17,12 +17,11 @@
  */
 package org.eu.zajc.ef.consumer.execpt.all;
 
-import java.util.function.Consumer;
-
+import org.eu.zajc.ef.consumer.BooleanConsumer;
 import org.eu.zajc.ef.consumer.execpt.EBooleanConsumer;
 
 /**
- * A variant of {@link Consumer} capable of throwing an {@link Exception}.
+ * A variant of {@link BooleanConsumer} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  */

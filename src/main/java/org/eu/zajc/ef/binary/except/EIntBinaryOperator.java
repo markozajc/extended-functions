@@ -19,10 +19,10 @@ package org.eu.zajc.ef.binary.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
-import java.util.function.*;
+import java.util.function.IntBinaryOperator;
 
 /**
- * A variant of {@link IntUnaryOperator} capable of throwing a generic
+ * A variant of {@link IntBinaryOperator} capable of throwing a generic
  * {@link Throwable}.
  *
  * @author Marko Zajc

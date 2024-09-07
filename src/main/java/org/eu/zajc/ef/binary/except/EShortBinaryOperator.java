@@ -20,10 +20,9 @@ package org.eu.zajc.ef.binary.except;
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
 import org.eu.zajc.ef.binary.ShortBinaryOperator;
-import org.eu.zajc.ef.unary.ShortUnaryOperator;
 
 /**
- * A variant of {@link ShortUnaryOperator} capable of throwing a generic
+ * A variant of {@link ShortBinaryOperator} capable of throwing a generic
  * {@link Throwable}.
  *
  * @author Marko Zajc

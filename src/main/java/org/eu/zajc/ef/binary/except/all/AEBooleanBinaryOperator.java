@@ -17,11 +17,11 @@
  */
 package org.eu.zajc.ef.binary.except.all;
 
+import org.eu.zajc.ef.binary.BooleanBinaryOperator;
 import org.eu.zajc.ef.binary.except.EBooleanBinaryOperator;
-import org.eu.zajc.ef.unary.BooleanUnaryOperator;
 
 /**
- * A variant of {@link BooleanUnaryOperator} capable of throwing an
+ * A variant of {@link BooleanBinaryOperator} capable of throwing an
  * {@link Exception}.
  *
  * @author Marko Zajc

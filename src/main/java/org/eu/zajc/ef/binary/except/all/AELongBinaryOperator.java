@@ -17,12 +17,12 @@
  */
 package org.eu.zajc.ef.binary.except.all;
 
-import java.util.function.LongUnaryOperator;
+import java.util.function.LongBinaryOperator;
 
 import org.eu.zajc.ef.binary.except.ELongBinaryOperator;
 
 /**
- * A variant of {@link LongUnaryOperator} capable of throwing an {@link Exception}.
+ * A variant of {@link LongBinaryOperator} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  */

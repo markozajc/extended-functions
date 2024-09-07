@@ -17,12 +17,12 @@
  */
 package org.eu.zajc.ef.consumer.execpt.all;
 
-import java.util.function.Consumer;
+import java.util.function.IntConsumer;
 
 import org.eu.zajc.ef.consumer.execpt.EIntConsumer;
 
 /**
- * A variant of {@link Consumer} capable of throwing an {@link Exception}.
+ * A variant of {@link IntConsumer} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  */

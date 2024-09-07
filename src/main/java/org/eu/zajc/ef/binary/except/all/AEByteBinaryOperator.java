@@ -17,11 +17,11 @@
  */
 package org.eu.zajc.ef.binary.except.all;
 
+import org.eu.zajc.ef.binary.ByteBinaryOperator;
 import org.eu.zajc.ef.binary.except.EByteBinaryOperator;
-import org.eu.zajc.ef.unary.ByteUnaryOperator;
 
 /**
- * A variant of {@link ByteUnaryOperator} capable of throwing an {@link Exception}.
+ * A variant of {@link ByteBinaryOperator} capable of throwing an {@link Exception}.
  *
  * @author Marko Zajc
  */

@@ -61,6 +61,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -86,6 +88,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -117,6 +121,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -639,6 +645,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <U>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -664,6 +674,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <U>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -695,6 +709,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <U>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -721,6 +739,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -746,6 +766,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -777,6 +799,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -803,6 +827,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -828,6 +854,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -859,6 +887,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -885,6 +915,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -910,6 +942,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -941,6 +975,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -967,6 +1003,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -992,6 +1030,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -1023,6 +1063,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1049,6 +1091,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1074,6 +1118,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -1105,6 +1151,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1131,6 +1179,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1156,6 +1206,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -1187,6 +1239,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled consumer by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1217,6 +1271,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1242,6 +1300,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -1273,6 +1335,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1299,6 +1365,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function with a
 	 * provided handler.
 	 *
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1324,6 +1392,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing a different exception.
 	 *
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -1355,6 +1425,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing it explicitly.
 	 *
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1381,6 +1453,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function with a
 	 * provided handler.
 	 *
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1406,6 +1480,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing a different exception.
 	 *
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -1437,6 +1513,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing it explicitly.
 	 *
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1463,6 +1541,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function with a
 	 * provided handler.
 	 *
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1488,6 +1568,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing a different exception.
 	 *
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -1519,6 +1601,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing it explicitly.
 	 *
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1545,6 +1629,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function with a
 	 * provided handler.
 	 *
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1570,6 +1656,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing a different exception.
 	 *
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -1601,6 +1689,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing it explicitly.
 	 *
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1627,6 +1717,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function with a
 	 * provided handler.
 	 *
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1652,6 +1744,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing a different exception.
 	 *
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -1683,8 +1777,12 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing it explicitly.
 	 *
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
+	 * @param <X>
+	 *            The exception type to throw
 	 * @param handled
 	 *            The function that may throw an exception
 	 *
@@ -1709,6 +1807,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function with a
 	 * provided handler.
 	 *
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1734,6 +1834,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing a different exception.
 	 *
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -1765,6 +1867,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing it explicitly.
 	 *
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1795,6 +1899,12 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <U>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1820,6 +1930,12 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <U>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -1851,6 +1967,12 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <U>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1877,6 +1999,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1902,6 +2028,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -1933,6 +2063,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1959,6 +2093,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -1984,6 +2122,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -2015,6 +2157,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -2041,6 +2187,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -2066,6 +2216,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -2097,6 +2251,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -2123,6 +2281,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -2148,6 +2310,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -2179,6 +2345,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -2205,6 +2375,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -2230,6 +2404,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -2261,6 +2439,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -2287,6 +2469,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -2312,6 +2498,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -2343,6 +2533,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled function by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <R>
+	 *            The handled function's return type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -2373,6 +2567,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -2398,6 +2594,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -2429,6 +2627,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -2951,6 +3151,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <U>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -2976,6 +3180,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <U>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -3007,6 +3215,10 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
+	 * @param <U>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -3033,6 +3245,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -3058,6 +3272,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -3089,6 +3305,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -3115,6 +3333,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -3140,6 +3360,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -3171,6 +3393,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -3197,6 +3421,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -3222,6 +3448,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -3253,6 +3481,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -3279,6 +3509,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -3304,6 +3536,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -3335,6 +3569,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -3361,6 +3597,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -3386,6 +3624,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -3417,6 +3657,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -3443,6 +3685,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate with a
 	 * provided handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -3468,6 +3712,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -3499,6 +3745,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled predicate by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -3615,6 +3863,8 @@ public class EHandle {
 	 * Handles any exception type that may occur in the handled callable with a provided
 	 * handler.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param handled
 	 *            The function that may throw an exception
 	 * @param handler
@@ -3637,6 +3887,8 @@ public class EHandle {
 	 * Handles any exception type that may occur in the handled callable by throwing a
 	 * different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <X>
 	 *            The exception type to throw
 	 * @param handled
@@ -3666,6 +3918,8 @@ public class EHandle {
 	 * Handles any exception type that may occur in the handled callable by throwing it
 	 * explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param handled
 	 *            The function that may throw an exception
 	 *
@@ -3714,6 +3968,8 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled supplier by throwing a
 	 * different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -3745,6 +4001,8 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled supplier by throwing it
 	 * explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -3773,6 +4031,8 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled supplier by throwing a
 	 * different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -3804,6 +4064,8 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled supplier by throwing it
 	 * explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -3832,6 +4094,8 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled supplier by throwing a
 	 * different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -3863,6 +4127,8 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled supplier by throwing it
 	 * explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -3914,6 +4180,8 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled supplier by throwing a
 	 * different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -3945,6 +4213,8 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled supplier by throwing it
 	 * explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -3973,6 +4243,8 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled supplier by throwing a
 	 * different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -4004,6 +4276,8 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled supplier by throwing it
 	 * explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -4055,6 +4329,8 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled supplier by throwing a
 	 * different exception.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param <X>
@@ -4086,6 +4362,8 @@ public class EHandle {
 	 * Handles any exception types that may occur in the handled supplier by throwing it
 	 * explicitly.
 	 *
+	 * @param <T>
+	 *            The handled function's input type
 	 * @param <E>
 	 *            The handled function's exception type
 	 * @param handled
@@ -4116,6 +4394,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled unary operator with
 	 * a provided handler.
 	 *
+	 * @param <T>
+	 *            The handled unary operator's input type
 	 * @param <E>
 	 *            The handled unary operator's exception type
 	 * @param handled
@@ -4141,6 +4421,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled unary operator by
 	 * throwing a different exception.
 	 *
+	 * @param <T>
+	 *            The handled unary operator's input type
 	 * @param <E>
 	 *            The handled unary operator's exception type
 	 * @param <X>
@@ -4172,6 +4454,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled unary operator by
 	 * throwing it explicitly.
 	 *
+	 * @param <T>
+	 *            The handled unary operator's input type
 	 * @param <E>
 	 *            The handled unary operator's exception type
 	 * @param handled
@@ -4201,6 +4485,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled unary operator by
 	 * throwing a different exception.
 	 *
+	 * @param <R>
+	 *            The handled unary operator's return type
 	 * @param <E>
 	 *            The handled unary operator's exception type
 	 * @param <X>
@@ -4232,6 +4518,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled unary operator by
 	 * throwing it explicitly.
 	 *
+	 * @param <R>
+	 *            The handled unary operator's return type
 	 * @param <E>
 	 *            The handled unary operator's exception type
 	 * @param handled
@@ -4260,6 +4548,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled unary operator by
 	 * throwing a different exception.
 	 *
+	 * @param <R>
+	 *            The handled unary operator's return type
 	 * @param <E>
 	 *            The handled unary operator's exception type
 	 * @param <X>
@@ -4291,6 +4581,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled unary operator by
 	 * throwing it explicitly.
 	 *
+	 * @param <R>
+	 *            The handled unary operator's return type
 	 * @param <E>
 	 *            The handled unary operator's exception type
 	 * @param handled
@@ -4319,6 +4611,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled unary operator by
 	 * throwing a different exception.
 	 *
+	 * @param <R>
+	 *            The handled unary operator's return type
 	 * @param <E>
 	 *            The handled unary operator's exception type
 	 * @param <X>
@@ -4350,6 +4644,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled unary operator by
 	 * throwing it explicitly.
 	 *
+	 * @param <R>
+	 *            The handled unary operator's return type
 	 * @param <E>
 	 *            The handled unary operator's exception type
 	 * @param handled
@@ -4378,6 +4674,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled unary operator by
 	 * throwing a different exception.
 	 *
+	 * @param <R>
+	 *            The handled unary operator's return type
 	 * @param <E>
 	 *            The handled unary operator's exception type
 	 * @param <X>
@@ -4409,6 +4707,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled unary operator by
 	 * throwing it explicitly.
 	 *
+	 * @param <R>
+	 *            The handled unary operator's return type
 	 * @param <E>
 	 *            The handled unary operator's exception type
 	 * @param handled
@@ -4437,6 +4737,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled unary operator by
 	 * throwing a different exception.
 	 *
+	 * @param <R>
+	 *            The handled unary operator's return type
 	 * @param <E>
 	 *            The handled unary operator's exception type
 	 * @param <X>
@@ -4468,8 +4770,12 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled unary operator by
 	 * throwing it explicitly.
 	 *
+	 * @param <R>
+	 *            The handled unary operator's return type
 	 * @param <E>
 	 *            The handled unary operator's exception type
+	 * @param <X>
+	 *            The exception type to throw
 	 * @param handled
 	 *            The function that may throw an exception
 	 *
@@ -4496,6 +4802,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled unary operator by
 	 * throwing a different exception.
 	 *
+	 * @param <R>
+	 *            The handled unary operator's return type
 	 * @param <E>
 	 *            The handled unary operator's exception type
 	 * @param <X>
@@ -4527,6 +4835,8 @@ public class EHandle {
 	 * Handles a generic exception type that may occur in the handled unary operator by
 	 * throwing it explicitly.
 	 *
+	 * @param <R>
+	 *            The handled unary operator's return type
 	 * @param <E>
 	 *            The handled unary operator's exception type
 	 * @param handled

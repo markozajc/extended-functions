@@ -40,7 +40,7 @@ public interface EBinaryOperator<T, E extends Throwable> extends BinaryOperator<
 	@Override
 	default T apply(T left, T right) {
 		try {
-			return apply(left, right);
+			return applyChecked(left, right);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}

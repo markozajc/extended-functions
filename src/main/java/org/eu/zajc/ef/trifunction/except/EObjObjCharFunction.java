@@ -19,10 +19,10 @@ package org.eu.zajc.ef.trifunction.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
-import org.eu.zajc.ef.trifunction.ObjObjBooleanFunction;
+import org.eu.zajc.ef.trifunction.ObjObjCharFunction;
 
 /**
- * A variant of {@link ObjObjBooleanFunction} capable of throwing a generic
+ * A variant of {@link ObjObjCharFunction} capable of throwing a generic
  * {@link Throwable}.
  *
  * @author Marko Zajc
@@ -37,10 +37,10 @@ import org.eu.zajc.ef.trifunction.ObjObjBooleanFunction;
  *            {@link Throwable} type
  */
 @FunctionalInterface
-public interface EObjObjCharFunction<T, U, R, E extends Throwable> extends ObjObjBooleanFunction<T, U, R> {
+public interface EObjObjCharFunction<T, U, R, E extends Throwable> extends ObjObjCharFunction<T, U, R> {
 
 	@Override
-	default R apply(T t, U u, boolean p) {
+	default R apply(T t, U u, char p) {
 		try {
 			return applyChecked(t, u, p);
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
@@ -49,20 +49,20 @@ public interface EObjObjCharFunction<T, U, R, E extends Throwable> extends ObjOb
 	}
 
 	/**
-	 * Same as {@link #apply(Object, Object, boolean)}, but throws a checked exception.
+	 * Same as {@link #apply(Object, Object, char)}, but throws a checked exception.
 	 *
 	 * @param t
 	 *            the first function argument
 	 * @param u
 	 *            the second function argument
 	 * @param p
-	 *            the third ({@code boolean}) function argument
+	 *            the third ({@code char}) function argument
 	 *
 	 * @return the function result
 	 *
 	 * @throws E
 	 *             the defined exception type
 	 */
-	R applyChecked(T t, U u, boolean p) throws E;
+	R applyChecked(T t, U u, char p) throws E;
 
 }

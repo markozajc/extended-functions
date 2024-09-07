@@ -17,6 +17,10 @@
  */
 package org.eu.zajc.ef.triconsumer;
 
+import java.util.Objects;
+
+import javax.annotation.Nonnull;
+
 /**
  * A {@link TriConsumer} variant that takes two generic types and a primitive
  * {@code long}.
@@ -42,5 +46,31 @@ public interface ObjObjLongConsumer<T, U> {
 	 *            the third ({@code long}) input argument
 	 */
 	void accept(T t, U u, long p);
+
+	/**
+	 * Returns a composed {@link ObjObjLongConsumer} that performs, in sequence, this
+	 * operation followed by the {@code after} operation. If performing either operation
+	 * throws an exception, it is relayed to the caller of the composed operation. If
+	 * performing this operation throws an exception, the {@code after} operation will
+	 * not be performed.
+	 *
+	 * @param after
+	 *            the operation to perform after this operation
+	 *
+	 * @return a composed {@link ObjObjLongConsumer} that performs in sequence this
+	 *         operation followed by the {@code after} operation
+	 *
+	 * @throws NullPointerException
+	 *             if {@code after} is null
+	 */
+	@Nonnull
+	default ObjObjLongConsumer<T, U> andThen(@Nonnull ObjObjLongConsumer<? super T, ? super U> after) {
+		Objects.requireNonNull(after);
+
+		return (t, u, p) -> {
+			accept(t, u, p);
+			after.accept(t, u, p);
+		};
+	}
 
 }

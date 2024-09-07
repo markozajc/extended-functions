@@ -17,7 +17,10 @@
  */
 package org.eu.zajc.ef.biconsumer;
 
+import java.util.Objects;
 import java.util.function.BiConsumer;
+
+import javax.annotation.Nonnull;
 
 /**
  * A {@link BiConsumer} variant that takes a generic type and a primitive
@@ -40,5 +43,30 @@ public interface ObjByteConsumer<T> {
 	 *            the second ({@code byte}) input argument
 	 */
 	void accept(T t, byte p);
+
+	/**
+	 * Returns a composed {@link ObjByteConsumer} that performs, in sequence, this
+	 * operation followed by the {@code after} operation. If performing either operation
+	 * throws an exception, it is relayed to the caller of the composed operation. If
+	 * performing this operation throws an exception, the {@code after} operation will
+	 * not be performed.
+	 *
+	 * @param after
+	 *            the operation to perform after this operation
+	 *
+	 * @return a composed {@link ObjByteConsumer} that performs in sequence this
+	 *         operation followed by the {@code after} operation
+	 *
+	 * @throws NullPointerException
+	 *             if {@code after} is null
+	 */
+	@Nonnull
+	default ObjByteConsumer<T> andThen(@Nonnull ObjByteConsumer<T> after) {
+		Objects.requireNonNull(after);
+		return (t, p) -> {
+			accept(t, p);
+			after.accept(t, p);
+		};
+	}
 
 }

@@ -17,7 +17,10 @@
  */
 package org.eu.zajc.ef.consumer;
 
+import java.util.Objects;
 import java.util.function.Consumer;
+
+import javax.annotation.Nonnull;
 
 /**
  * A {@link Consumer} variant that takes a primitive {@code byte} type.
@@ -33,5 +36,30 @@ public interface ByteConsumer {
 	 *            the input argument
 	 */
 	void accept(byte p);
+
+	/**
+	 * Returns a composed {@link ByteConsumer} that performs, in sequence, this operation
+	 * followed by the {@code after} operation. If performing either operation throws an
+	 * exception, it is relayed to the caller of the composed operation. If performing
+	 * this operation throws an exception, the {@code after} operation will not be
+	 * performed.
+	 *
+	 * @param after
+	 *            the operation to perform after this operation
+	 *
+	 * @return a composed {@link ByteConsumer} that performs in sequence this operation
+	 *         followed by the {@code after} operation
+	 *
+	 * @throws NullPointerException
+	 *             if {@code after} is null
+	 */
+	@Nonnull
+	default ByteConsumer andThen(@Nonnull ByteConsumer after) {
+		Objects.requireNonNull(after);
+		return t -> {
+			accept(t);
+			after.accept(t);
+		};
+	}
 
 }

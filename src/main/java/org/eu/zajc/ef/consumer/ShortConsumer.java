@@ -17,7 +17,10 @@
  */
 package org.eu.zajc.ef.consumer;
 
+import java.util.Objects;
 import java.util.function.Consumer;
+
+import javax.annotation.Nonnull;
 
 /**
  * A {@link Consumer} variant that takes a primitive {@code short} type.
@@ -33,5 +36,30 @@ public interface ShortConsumer {
 	 *            the input argument
 	 */
 	void accept(short p);
+
+	/**
+	 * Returns a composed {@link ShortConsumer} that performs, in sequence, this
+	 * operation followed by the {@code after} operation. If performing either operation
+	 * throws an exception, it is relayed to the caller of the composed operation. If
+	 * performing this operation throws an exception, the {@code after} operation will
+	 * not be performed.
+	 *
+	 * @param after
+	 *            the operation to perform after this operation
+	 *
+	 * @return a composed {@link ShortConsumer} that performs in sequence this operation
+	 *         followed by the {@code after} operation
+	 *
+	 * @throws NullPointerException
+	 *             if {@code after} is null
+	 */
+	@Nonnull
+	default ShortConsumer andThen(@Nonnull ShortConsumer after) {
+		Objects.requireNonNull(after);
+		return t -> {
+			accept(t);
+			after.accept(t);
+		};
+	}
 
 }

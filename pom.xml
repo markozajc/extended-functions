@@ -5,10 +5,11 @@
 
 	<groupId>org.eu.zajc</groupId>
 	<artifactId>extended-functions</artifactId>
-	<version>1.4.2</version>
+	<version>1.5</version>
 
 	<name>Extended Functions</name>
-	<description>Variants and support utilities for functional interfaces that are missing from the standard library</description>
+	<description>Specializations and support utilities for functional interfaces that are missing from the standard
+		library</description>
 	<url>https://git.zajc.tel/extended-functions.git</url>
 
 	<inceptionYear>2021</inceptionYear>

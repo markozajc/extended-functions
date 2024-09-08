@@ -19,7 +19,7 @@ Add the following to your pom.xml's dependencies:
     <dependency>
         <groupId>org.eu.zajc</groupId>
         <artifactId>extended-functions</artifactId>
-        <version>1.4.2</version>
+        <version>1.5</version>
     </dependency>
     ...
 </dependencies>
@@ -36,7 +36,7 @@ repositories {
 
 dependencies {
     ...
-    api 'org.eu.zajc:extended-functions:1.4.2'
+    api 'org.eu.zajc:extended-functions:1.5'
     ...
 }
 ```

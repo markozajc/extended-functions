@@ -26,9 +26,9 @@ import org.eu.zajc.ef.function.BooleanFunction;
 import org.eu.zajc.ef.trifunction.ObjObjBooleanFunction;
 
 /**
- * Represents a function that accepts an object-valued and a {@code boolean}-valued argument,
- * and produces a result. This is the {@code (reference, boolean)} specialization of
- * {@link BiFunction}.
+ * Represents a function that accepts an object-valued and a {@code boolean}-valued
+ * argument, and produces a result. This is the {@code (reference, boolean)}
+ * specialization of {@link BiFunction}.
  *
  * <p>
  * This is a functional interface whose functional method is

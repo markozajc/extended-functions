@@ -19,16 +19,31 @@ package org.eu.zajc.ef.binary.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
+import java.util.function.BinaryOperator;
+
 import org.eu.zajc.ef.binary.BooleanBinaryOperator;
+import org.eu.zajc.ef.unary.except.EBooleanUnaryOperator;
 
 /**
- * A variant of {@link BooleanBinaryOperator} capable of throwing a generic
- * {@link Throwable}.
+ * Represents an operation upon two {@code boolean}-valued operands and producing a
+ * {@code boolean}-valued result. This is the primitive type specialization of
+ * {@link EBinaryOperator} for {@code boolean}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyCheckedAsBoolean(boolean, boolean)}.
  *
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see BinaryOperator
+ * @see EBooleanUnaryOperator
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EBooleanBinaryOperator<E extends Throwable> extends BooleanBinaryOperator {

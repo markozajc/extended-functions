@@ -19,15 +19,30 @@ package org.eu.zajc.ef.consumer.execpt.all;
 
 import java.util.function.Consumer;
 
+import org.eu.zajc.ef.biconsumer.except.all.AEBiConsumer;
 import org.eu.zajc.ef.consumer.execpt.EConsumer;
+import org.eu.zajc.ef.triconsumer.except.all.AETriConsumer;
 
 /**
- * A variant of {@link Consumer} capable of throwing an {@link Exception}.
+ * Represents an operation that accepts a single input argument and returns no
+ * result. Unlike most other functional interfaces, {@link AEConsumer} is expected to
+ * operate via side-effects.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #acceptChecked(Object)}.
  *
  * @param <T>
  *            the type of the input to the operation
+ *
+ * @see Consumer
+ * @see AEBiConsumer
+ * @see AETriConsumer
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEConsumer<T> extends EConsumer<T, Exception> {}

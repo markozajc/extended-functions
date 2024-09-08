@@ -21,15 +21,32 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 
 import java.util.function.Consumer;
 
+import org.eu.zajc.ef.biconsumer.except.EBiConsumer;
+import org.eu.zajc.ef.triconsumer.except.ETriConsumer;
+
 /**
- * A variant of {@link Consumer} capable of throwing a generic {@link Throwable}.
+ * Represents an operation that accepts a single input argument and returns no
+ * result. Unlike most other functional interfaces, {@link EConsumer} is expected to
+ * operate via side-effects.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #acceptChecked(Object)}.
  *
  * @param <T>
  *            the type of the input to the operation
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see Consumer
+ * @see EBiConsumer
+ * @see ETriConsumer
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EConsumer<T, E extends Throwable> extends Consumer<T> {

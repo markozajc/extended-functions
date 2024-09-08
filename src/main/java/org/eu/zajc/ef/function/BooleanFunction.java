@@ -22,14 +22,25 @@ import java.util.function.Function;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.bifunction.ObjBooleanFunction;
+import org.eu.zajc.ef.trifunction.ObjObjBooleanFunction;
+
 /**
- * A {@link Function} variant that takes a primitive {@code boolean}, and returns a
- * generic type.
+ * Represents a function that accepts a boolean-valued argument and produces a
+ * result. This is the {@code boolean}-consuming primitive specialization for
+ * {@link Function}.
  *
- * @author Marko Zajc
+ * <p>
+ * This is a functional interface whose functional method is {@link #apply(boolean)}.
  *
  * @param <R>
  *            the type of the result of the function
+ *
+ * @see Function
+ * @see ObjBooleanFunction
+ * @see ObjObjBooleanFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface BooleanFunction<R> {
@@ -38,7 +49,7 @@ public interface BooleanFunction<R> {
 	 * Applies this function to the given arguments.
 	 *
 	 * @param p
-	 *            value the function argument
+	 *            the function argument
 	 *
 	 * @return the function result
 	 */

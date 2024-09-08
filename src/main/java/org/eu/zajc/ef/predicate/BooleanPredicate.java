@@ -22,12 +22,24 @@ import java.util.function.Predicate;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.bipredicate.ObjBooleanPredicate;
+import org.eu.zajc.ef.tripredicate.ObjObjBooleanPredicate;
 import org.eu.zajc.ef.unary.BooleanUnaryOperator;
 
 /**
- * A variant of {@link Predicate} that takes a primitive {@code boolean}.
+ * Represents a predicate (boolean-valued function) of one {@code boolean}-valued
+ * argument. This is the {@code boolean}-consuming primitive type specialization of
+ * {@link Predicate}.
  *
- * This is equivalent to {@link BooleanUnaryOperator}
+ * <p>
+ * This is equivalent to {@link BooleanUnaryOperator}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is {@link #test(boolean)}.
+ *
+ * @see Predicate
+ * @see ObjBooleanPredicate
+ * @see ObjObjBooleanPredicate
  *
  * @author Marko Zajc
  */

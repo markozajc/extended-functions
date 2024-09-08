@@ -17,16 +17,33 @@
  */
 package org.eu.zajc.ef.biconsumer.except.all;
 
-import org.eu.zajc.ef.biconsumer.ObjBooleanConsumer;
+import java.util.function.BiConsumer;
+
 import org.eu.zajc.ef.biconsumer.except.EObjBooleanConsumer;
+import org.eu.zajc.ef.consumer.execpt.EBooleanConsumer;
+import org.eu.zajc.ef.triconsumer.except.EObjObjBooleanConsumer;
 
 /**
- * A variant of {@link ObjBooleanConsumer} capable of throwing an {@link Exception}.
+ * Represents an operation that accepts an object-valued and a {@code boolean}-valued
+ * argument, and returns no result. This is the {@code (reference, boolean)}
+ * specialization of {@link AEBiConsumer}. Unlike most other functional interfaces,
+ * {@link AEObjBooleanConsumer} is expected to operate via side-effects.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #acceptChecked(Object, boolean)}.
  *
  * @param <T>
- *            the type of the first argument to the operation
+ *            the type of the object argument to the operation
+ *
+ * @see BiConsumer
+ * @see EBooleanConsumer
+ * @see EObjObjBooleanConsumer
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEObjBooleanConsumer<T> extends EObjBooleanConsumer<T, Exception> {}

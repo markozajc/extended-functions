@@ -17,18 +17,34 @@
  */
 package org.eu.zajc.ef.bifunction.except.all;
 
-import org.eu.zajc.ef.bifunction.ObjLongFunction;
+import java.util.function.BiFunction;
+
 import org.eu.zajc.ef.bifunction.except.EObjLongFunction;
+import org.eu.zajc.ef.function.except.all.AELongFunction;
+import org.eu.zajc.ef.trifunction.except.all.AEObjObjLongFunction;
 
 /**
- * A variant of {@link ObjLongFunction} capable of throwing an {@link Exception}.
+ * Represents a function that accepts an object-valued and a {@code long}-valued
+ * argument, and produces a result. This is the {@code (reference, long)}
+ * specialization of {@link AEBiFunction}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyChecked(Object, long)}.
  *
  * @param <T>
  *            the type of the first argument to the function
  * @param <R>
  *            the type of the result of the function
+ *
+ * @see BiFunction
+ * @see AELongFunction
+ * @see AEObjObjLongFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEObjLongFunction<T, R> extends EObjLongFunction<T, R, Exception> {}

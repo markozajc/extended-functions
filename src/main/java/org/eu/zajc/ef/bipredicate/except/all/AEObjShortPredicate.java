@@ -17,16 +17,32 @@
  */
 package org.eu.zajc.ef.bipredicate.except.all;
 
-import org.eu.zajc.ef.bipredicate.ObjShortPredicate;
+import java.util.function.BiPredicate;
+
 import org.eu.zajc.ef.bipredicate.except.EObjShortPredicate;
+import org.eu.zajc.ef.predicate.ShortPredicate;
+import org.eu.zajc.ef.tripredicate.ObjObjShortPredicate;
 
 /**
- * A variant of {@link ObjShortPredicate} capable of throwing an {@link Exception}.
+ * Represents a predicate (boolean-valued function) of an object-valued and a
+ * {@code short}-valued argument. This is the {@code (reference, short)}
+ * specialization of {@link AEBiPredicate}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(Object, short)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
+ *
+ * @see BiPredicate
+ * @see ShortPredicate
+ * @see ObjObjShortPredicate
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEObjShortPredicate<T> extends EObjShortPredicate<T, Exception> {}

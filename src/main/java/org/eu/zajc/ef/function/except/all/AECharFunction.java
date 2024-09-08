@@ -17,16 +17,32 @@
  */
 package org.eu.zajc.ef.function.except.all;
 
-import org.eu.zajc.ef.function.CharFunction;
+import java.util.function.Function;
+
+import org.eu.zajc.ef.bifunction.except.EObjCharFunction;
 import org.eu.zajc.ef.function.except.ECharFunction;
+import org.eu.zajc.ef.trifunction.except.EObjObjCharFunction;
 
 /**
- * A variant of {@link CharFunction} capable of throwing an {@link Exception}.
+ * Represents a function that accepts a char-valued argument and produces a result.
+ * This is the {@code char}-consuming primitive specialization for
+ * {@link AEFunction}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyChecked(char)}.
  *
  * @param <R>
  *            the type of the result of the function
+ *
+ * @see Function
+ * @see EObjCharFunction
+ * @see EObjObjCharFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AECharFunction<R> extends ECharFunction<R, Exception> {}

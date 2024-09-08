@@ -22,11 +22,16 @@ import java.util.function.Function;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.function.CharFunction;
+
 /**
- * A {@link Function} variant that takes two generic types and a primitive
- * {@code char}, and returns a generic type.
+ * Represents a function that accepts two object-valued and one {@code char}-valued
+ * arguments, and produces a result. This is the {@code (reference, reference, char)}
+ * specialization of {@link TriFunction}.
  *
- * @author Marko Zajc
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #apply(Object, Object, char)}.
  *
  * @param <T>
  *            the type of the first argument to the function
@@ -34,6 +39,12 @@ import javax.annotation.Nonnull;
  *            the type of the second argument to the function
  * @param <R>
  *            the type of the result of the function
+ *
+ * @see TriFunction
+ * @see CharFunction
+ * @see ObjObjCharFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface ObjObjCharFunction<T, U, R> {

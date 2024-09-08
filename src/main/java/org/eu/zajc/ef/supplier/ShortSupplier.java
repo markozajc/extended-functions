@@ -20,7 +20,17 @@ package org.eu.zajc.ef.supplier;
 import java.util.function.Supplier;
 
 /**
- * A {@link Supplier} variant that and returns a primitive {@code short}.
+ * Represents a supplier of {@code short}-valued results. This is the
+ * {@code short}-producing primitive specialization of {@link Supplier}.
+ *
+ * <p>
+ * There is no requirement that a new or distinct result be returned each time the
+ * supplier is invoked.
+ *
+ * <p>
+ * This is a functional interface whose functional method is {@link #getAsShort()}.
+ *
+ * @see Supplier
  *
  * @author Marko Zajc
  */

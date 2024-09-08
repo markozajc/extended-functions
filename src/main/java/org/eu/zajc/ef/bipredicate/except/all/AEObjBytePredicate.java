@@ -17,16 +17,32 @@
  */
 package org.eu.zajc.ef.bipredicate.except.all;
 
-import org.eu.zajc.ef.bipredicate.ObjBytePredicate;
+import java.util.function.BiPredicate;
+
 import org.eu.zajc.ef.bipredicate.except.EObjBytePredicate;
+import org.eu.zajc.ef.predicate.BytePredicate;
+import org.eu.zajc.ef.tripredicate.ObjObjBytePredicate;
 
 /**
- * A variant of {@link ObjBytePredicate} capable of throwing an {@link Exception}.
+ * Represents a predicate (boolean-valued function) of an object-valued and a
+ * {@code byte}-valued argument. This is the {@code (reference, byte)} specialization
+ * of {@link AEBiPredicate}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(Object, byte)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
+ *
+ * @see BiPredicate
+ * @see BytePredicate
+ * @see ObjObjBytePredicate
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEObjBytePredicate<T> extends EObjBytePredicate<T, Exception> {}

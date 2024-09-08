@@ -19,16 +19,31 @@ package org.eu.zajc.ef.binary.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
+import java.util.function.BinaryOperator;
+
 import org.eu.zajc.ef.binary.ByteBinaryOperator;
+import org.eu.zajc.ef.unary.except.EByteUnaryOperator;
 
 /**
- * A variant of {@link ByteBinaryOperator} capable of throwing a generic
- * {@link Throwable}.
+ * Represents an operation upon two {@code byte}-valued operands and producing a
+ * {@code byte}-valued result. This is the primitive type specialization of
+ * {@link EBinaryOperator} for {@code byte}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyCheckedAsByte(byte, byte)}.
  *
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see BinaryOperator
+ * @see EByteUnaryOperator
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EByteBinaryOperator<E extends Throwable> extends ByteBinaryOperator {

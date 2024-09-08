@@ -21,10 +21,20 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 
 import java.util.function.BiPredicate;
 
+import org.eu.zajc.ef.predicate.except.EPredicate;
+import org.eu.zajc.ef.tripredicate.except.ETriPredicate;
+
 /**
- * A variant of {@link BiPredicate} capable of throwing a generic {@link Throwable}.
+ * Represents a predicate (boolean-valued function) of two arguments. This is the
+ * two-arity specialization of {@link EPredicate}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(Object, Object)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
@@ -32,6 +42,12 @@ import java.util.function.BiPredicate;
  *            the type of the second argument the predicate
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see BiPredicate
+ * @see EPredicate
+ * @see ETriPredicate
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EBiPredicate<T, U, E extends Throwable> extends BiPredicate<T, U> {

@@ -22,18 +22,18 @@ import java.util.function.BinaryOperator;
 import org.eu.zajc.ef.unary.CharUnaryOperator;
 
 /**
- * Represents an operation upon two {@code char}-valued operands and producing an
+ * Represents an operation upon two {@code char}-valued operands and producing a
  * {@code char}-valued result. This is the primitive type specialization of
  * {@link BinaryOperator} for {@code char}.
  *
  * <p>
- * This is a <a href="package-summary.html">functional interface</a> whose functional
- * method is {@link #applyAsChar(char, char)}.
+ * This is a functional interface whose functional method is
+ * {@link #applyAsChar(char, char)}.
  *
  * @see BinaryOperator
  * @see CharUnaryOperator
  *
- * @since 1.8
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface CharBinaryOperator {

@@ -17,17 +17,31 @@
  */
 package org.eu.zajc.ef.function.except.all;
 
-import java.util.function.IntFunction;
+import java.util.function.Function;
 
+import org.eu.zajc.ef.bifunction.except.EObjIntFunction;
 import org.eu.zajc.ef.function.except.EIntFunction;
+import org.eu.zajc.ef.trifunction.except.EObjObjIntFunction;
 
 /**
- * A variant of {@link IntFunction} capable of throwing an {@link Exception}.
+ * Represents a function that accepts an int-valued argument and produces a result.
+ * This is the {@code int}-consuming primitive specialization for {@link AEFunction}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyChecked(int)}.
  *
  * @param <R>
  *            the type of the result of the function
+ *
+ * @see Function
+ * @see EObjIntFunction
+ * @see EObjObjIntFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEIntFunction<R> extends EIntFunction<R, Exception> {}

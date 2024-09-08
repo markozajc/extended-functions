@@ -22,8 +22,20 @@ import java.util.function.Predicate;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.bipredicate.ObjShortPredicate;
+import org.eu.zajc.ef.tripredicate.ObjObjShortPredicate;
+
 /**
- * A variant of {@link Predicate} that takes a primitive {@code short}.
+ * Represents a predicate (boolean-valued function) of one {@code short}-valued
+ * argument. This is the {@code short}-consuming primitive type specialization of
+ * {@link Predicate}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is {@link #test(short)}.
+ *
+ * @see Predicate
+ * @see ObjShortPredicate
+ * @see ObjObjShortPredicate
  *
  * @author Marko Zajc
  */

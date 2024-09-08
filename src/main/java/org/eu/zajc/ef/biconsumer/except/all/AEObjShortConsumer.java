@@ -17,16 +17,33 @@
  */
 package org.eu.zajc.ef.biconsumer.except.all;
 
-import org.eu.zajc.ef.biconsumer.ObjShortConsumer;
+import java.util.function.BiConsumer;
+
 import org.eu.zajc.ef.biconsumer.except.EObjShortConsumer;
+import org.eu.zajc.ef.consumer.execpt.EShortConsumer;
+import org.eu.zajc.ef.triconsumer.except.EObjObjShortConsumer;
 
 /**
- * A variant of {@link ObjShortConsumer} capable of throwing an {@link Exception}.
+ * Represents an operation that accepts an object-valued and a {@code short}-valued
+ * argument, and returns no result. This is the {@code (reference, short)}
+ * specialization of {@link AEBiConsumer}. Unlike most other functional interfaces,
+ * {@link AEObjShortConsumer} is expected to operate via side-effects.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #acceptChecked(Object, short)}.
  *
  * @param <T>
- *            the type of the first argument to the operation
+ *            the type of the object argument to the operation
+ *
+ * @see BiConsumer
+ * @see EShortConsumer
+ * @see EObjObjShortConsumer
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEObjShortConsumer<T> extends EObjShortConsumer<T, Exception> {}

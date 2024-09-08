@@ -19,15 +19,30 @@ package org.eu.zajc.ef.supplier.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
-import java.util.function.IntSupplier;
+import java.util.function.*;
 
 /**
- * A variant of {@link IntSupplier} capable of throwing a generic {@link Throwable}.
+ * Represents a supplier of {@code int}-valued results. This is the
+ * {@code int}-producing primitive specialization of {@link ESupplier}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * There is no requirement that a new or distinct result be returned each time the
+ * supplier is invoked.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #getCheckedAsInt()}.
  *
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see Supplier
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EIntSupplier<E extends Throwable> extends IntSupplier {
@@ -35,7 +50,7 @@ public interface EIntSupplier<E extends Throwable> extends IntSupplier {
 	@Override
 	default int getAsInt() {
 		try {
-			return getChecked();
+			return getCheckedAsInt();
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}
@@ -49,6 +64,21 @@ public interface EIntSupplier<E extends Throwable> extends IntSupplier {
 	 * @throws E
 	 *             the defined exception type
 	 */
-	int getChecked() throws E;
+	int getCheckedAsInt() throws E;
+
+	/**
+	 * Same as {@link #getAsInt()}, but throws a checked exception.
+	 *
+	 * @return a result
+	 *
+	 * @throws E
+	 *             the defined exception type
+	 *
+	 * @deprecated Since 1.5, for removal. Use {@link #getCheckedAsInt()} instead
+	 */
+	@Deprecated
+	default int getChecked() throws E {
+		return getCheckedAsInt();
+	}
 
 }

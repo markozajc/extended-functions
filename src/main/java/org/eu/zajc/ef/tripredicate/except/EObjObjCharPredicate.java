@@ -19,13 +19,22 @@ package org.eu.zajc.ef.tripredicate.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
-import org.eu.zajc.ef.tripredicate.ObjObjCharPredicate;
+import org.eu.zajc.ef.bipredicate.except.EObjCharPredicate;
+import org.eu.zajc.ef.predicate.except.ECharPredicate;
+import org.eu.zajc.ef.tripredicate.*;
 
 /**
- * A variant of {@link ObjObjCharPredicate} capable of throwing a generic
- * {@link Throwable}.
+ * Represents a predicate (boolean-valued function) of two object-valued and one
+ * {@code char}-valued arguments. This is the {@code (reference, reference, char)}
+ * specialization of {@link ETriPredicate}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(Object, Object, char)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
@@ -33,6 +42,12 @@ import org.eu.zajc.ef.tripredicate.ObjObjCharPredicate;
  *            the type of the second argument the predicate
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see TriPredicate
+ * @see ECharPredicate
+ * @see EObjCharPredicate
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EObjObjCharPredicate<T, U, E extends Throwable> extends ObjObjCharPredicate<T, U> {

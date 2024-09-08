@@ -19,12 +19,21 @@ package org.eu.zajc.ef.trifunction.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
+import org.eu.zajc.ef.bifunction.except.EBiFunction;
+import org.eu.zajc.ef.function.except.EFunction;
 import org.eu.zajc.ef.trifunction.TriFunction;
 
 /**
- * A variant of {@link TriFunction} capable of throwing a generic {@link Throwable}.
+ * Represents a function that accepts two arguments and produces a result. This is
+ * the three-arity specialization of {@link EFunction}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyChecked(Object, Object, Object)}.
  *
  * @param <T>
  *            the type of the first argument to the function
@@ -36,6 +45,12 @@ import org.eu.zajc.ef.trifunction.TriFunction;
  *            the type of the result of the function
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see TriFunction
+ * @see EFunction
+ * @see EBiFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface ETriFunction<T, U, V, R, E extends Throwable> extends TriFunction<T, U, V, R> {

@@ -19,13 +19,24 @@ package org.eu.zajc.ef.bifunction.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
+import java.util.function.BiFunction;
+
 import org.eu.zajc.ef.bifunction.ObjBooleanFunction;
+import org.eu.zajc.ef.function.except.EBooleanFunction;
+import org.eu.zajc.ef.trifunction.except.EObjObjBooleanFunction;
 
 /**
- * A variant of {@link ObjBooleanFunction} capable of throwing a generic
- * {@link Throwable}.
+ * Represents a function that accepts an object-valued and a {@code boolean}-valued
+ * argument, and produces a result. This is the {@code (reference, boolean)}
+ * specialization of {@link EBiFunction}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyChecked(Object, boolean)}.
  *
  * @param <T>
  *            the type of the first argument to the function
@@ -33,6 +44,12 @@ import org.eu.zajc.ef.bifunction.ObjBooleanFunction;
  *            the type of the result of the function
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see BiFunction
+ * @see EBooleanFunction
+ * @see EObjObjBooleanFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EObjBooleanFunction<T, R, E extends Throwable> extends ObjBooleanFunction<T, R> {

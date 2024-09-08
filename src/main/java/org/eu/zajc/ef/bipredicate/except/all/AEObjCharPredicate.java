@@ -17,16 +17,32 @@
  */
 package org.eu.zajc.ef.bipredicate.except.all;
 
-import org.eu.zajc.ef.bipredicate.ObjCharPredicate;
+import java.util.function.BiPredicate;
+
 import org.eu.zajc.ef.bipredicate.except.EObjCharPredicate;
+import org.eu.zajc.ef.predicate.CharPredicate;
+import org.eu.zajc.ef.tripredicate.ObjObjCharPredicate;
 
 /**
- * A variant of {@link ObjCharPredicate} capable of throwing an {@link Exception}.
+ * Represents a predicate (boolean-valued function) of an object-valued and a
+ * {@code char}-valued argument. This is the {@code (reference, char)} specialization
+ * of {@link AEBiPredicate}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(Object, char)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
+ *
+ * @see BiPredicate
+ * @see CharPredicate
+ * @see ObjObjCharPredicate
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEObjCharPredicate<T> extends EObjCharPredicate<T, Exception> {}

@@ -17,11 +17,27 @@
  */
 package org.eu.zajc.ef.predicate.except.all;
 
-import org.eu.zajc.ef.predicate.BytePredicate;
+import java.util.function.Predicate;
+
+import org.eu.zajc.ef.bipredicate.except.EObjBytePredicate;
 import org.eu.zajc.ef.predicate.except.EBytePredicate;
+import org.eu.zajc.ef.tripredicate.except.EObjObjBytePredicate;
 
 /**
- * A variant of {@link BytePredicate} capable of throwing an {@link Exception}.
+ * Represents a predicate (boolean-valued function) of one {@code byte}-valued
+ * argument. This is the {@code byte}-consuming primitive type specialization of
+ * {@link Predicate}.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(byte)}.
+ *
+ * @see Predicate
+ * @see EObjBytePredicate
+ * @see EObjObjBytePredicate
  *
  * @author Marko Zajc
  */

@@ -22,8 +22,20 @@ import java.util.function.Predicate;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.bipredicate.ObjBytePredicate;
+import org.eu.zajc.ef.tripredicate.ObjObjBytePredicate;
+
 /**
- * A variant of {@link Predicate} that takes a primitive {@code byte}.
+ * Represents a predicate (boolean-valued function) of one {@code byte}-valued
+ * argument. This is the {@code byte}-consuming primitive type specialization of
+ * {@link Predicate}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is {@link #test(byte)}.
+ *
+ * @see Predicate
+ * @see ObjBytePredicate
+ * @see ObjObjBytePredicate
  *
  * @author Marko Zajc
  */

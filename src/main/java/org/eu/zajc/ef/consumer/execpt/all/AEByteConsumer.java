@@ -17,11 +17,28 @@
  */
 package org.eu.zajc.ef.consumer.execpt.all;
 
-import org.eu.zajc.ef.consumer.ByteConsumer;
+import java.util.function.Consumer;
+
+import org.eu.zajc.ef.biconsumer.except.all.AEObjByteConsumer;
 import org.eu.zajc.ef.consumer.execpt.EByteConsumer;
+import org.eu.zajc.ef.triconsumer.except.all.AEObjObjByteConsumer;
 
 /**
- * A variant of {@link ByteConsumer} capable of throwing an {@link Exception}.
+ * Represents an operation that accepts a single {@code byte}-valued argument and
+ * returns no result. This is the primitive type specialization of {@link AEConsumer}
+ * for {@code byte}. Unlike most other functional interfaces, {@link AEByteConsumer}
+ * is expected to operate via side-effects.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #acceptChecked(byte)}.
+ *
+ * @see Consumer
+ * @see AEObjByteConsumer
+ * @see AEObjObjByteConsumer
  *
  * @author Marko Zajc
  */

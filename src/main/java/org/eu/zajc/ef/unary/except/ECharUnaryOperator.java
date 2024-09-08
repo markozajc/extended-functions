@@ -19,16 +19,31 @@ package org.eu.zajc.ef.unary.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
+import java.util.function.UnaryOperator;
+
+import org.eu.zajc.ef.binary.except.ECharBinaryOperator;
 import org.eu.zajc.ef.unary.CharUnaryOperator;
 
 /**
- * A variant of {@link CharUnaryOperator} capable of throwing a generic
- * {@link Throwable}.
+ * Represents an operation on a single {@code char}-valued operand that produces an
+ * {@code char}-valued result. This is the primitive type specialization of
+ * {@link EUnaryOperator} for {@code char}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyCheckedAsChar(char)}.
  *
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see UnaryOperator
+ * @see ECharBinaryOperator
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface ECharUnaryOperator<E extends Throwable> extends CharUnaryOperator {

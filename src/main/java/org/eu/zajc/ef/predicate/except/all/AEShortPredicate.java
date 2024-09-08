@@ -17,11 +17,27 @@
  */
 package org.eu.zajc.ef.predicate.except.all;
 
-import org.eu.zajc.ef.predicate.ShortPredicate;
+import java.util.function.Predicate;
+
+import org.eu.zajc.ef.bipredicate.except.EObjShortPredicate;
 import org.eu.zajc.ef.predicate.except.EShortPredicate;
+import org.eu.zajc.ef.tripredicate.except.EObjObjShortPredicate;
 
 /**
- * A variant of {@link ShortPredicate} capable of throwing an {@link Exception}.
+ * Represents a predicate (boolean-valued function) of one {@code short}-valued
+ * argument. This is the {@code short}-consuming primitive type specialization of
+ * {@link Predicate}.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(short)}.
+ *
+ * @see Predicate
+ * @see EObjShortPredicate
+ * @see EObjObjShortPredicate
  *
  * @author Marko Zajc
  */

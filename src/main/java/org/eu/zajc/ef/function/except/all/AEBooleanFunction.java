@@ -17,16 +17,32 @@
  */
 package org.eu.zajc.ef.function.except.all;
 
-import org.eu.zajc.ef.function.BooleanFunction;
+import java.util.function.Function;
+
+import org.eu.zajc.ef.bifunction.except.EObjBooleanFunction;
 import org.eu.zajc.ef.function.except.EBooleanFunction;
+import org.eu.zajc.ef.trifunction.except.EObjObjBooleanFunction;
 
 /**
- * A variant of {@link BooleanFunction} capable of throwing an {@link Exception}.
+ * Represents a function that accepts a boolean-valued argument and produces a
+ * result. This is the {@code boolean}-consuming primitive specialization for
+ * {@link AEFunction}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyChecked(boolean)}.
  *
  * @param <R>
  *            the type of the result of the function
+ *
+ * @see Function
+ * @see EObjBooleanFunction
+ * @see EObjObjBooleanFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEBooleanFunction<R> extends EBooleanFunction<R, Exception> {}

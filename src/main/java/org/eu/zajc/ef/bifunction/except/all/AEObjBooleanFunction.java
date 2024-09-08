@@ -17,18 +17,34 @@
  */
 package org.eu.zajc.ef.bifunction.except.all;
 
-import org.eu.zajc.ef.bifunction.ObjBooleanFunction;
+import java.util.function.BiFunction;
+
 import org.eu.zajc.ef.bifunction.except.EObjBooleanFunction;
+import org.eu.zajc.ef.function.except.all.AEBooleanFunction;
+import org.eu.zajc.ef.trifunction.except.all.AEObjObjBooleanFunction;
 
 /**
- * A variant of {@link ObjBooleanFunction} capable of throwing an {@link Exception}.
+ * Represents a function that accepts an object-valued and a {@code boolean}-valued
+ * argument, and produces a result. This is the {@code (reference, boolean)}
+ * specialization of {@link AEBiFunction}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyChecked(Object, boolean)}.
  *
  * @param <T>
  *            the type of the first argument to the function
  * @param <R>
  *            the type of the result of the function
+ *
+ * @see BiFunction
+ * @see AEBooleanFunction
+ * @see AEObjObjBooleanFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEObjBooleanFunction<T, R> extends EObjBooleanFunction<T, R, Exception> {}

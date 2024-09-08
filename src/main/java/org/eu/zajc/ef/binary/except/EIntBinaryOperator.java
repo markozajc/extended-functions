@@ -19,16 +19,30 @@ package org.eu.zajc.ef.binary.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
-import java.util.function.IntBinaryOperator;
+import java.util.function.*;
+
+import org.eu.zajc.ef.unary.except.EIntUnaryOperator;
 
 /**
- * A variant of {@link IntBinaryOperator} capable of throwing a generic
- * {@link Throwable}.
+ * Represents an operation upon two {@code int}-valued operands and producing an
+ * {@code int}-valued result. This is the primitive type specialization of
+ * {@link EBinaryOperator} for {@code int}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyCheckedAsInt(int, int)}.
  *
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see BinaryOperator
+ * @see EIntUnaryOperator
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EIntBinaryOperator<E extends Throwable> extends IntBinaryOperator {

@@ -21,16 +21,30 @@ import java.util.Objects;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.biconsumer.ObjShortConsumer;
+import org.eu.zajc.ef.consumer.ShortConsumer;
+
 /**
- * A {@link TriConsumer} variant that takes two generic types and a primitive
- * {@code short}.
+ * Represents an operation that accepts two object-valued and one
+ * {@code short}-valued argument, and returns no result. This is the
+ * {@code (reference, reference, short)} specialization of {@link TriConsumer}.
+ * Unlike most other functional interfaces, {@link ObjObjShortConsumer} is expected
+ * to operate via side-effects.
  *
- * @author Marko Zajc
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #accept(Object, Object, short)}.
  *
  * @param <T>
- *            the type of the first argument to the operation
+ *            the type of the object argument to the operation
  * @param <U>
  *            the type of the second argument to the operation
+ *
+ * @see TriConsumer
+ * @see ShortConsumer
+ * @see ObjShortConsumer
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface ObjObjShortConsumer<T, U> {

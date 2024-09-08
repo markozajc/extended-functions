@@ -17,19 +17,39 @@
  */
 package org.eu.zajc.ef.triconsumer.except.all;
 
-import org.eu.zajc.ef.triconsumer.ObjObjBooleanConsumer;
+import org.eu.zajc.ef.biconsumer.except.all.AEObjBooleanConsumer;
+import org.eu.zajc.ef.consumer.execpt.all.AEBooleanConsumer;
+import org.eu.zajc.ef.triconsumer.TriConsumer;
 import org.eu.zajc.ef.triconsumer.except.EObjObjBooleanConsumer;
 
 /**
- * A variant of {@link ObjObjBooleanConsumer} capable of throwing an
- * {@link Exception}.
+ * Represents an operation that accepts two object-valued and one
+ * {@code boolean}-valued argument, and returns no result. This is the
+ * {@code (reference, reference, boolean)} specialization of {@link AETriConsumer}.
+ * Unlike most other functional interfaces, {@link AEObjObjBooleanConsumer} is
+ * expected to operate via side-effects.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #acceptChecked(Object, Object, boolean)}.
  *
  * @param <T>
- *            the type of the first argument to the operation
+ *            the type of the object argument to the operation
  * @param <U>
  *            the type of the second argument to the operation
+ *
+ * @see TriConsumer
+ * @see AEBooleanConsumer
+ * @see AEObjBooleanConsumer
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEObjObjBooleanConsumer<T, U> extends EObjObjBooleanConsumer<T, U, Exception> {}

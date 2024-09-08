@@ -17,18 +17,34 @@
  */
 package org.eu.zajc.ef.bifunction.except.all;
 
-import org.eu.zajc.ef.bifunction.ObjCharFunction;
+import java.util.function.BiFunction;
+
 import org.eu.zajc.ef.bifunction.except.EObjCharFunction;
+import org.eu.zajc.ef.function.except.all.AECharFunction;
+import org.eu.zajc.ef.trifunction.except.all.AEObjObjCharFunction;
 
 /**
- * A variant of {@link ObjCharFunction} capable of throwing an {@link Exception}.
+ * Represents a function that accepts an object-valued and a {@code char}-valued
+ * argument, and produces a result. This is the {@code (reference, char)}
+ * specialization of {@link AEBiFunction}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyChecked(Object, char)}.
  *
  * @param <T>
  *            the type of the first argument to the function
  * @param <R>
  *            the type of the result of the function
+ *
+ * @see BiFunction
+ * @see AECharFunction
+ * @see AEObjObjCharFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEObjCharFunction<T, R> extends EObjCharFunction<T, R, Exception> {}

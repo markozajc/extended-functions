@@ -19,13 +19,27 @@ package org.eu.zajc.ef.unary.except.all;
 
 import java.util.function.UnaryOperator;
 
+import org.eu.zajc.ef.binary.except.all.AEBinaryOperator;
+import org.eu.zajc.ef.function.except.all.AEFunction;
 import org.eu.zajc.ef.unary.except.EUnaryOperator;
 
 /**
- * A variant of {@link UnaryOperator} capable of throwing an {@link Exception}.
+ * Represents an operation on a single operand that produces a result of the same
+ * type as its operand. This is a specialization of {@link AEFunction} for the case
+ * where the operand and result are of the same type.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyChecked(Object)}.
  *
  * @param <T>
  *            the type of the operand and result of the operator
+ *
+ * @see UnaryOperator
+ * @see AEBinaryOperator
  *
  * @author Marko Zajc
  */

@@ -22,8 +22,21 @@ import java.util.function.Consumer;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.biconsumer.ObjCharConsumer;
+import org.eu.zajc.ef.triconsumer.ObjObjCharConsumer;
+
 /**
- * A {@link Consumer} variant that takes a primitive {@code char} type.
+ * Represents an operation that accepts a single {@code char}-valued argument and
+ * returns no result. This is the primitive type specialization of {@link Consumer}
+ * for {@code char}. Unlike most other functional interfaces, {@link CharConsumer} is
+ * expected to operate via side-effects.
+ *
+ * <p>
+ * This is a functional interface whose functional method is {@link #accept(char)}.
+ *
+ * @see Consumer
+ * @see ObjCharConsumer
+ * @see ObjObjCharConsumer
  *
  * @author Marko Zajc
  */

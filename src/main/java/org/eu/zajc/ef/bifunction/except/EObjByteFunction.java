@@ -19,13 +19,24 @@ package org.eu.zajc.ef.bifunction.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
+import java.util.function.BiFunction;
+
 import org.eu.zajc.ef.bifunction.ObjByteFunction;
+import org.eu.zajc.ef.function.except.EByteFunction;
+import org.eu.zajc.ef.trifunction.except.EObjObjByteFunction;
 
 /**
- * A variant of {@link ObjByteFunction} capable of throwing a generic
- * {@link Throwable}.
+ * Represents a function that accepts an object-valued and a {@code byte}-valued
+ * argument, and produces a result. This is the {@code (reference, byte)}
+ * specialization of {@link EBiFunction}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyChecked(Object, byte)}.
  *
  * @param <T>
  *            the type of the first argument to the function
@@ -33,6 +44,12 @@ import org.eu.zajc.ef.bifunction.ObjByteFunction;
  *            the type of the result of the function
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see BiFunction
+ * @see EByteFunction
+ * @see EObjObjByteFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EObjByteFunction<T, R, E extends Throwable> extends ObjByteFunction<T, R> {

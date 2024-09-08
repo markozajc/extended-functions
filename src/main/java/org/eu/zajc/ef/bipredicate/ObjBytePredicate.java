@@ -22,12 +22,24 @@ import java.util.function.BiPredicate;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.predicate.BytePredicate;
+import org.eu.zajc.ef.tripredicate.ObjObjBytePredicate;
+
 /**
- * A variant of {@link BiPredicate} that takes a generic type and a primitive
- * {@code byte}.
+ * Represents a predicate (boolean-valued function) of an object-valued and a
+ * {@code byte}-valued argument. This is the {@code (reference, byte)} specialization
+ * of {@link BiPredicate}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #test(Object, byte)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
+ *
+ * @see BiPredicate
+ * @see BytePredicate
+ * @see ObjObjBytePredicate
  *
  * @author Marko Zajc
  */

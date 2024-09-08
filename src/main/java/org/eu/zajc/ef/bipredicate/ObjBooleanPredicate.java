@@ -22,12 +22,24 @@ import java.util.function.BiPredicate;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.predicate.BooleanPredicate;
+import org.eu.zajc.ef.tripredicate.ObjObjBooleanPredicate;
+
 /**
- * A variant of {@link BiPredicate} that takes a generic type and a primitive
- * {@code boolean}.
+ * Represents a predicate (boolean-valued function) of an object-valued and a
+ * {@code boolean}-valued argument. This is the {@code (reference, boolean)}
+ * specialization of {@link BiPredicate}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #test(Object, boolean)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
+ *
+ * @see BiPredicate
+ * @see BooleanPredicate
+ * @see ObjObjBooleanPredicate
  *
  * @author Marko Zajc
  */

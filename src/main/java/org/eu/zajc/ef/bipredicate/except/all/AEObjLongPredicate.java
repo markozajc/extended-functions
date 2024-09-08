@@ -17,16 +17,31 @@
  */
 package org.eu.zajc.ef.bipredicate.except.all;
 
-import org.eu.zajc.ef.bipredicate.ObjLongPredicate;
+import java.util.function.*;
+
 import org.eu.zajc.ef.bipredicate.except.EObjLongPredicate;
+import org.eu.zajc.ef.tripredicate.ObjObjLongPredicate;
 
 /**
- * A variant of {@link ObjLongPredicate} capable of throwing an {@link Exception}.
+ * Represents a predicate (boolean-valued function) of an object-valued and a
+ * {@code long}-valued argument. This is the {@code (reference, long)} specialization
+ * of {@link AEBiPredicate}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(Object, long)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
+ *
+ * @see BiPredicate
+ * @see LongPredicate
+ * @see ObjObjLongPredicate
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEObjLongPredicate<T> extends EObjLongPredicate<T, Exception> {}

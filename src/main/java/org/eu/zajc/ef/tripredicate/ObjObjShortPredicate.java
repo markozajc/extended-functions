@@ -21,14 +21,26 @@ import java.util.Objects;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.bipredicate.ObjShortPredicate;
+import org.eu.zajc.ef.predicate.ShortPredicate;
+
 /**
- * A variant of {@link TriPredicate} that takes two generic types and a primitive
- * {@code short}.
+ * Represents a predicate (boolean-valued function) of two object-valued and one
+ * {@code short}-valued arguments. This is the {@code (reference, reference, short)}
+ * specialization of {@link TriPredicate}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #test(Object, Object, short)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
  * @param <U>
- *            the type of the second argument to the predicate
+ *            the type of the second argument the predicate
+ *
+ * @see TriPredicate
+ * @see ShortPredicate
+ * @see ObjShortPredicate
  *
  * @author Marko Zajc
  */

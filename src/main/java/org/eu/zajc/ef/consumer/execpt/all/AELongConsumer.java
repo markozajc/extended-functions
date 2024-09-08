@@ -17,12 +17,28 @@
  */
 package org.eu.zajc.ef.consumer.execpt.all;
 
-import java.util.function.LongConsumer;
+import java.util.function.Consumer;
 
+import org.eu.zajc.ef.biconsumer.except.all.AEObjLongConsumer;
 import org.eu.zajc.ef.consumer.execpt.ELongConsumer;
+import org.eu.zajc.ef.triconsumer.except.all.AEObjObjLongConsumer;
 
 /**
- * A variant of {@link LongConsumer} capable of throwing an {@link Exception}.
+ * Represents an operation that accepts a single {@code long}-valued argument and
+ * returns no result. This is the primitive type specialization of {@link AEConsumer}
+ * for {@code long}. Unlike most other functional interfaces, {@link AELongConsumer}
+ * is expected to operate via side-effects.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #acceptChecked(long)}.
+ *
+ * @see Consumer
+ * @see AEObjLongConsumer
+ * @see AEObjObjLongConsumer
  *
  * @author Marko Zajc
  */

@@ -19,18 +19,35 @@ package org.eu.zajc.ef.bipredicate.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
+import java.util.function.BiPredicate;
+
 import org.eu.zajc.ef.bipredicate.ObjShortPredicate;
+import org.eu.zajc.ef.predicate.ShortPredicate;
+import org.eu.zajc.ef.tripredicate.ObjObjShortPredicate;
 
 /**
- * A variant of {@link ObjShortPredicate} capable of throwing a generic
- * {@link Throwable}.
+ * Represents a predicate (boolean-valued function) of an object-valued and a
+ * {@code short}-valued argument. This is the {@code (reference, short)}
+ * specialization of {@link EBiPredicate}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(Object, short)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see BiPredicate
+ * @see ShortPredicate
+ * @see ObjObjShortPredicate
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EObjShortPredicate<T, E extends Throwable> extends ObjShortPredicate<T> {

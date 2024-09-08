@@ -17,12 +17,25 @@
  */
 package org.eu.zajc.ef.binary.except.all;
 
-import org.eu.zajc.ef.binary.BooleanBinaryOperator;
+import java.util.function.BinaryOperator;
+
 import org.eu.zajc.ef.binary.except.EBooleanBinaryOperator;
+import org.eu.zajc.ef.unary.except.all.AEBooleanUnaryOperator;
 
 /**
- * A variant of {@link BooleanBinaryOperator} capable of throwing an
- * {@link Exception}.
+ * Represents an operation upon two {@code boolean}-valued operands and producing a
+ * {@code boolean}-valued result. This is the primitive type specialization of
+ * {@link AEBinaryOperator} for {@code boolean}.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyCheckedAsBoolean(boolean, boolean)}.
+ *
+ * @see BinaryOperator
+ * @see AEBooleanUnaryOperator
  *
  * @author Marko Zajc
  */

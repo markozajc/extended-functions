@@ -19,16 +19,30 @@ package org.eu.zajc.ef.unary.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
-import java.util.function.IntUnaryOperator;
+import java.util.function.*;
+
+import org.eu.zajc.ef.binary.except.EIntBinaryOperator;
 
 /**
- * A variant of {@link IntUnaryOperator} capable of throwing a generic
- * {@link Throwable}.
+ * Represents an operation on a single {@code int}-valued operand that produces an
+ * {@code int}-valued result. This is the primitive type specialization of
+ * {@link EUnaryOperator} for {@code int}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyCheckedAsInt(int)}.
  *
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see UnaryOperator
+ * @see EIntBinaryOperator
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EIntUnaryOperator<E extends Throwable> extends IntUnaryOperator {

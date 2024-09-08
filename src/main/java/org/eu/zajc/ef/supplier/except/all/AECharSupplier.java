@@ -17,14 +17,28 @@
  */
 package org.eu.zajc.ef.supplier.except.all;
 
-import org.eu.zajc.ef.supplier.CharSupplier;
+import java.util.function.Supplier;
+
 import org.eu.zajc.ef.supplier.except.ECharSupplier;
 
 /**
- * A variant of {@link CharSupplier} capable of throwing an {@link Exception}.
+ * Represents a supplier of {@code char}-valued results. This is the
+ * {@code char}-producing primitive specialization of {@link AESupplier}.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * There is no requirement that a new or distinct result be returned each time the
+ * supplier is invoked.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #getCheckedAsChar()}.
+ *
+ * @see Supplier
  *
  * @author Marko Zajc
- *
  */
 @FunctionalInterface
 public interface AECharSupplier extends ECharSupplier<Exception> {}

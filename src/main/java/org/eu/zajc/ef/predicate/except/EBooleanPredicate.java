@@ -19,19 +19,37 @@ package org.eu.zajc.ef.predicate.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
+import java.util.function.Predicate;
+
+import org.eu.zajc.ef.bipredicate.except.EObjBooleanPredicate;
 import org.eu.zajc.ef.predicate.BooleanPredicate;
+import org.eu.zajc.ef.tripredicate.except.EObjObjBooleanPredicate;
 import org.eu.zajc.ef.unary.except.EBooleanUnaryOperator;
 
 /**
- * A variant of {@link BooleanPredicate} capable of throwing a generic
- * {@link Throwable}.
+ * Represents a predicate (boolean-valued function) of one {@code boolean}-valued
+ * argument. This is the {@code boolean}-consuming primitive type specialization of
+ * {@link Predicate}.
  *
- * This is equivalent to {@link EBooleanUnaryOperator}
+ * <p>
+ * This is equivalent to {@link EBooleanUnaryOperator}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(boolean)}.
  *
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see Predicate
+ * @see EObjBooleanPredicate
+ * @see EObjObjBooleanPredicate
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EBooleanPredicate<E extends Throwable> extends BooleanPredicate {

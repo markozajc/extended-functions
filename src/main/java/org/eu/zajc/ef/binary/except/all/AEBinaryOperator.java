@@ -19,13 +19,27 @@ package org.eu.zajc.ef.binary.except.all;
 
 import java.util.function.BinaryOperator;
 
+import org.eu.zajc.ef.bifunction.except.all.AEBiFunction;
 import org.eu.zajc.ef.binary.except.EBinaryOperator;
+import org.eu.zajc.ef.unary.except.all.AEUnaryOperator;
 
 /**
- * A variant of {@link BinaryOperator} capable of throwing an {@link Exception}.
+ * Represents an operation upon two operands of the same type, producing a result of
+ * the same type as the operands. This is a specialization of {@link AEBiFunction}
+ * for the case where the operands and the result are all of the same type.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyChecked(Object, Object)}.
  *
  * @param <T>
  *            the type of the operands and result of the operator
+ *
+ * @see BinaryOperator
+ * @see AEUnaryOperator
  *
  * @author Marko Zajc
  */

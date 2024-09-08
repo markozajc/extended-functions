@@ -18,16 +18,27 @@
 package org.eu.zajc.ef.bipredicate;
 
 import java.util.Objects;
-import java.util.function.BiPredicate;
+import java.util.function.*;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.tripredicate.ObjObjLongPredicate;
+
 /**
- * A variant of {@link BiPredicate} that takes a generic type and a primitive
- * {@code long}.
+ * Represents a predicate (boolean-valued function) of an object-valued and a
+ * {@code long}-valued argument. This is the {@code (reference, long)} specialization
+ * of {@link BiPredicate}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #test(Object, long)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
+ *
+ * @see BiPredicate
+ * @see LongPredicate
+ * @see ObjObjLongPredicate
  *
  * @author Marko Zajc
  */

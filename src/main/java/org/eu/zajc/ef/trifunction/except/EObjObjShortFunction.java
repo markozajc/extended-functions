@@ -19,13 +19,21 @@ package org.eu.zajc.ef.trifunction.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
-import org.eu.zajc.ef.trifunction.ObjObjShortFunction;
+import org.eu.zajc.ef.function.except.EShortFunction;
+import org.eu.zajc.ef.trifunction.*;
 
 /**
- * A variant of {@link ObjObjShortFunction} capable of throwing a generic
- * {@link Throwable}.
+ * Represents a function that accepts two object-valued and one {@code short}-valued
+ * arguments, and produces a result. This is the
+ * {@code (reference, reference, short)} specialization of {@link ETriFunction}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyChecked(Object, Object, short)}.
  *
  * @param <T>
  *            the type of the first argument to the function
@@ -35,6 +43,12 @@ import org.eu.zajc.ef.trifunction.ObjObjShortFunction;
  *            the type of the result of the function
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see TriFunction
+ * @see EShortFunction
+ * @see EObjObjShortFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EObjObjShortFunction<T, U, R, E extends Throwable> extends ObjObjShortFunction<T, U, R> {

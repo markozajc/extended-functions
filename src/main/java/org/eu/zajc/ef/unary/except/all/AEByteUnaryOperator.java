@@ -17,11 +17,25 @@
  */
 package org.eu.zajc.ef.unary.except.all;
 
-import org.eu.zajc.ef.unary.ByteUnaryOperator;
+import java.util.function.UnaryOperator;
+
+import org.eu.zajc.ef.binary.except.all.AEByteBinaryOperator;
 import org.eu.zajc.ef.unary.except.EByteUnaryOperator;
 
 /**
- * A variant of {@link ByteUnaryOperator} capable of throwing an {@link Exception}.
+ * Represents an operation on a single {@code byte}-valued operand that produces an
+ * {@code byte}-valued result. This is the primitive type specialization of
+ * {@link AEUnaryOperator} for {@code byte}.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyCheckedAsByte(byte)}.
+ *
+ * @see UnaryOperator
+ * @see AEByteBinaryOperator
  *
  * @author Marko Zajc
  */

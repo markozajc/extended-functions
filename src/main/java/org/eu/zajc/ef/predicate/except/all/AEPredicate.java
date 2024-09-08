@@ -19,15 +19,28 @@ package org.eu.zajc.ef.predicate.except.all;
 
 import java.util.function.Predicate;
 
+import org.eu.zajc.ef.bipredicate.except.EBiPredicate;
 import org.eu.zajc.ef.predicate.except.EPredicate;
+import org.eu.zajc.ef.tripredicate.except.ETriPredicate;
 
 /**
- * A variant of {@link Predicate} capable of throwing an {@link Exception}.
+ * Represents a predicate (boolean-valued function) of one argument.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(Object)}.
  *
  * @param <T>
  *            the type of the input to the predicate
+ *
+ * @see Predicate
+ * @see EBiPredicate
+ * @see ETriPredicate
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEPredicate<T> extends EPredicate<T, Exception> {}

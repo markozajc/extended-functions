@@ -17,13 +17,21 @@
  */
 package org.eu.zajc.ef.trifunction.except.all;
 
-import org.eu.zajc.ef.trifunction.ObjObjLongFunction;
+import org.eu.zajc.ef.function.except.ELongFunction;
+import org.eu.zajc.ef.trifunction.TriFunction;
 import org.eu.zajc.ef.trifunction.except.EObjObjLongFunction;
 
 /**
- * A variant of {@link ObjObjLongFunction} capable of throwing an {@link Exception}.
+ * Represents a function that accepts two object-valued and one {@code long}-valued
+ * arguments, and produces a result. This is the {@code (reference, reference, long)}
+ * specialization of {@link AETriFunction}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyChecked(Object, Object, long)}.
  *
  * @param <T>
  *            the type of the first argument to the function
@@ -31,6 +39,12 @@ import org.eu.zajc.ef.trifunction.except.EObjObjLongFunction;
  *            the type of the second argument to the function
  * @param <R>
  *            the type of the result of the function
+ *
+ * @see TriFunction
+ * @see ELongFunction
+ * @see EObjObjLongFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEObjObjLongFunction<T, U, R> extends EObjObjLongFunction<T, U, R, Exception> {}

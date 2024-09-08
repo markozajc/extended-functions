@@ -22,14 +22,24 @@ import java.util.function.Function;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.bifunction.ObjByteFunction;
+import org.eu.zajc.ef.trifunction.ObjObjByteFunction;
+
 /**
- * A {@link Function} variant that takes a primitive {@code byte}, and returns a
- * generic type.
+ * Represents a function that accepts a byte-valued argument and produces a result.
+ * This is the {@code byte}-consuming primitive specialization for {@link Function}.
  *
- * @author Marko Zajc
+ * <p>
+ * This is a functional interface whose functional method is {@link #apply(byte)}.
  *
  * @param <R>
  *            the type of the result of the function
+ *
+ * @see Function
+ * @see ObjByteFunction
+ * @see ObjObjByteFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface ByteFunction<R> {
@@ -38,7 +48,7 @@ public interface ByteFunction<R> {
 	 * Applies this function to the given arguments.
 	 *
 	 * @param p
-	 *            value the function argument
+	 *            the function argument
 	 *
 	 * @return the function result
 	 */

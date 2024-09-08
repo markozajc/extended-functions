@@ -20,12 +20,18 @@ package org.eu.zajc.ef.runnable.except;
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
 /**
- * A variant of {@link Runnable} capable of throwing a generic {@link Throwable}.
+ * A variant of {@link Runnable} whose functional method is allowed to throw a
+ * generic {@link Throwable} of type {@code E}.
  *
- * @author Marko Zajc
+ * <p>
+ * This is a functional interface whose functional method is {@link #runChecked()}.
  *
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see Runnable
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface ERunnable<E extends Throwable> extends Runnable {

@@ -18,17 +18,29 @@
 package org.eu.zajc.ef.tripredicate;
 
 import java.util.Objects;
+import java.util.function.LongPredicate;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.bipredicate.ObjLongPredicate;
+
 /**
- * A variant of {@link TriPredicate} that takes two generic types and a primitive
- * {@code long}.
+ * Represents a predicate (boolean-valued function) of two object-valued and one
+ * {@code long}-valued arguments. This is the {@code (reference, reference, long)}
+ * specialization of {@link TriPredicate}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #test(Object, Object, long)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
  * @param <U>
- *            the type of the second argument to the predicate
+ *            the type of the second argument the predicate
+ *
+ * @see TriPredicate
+ * @see LongPredicate
+ * @see ObjLongPredicate
  *
  * @author Marko Zajc
  */

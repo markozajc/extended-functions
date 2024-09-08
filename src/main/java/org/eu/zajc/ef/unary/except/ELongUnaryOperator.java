@@ -19,16 +19,30 @@ package org.eu.zajc.ef.unary.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
-import java.util.function.LongUnaryOperator;
+import java.util.function.*;
+
+import org.eu.zajc.ef.binary.except.ELongBinaryOperator;
 
 /**
- * A variant of {@link LongUnaryOperator} capable of throwing a generic
- * {@link Throwable}.
+ * Represents an operation on a single {@code long}-valued operand that produces an
+ * {@code long}-valued result. This is the primitive type specialization of
+ * {@link EUnaryOperator} for {@code long}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyCheckedAsLong(long)}.
  *
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see UnaryOperator
+ * @see ELongBinaryOperator
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface ELongUnaryOperator<E extends Throwable> extends LongUnaryOperator {

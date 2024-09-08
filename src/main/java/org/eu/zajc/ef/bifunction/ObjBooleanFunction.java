@@ -22,16 +22,28 @@ import java.util.function.*;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.function.BooleanFunction;
+import org.eu.zajc.ef.trifunction.ObjObjBooleanFunction;
+
 /**
- * A {@link BiFunction} variant that takes a generic type and a primitive
- * {@code boolean}, and returns a generic type.
+ * Represents a function that accepts an object-valued and a {@code boolean}-valued argument,
+ * and produces a result. This is the {@code (reference, boolean)} specialization of
+ * {@link BiFunction}.
  *
- * @author Marko Zajc
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #apply(Object, boolean)}.
  *
  * @param <T>
  *            the type of the first argument to the function
  * @param <R>
  *            the type of the result of the function
+ *
+ * @see BiFunction
+ * @see BooleanFunction
+ * @see ObjObjBooleanFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface ObjBooleanFunction<T, R> {

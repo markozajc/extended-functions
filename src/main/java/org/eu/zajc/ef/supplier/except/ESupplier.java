@@ -23,14 +23,30 @@ import java.util.concurrent.Callable;
 import java.util.function.Supplier;
 
 /**
- * A variant of {@link Supplier} capable of throwing a generic {@link Throwable}.
+ * Represents a supplier of results.
  *
- * @author Marko Zajc
+ * <p>
+ * This is equivalent to {@link Callable} when {@code E} is {@link Exception}.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * There is no requirement that a new or distinct result be returned each time the
+ * supplier is invoked.
+ *
+ * <p>
+ * This is a functional interface whose functional method is {@link #getChecked()}.
  *
  * @param <T>
  *            the type of results supplied by this supplier
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see Supplier
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface ESupplier<T, E extends Throwable> extends Supplier<T>, Callable<T> {

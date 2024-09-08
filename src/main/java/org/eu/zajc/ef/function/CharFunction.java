@@ -22,14 +22,24 @@ import java.util.function.Function;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.bifunction.ObjCharFunction;
+import org.eu.zajc.ef.trifunction.ObjObjCharFunction;
+
 /**
- * A {@link Function} variant that takes a primitive {@code char}, and returns a
- * generic type.
+ * Represents a function that accepts a char-valued argument and produces a result.
+ * This is the {@code char}-consuming primitive specialization for {@link Function}.
  *
- * @author Marko Zajc
+ * <p>
+ * This is a functional interface whose functional method is {@link #apply(char)}.
  *
  * @param <R>
  *            the type of the result of the function
+ *
+ * @see Function
+ * @see ObjCharFunction
+ * @see ObjObjCharFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface CharFunction<R> {
@@ -38,7 +48,7 @@ public interface CharFunction<R> {
 	 * Applies this function to the given arguments.
 	 *
 	 * @param p
-	 *            value the function argument
+	 *            the function argument
 	 *
 	 * @return the function result
 	 */

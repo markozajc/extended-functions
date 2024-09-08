@@ -17,18 +17,33 @@
  */
 package org.eu.zajc.ef.tripredicate.except.all;
 
-import org.eu.zajc.ef.tripredicate.ObjObjBytePredicate;
+import org.eu.zajc.ef.bipredicate.except.all.AEObjBytePredicate;
+import org.eu.zajc.ef.predicate.except.all.AEBytePredicate;
+import org.eu.zajc.ef.tripredicate.TriPredicate;
 import org.eu.zajc.ef.tripredicate.except.EObjObjBytePredicate;
 
 /**
- * A variant of {@link ObjObjBytePredicate} capable of throwing an {@link Exception}.
+ * Represents a predicate (boolean-valued function) of two object-valued and one
+ * {@code byte}-valued arguments. This is the {@code (reference, reference, byte)}
+ * specialization of {@link AETriPredicate}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(Object, Object, byte)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
  * @param <U>
  *            the type of the second argument the predicate
+ *
+ * @see TriPredicate
+ * @see AEBytePredicate
+ * @see AEObjBytePredicate
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEObjObjBytePredicate<T, U> extends EObjObjBytePredicate<T, U, Exception> {}

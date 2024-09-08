@@ -17,16 +17,31 @@
  */
 package org.eu.zajc.ef.bipredicate.except.all;
 
-import org.eu.zajc.ef.bipredicate.ObjIntPredicate;
+import java.util.function.*;
+
 import org.eu.zajc.ef.bipredicate.except.EObjIntPredicate;
+import org.eu.zajc.ef.tripredicate.ObjObjIntPredicate;
 
 /**
- * A variant of {@link ObjIntPredicate} capable of throwing an {@link Exception}.
+ * Represents a predicate (boolean-valued function) of an object-valued and a
+ * {@code int}-valued argument. This is the {@code (reference, int)} specialization
+ * of {@link AEBiPredicate}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(Object, int)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
+ *
+ * @see BiPredicate
+ * @see IntPredicate
+ * @see ObjObjIntPredicate
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEObjIntPredicate<T> extends EObjIntPredicate<T, Exception> {}

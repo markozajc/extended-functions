@@ -17,16 +17,33 @@
  */
 package org.eu.zajc.ef.biconsumer.except.all;
 
-import org.eu.zajc.ef.biconsumer.ObjByteConsumer;
+import java.util.function.BiConsumer;
+
 import org.eu.zajc.ef.biconsumer.except.EObjByteConsumer;
+import org.eu.zajc.ef.consumer.execpt.EByteConsumer;
+import org.eu.zajc.ef.triconsumer.except.EObjObjByteConsumer;
 
 /**
- * A variant of {@link ObjByteConsumer} capable of throwing an {@link Exception}.
+ * Represents an operation that accepts an object-valued and a {@code byte}-valued
+ * argument, and returns no result. This is the {@code (reference, byte)}
+ * specialization of {@link AEBiConsumer}. Unlike most other functional interfaces,
+ * {@link AEObjByteConsumer} is expected to operate via side-effects.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #acceptChecked(Object, byte)}.
  *
  * @param <T>
- *            the type of the first argument to the operation
+ *            the type of the object argument to the operation
+ *
+ * @see BiConsumer
+ * @see EByteConsumer
+ * @see EObjObjByteConsumer
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEObjByteConsumer<T> extends EObjByteConsumer<T, Exception> {}

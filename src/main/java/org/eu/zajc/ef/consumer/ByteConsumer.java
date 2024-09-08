@@ -22,8 +22,21 @@ import java.util.function.Consumer;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.biconsumer.ObjByteConsumer;
+import org.eu.zajc.ef.triconsumer.ObjObjByteConsumer;
+
 /**
- * A {@link Consumer} variant that takes a primitive {@code byte} type.
+ * Represents an operation that accepts a single {@code byte}-valued argument and
+ * returns no result. This is the primitive type specialization of {@link Consumer}
+ * for {@code byte}. Unlike most other functional interfaces, {@link ByteConsumer} is
+ * expected to operate via side-effects.
+ *
+ * <p>
+ * This is a functional interface whose functional method is {@link #accept(byte)}.
+ *
+ * @see Consumer
+ * @see ObjByteConsumer
+ * @see ObjObjByteConsumer
  *
  * @author Marko Zajc
  */

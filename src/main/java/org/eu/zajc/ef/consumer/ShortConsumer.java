@@ -22,8 +22,21 @@ import java.util.function.Consumer;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.biconsumer.ObjShortConsumer;
+import org.eu.zajc.ef.triconsumer.ObjObjShortConsumer;
+
 /**
- * A {@link Consumer} variant that takes a primitive {@code short} type.
+ * Represents an operation that accepts a single {@code short}-valued argument and
+ * returns no result. This is the primitive type specialization of {@link Consumer}
+ * for {@code short}. Unlike most other functional interfaces, {@link ShortConsumer}
+ * is expected to operate via side-effects.
+ *
+ * <p>
+ * This is a functional interface whose functional method is {@link #accept(short)}.
+ *
+ * @see Consumer
+ * @see ObjShortConsumer
+ * @see ObjObjShortConsumer
  *
  * @author Marko Zajc
  */

@@ -19,17 +19,33 @@ package org.eu.zajc.ef.function.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
-import java.util.function.IntFunction;
+import java.util.function.*;
+
+import org.eu.zajc.ef.bifunction.except.EObjIntFunction;
+import org.eu.zajc.ef.trifunction.except.EObjObjIntFunction;
 
 /**
- * A variant of {@link IntFunction} capable of throwing a generic {@link Throwable}.
+ * Represents a function that accepts an int-valued argument and produces a result.
+ * This is the {@code int}-consuming primitive specialization for {@link EFunction}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyChecked(int)}.
  *
  * @param <R>
  *            the type of the result of the function
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see Function
+ * @see EObjIntFunction
+ * @see EObjObjIntFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EIntFunction<R, E extends Throwable> extends IntFunction<R> {

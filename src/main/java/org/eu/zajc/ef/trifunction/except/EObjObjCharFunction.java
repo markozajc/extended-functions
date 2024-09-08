@@ -19,13 +19,21 @@ package org.eu.zajc.ef.trifunction.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
-import org.eu.zajc.ef.trifunction.ObjObjCharFunction;
+import org.eu.zajc.ef.function.except.ECharFunction;
+import org.eu.zajc.ef.trifunction.*;
 
 /**
- * A variant of {@link ObjObjCharFunction} capable of throwing a generic
- * {@link Throwable}.
+ * Represents a function that accepts two object-valued and one {@code char}-valued
+ * arguments, and produces a result. This is the {@code (reference, reference, char)}
+ * specialization of {@link ETriFunction}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyChecked(Object, Object, char)}.
  *
  * @param <T>
  *            the type of the first argument to the function
@@ -35,6 +43,12 @@ import org.eu.zajc.ef.trifunction.ObjObjCharFunction;
  *            the type of the result of the function
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see TriFunction
+ * @see ECharFunction
+ * @see EObjObjCharFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EObjObjCharFunction<T, U, R, E extends Throwable> extends ObjObjCharFunction<T, U, R> {

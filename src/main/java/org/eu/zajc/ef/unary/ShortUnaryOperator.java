@@ -22,8 +22,19 @@ import java.util.function.UnaryOperator;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.binary.ShortBinaryOperator;
+
 /**
- * A {@link UnaryOperator} variant that takes and returns a primitive {@code short}.
+ * Represents an operation on a single {@code short}-valued operand that produces an
+ * {@code short}-valued result. This is the primitive type specialization of
+ * {@link UnaryOperator} for {@code short}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyAsShort(short)}.
+ *
+ * @see UnaryOperator
+ * @see ShortBinaryOperator
  *
  * @author Marko Zajc
  */

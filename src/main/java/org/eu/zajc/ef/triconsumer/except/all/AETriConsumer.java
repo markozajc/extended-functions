@@ -17,13 +17,23 @@
  */
 package org.eu.zajc.ef.triconsumer.except.all;
 
+import org.eu.zajc.ef.biconsumer.except.all.AEBiConsumer;
+import org.eu.zajc.ef.consumer.execpt.all.AEConsumer;
 import org.eu.zajc.ef.triconsumer.TriConsumer;
 import org.eu.zajc.ef.triconsumer.except.ETriConsumer;
 
 /**
- * A variant of {@link TriConsumer} capable of throwing an {@link Exception}.
+ * Represents an operation that accepts three input arguments and returns no result.
+ * This is the three-arity specialization of {@link AEConsumer}. Unlike most other
+ * functional interfaces, {@link AETriConsumer} is expected to operate via
+ * side-effects.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #acceptChecked(Object, Object, Object)}.
  *
  * @param <T>
  *            the type of the first argument to the operation
@@ -31,6 +41,12 @@ import org.eu.zajc.ef.triconsumer.except.ETriConsumer;
  *            the type of the second argument to the operation
  * @param <V>
  *            the type of the third argument to the operation
+ *
+ * @see TriConsumer
+ * @see AEConsumer
+ * @see AEBiConsumer
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AETriConsumer<T, U, V> extends ETriConsumer<T, U, V, Exception> {}

@@ -19,13 +19,22 @@ package org.eu.zajc.ef.tripredicate.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
-import org.eu.zajc.ef.tripredicate.ObjObjShortPredicate;
+import org.eu.zajc.ef.bipredicate.except.EObjShortPredicate;
+import org.eu.zajc.ef.predicate.except.EShortPredicate;
+import org.eu.zajc.ef.tripredicate.*;
 
 /**
- * A variant of {@link ObjObjShortPredicate} capable of throwing a generic
- * {@link Throwable}.
+ * Represents a predicate (boolean-valued function) of two object-valued and one
+ * {@code short}-valued arguments. This is the {@code (reference, reference, short)}
+ * specialization of {@link ETriPredicate}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(Object, Object, short)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
@@ -33,6 +42,12 @@ import org.eu.zajc.ef.tripredicate.ObjObjShortPredicate;
  *            the type of the second argument the predicate
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see TriPredicate
+ * @see EShortPredicate
+ * @see EObjShortPredicate
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EObjObjShortPredicate<T, U, E extends Throwable> extends ObjObjShortPredicate<T, U> {

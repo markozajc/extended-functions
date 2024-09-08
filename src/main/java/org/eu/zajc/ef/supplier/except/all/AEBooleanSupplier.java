@@ -17,15 +17,28 @@
  */
 package org.eu.zajc.ef.supplier.except.all;
 
-import java.util.function.BooleanSupplier;
+import java.util.function.Supplier;
 
 import org.eu.zajc.ef.supplier.except.EBooleanSupplier;
 
 /**
- * A variant of {@link BooleanSupplier} capable of throwing an {@link Exception}.
+ * Represents a supplier of {@code boolean}-valued results. This is the
+ * {@code boolean}-producing primitive specialization of {@link AESupplier}.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * There is no requirement that a new or distinct result be returned each time the
+ * supplier is invoked.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #getCheckedAsBoolean()}.
+ *
+ * @see Supplier
  *
  * @author Marko Zajc
- *
  */
 @FunctionalInterface
 public interface AEBooleanSupplier extends EBooleanSupplier<Exception> {}

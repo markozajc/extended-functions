@@ -17,17 +17,33 @@
  */
 package org.eu.zajc.ef.biconsumer.except.all;
 
-import java.util.function.ObjLongConsumer;
+import java.util.function.BiConsumer;
 
 import org.eu.zajc.ef.biconsumer.except.EObjLongConsumer;
+import org.eu.zajc.ef.consumer.execpt.ELongConsumer;
+import org.eu.zajc.ef.triconsumer.except.EObjObjLongConsumer;
 
 /**
- * A variant of {@link ObjLongConsumer} capable of throwing an {@link Exception}.
+ * Represents an operation that accepts an object-valued and a {@code long}-valued
+ * argument, and returns no result. This is the {@code (reference, long)}
+ * specialization of {@link AEBiConsumer}. Unlike most other functional interfaces,
+ * {@link AEObjLongConsumer} is expected to operate via side-effects.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #acceptChecked(Object, long)}.
  *
  * @param <T>
- *            the type of the first argument to the operation
+ *            the type of the object argument to the operation
+ *
+ * @see BiConsumer
+ * @see ELongConsumer
+ * @see EObjObjLongConsumer
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEObjLongConsumer<T> extends EObjLongConsumer<T, Exception> {}

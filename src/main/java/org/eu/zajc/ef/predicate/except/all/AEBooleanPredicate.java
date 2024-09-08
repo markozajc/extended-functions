@@ -17,14 +17,31 @@
  */
 package org.eu.zajc.ef.predicate.except.all;
 
-import org.eu.zajc.ef.predicate.BooleanPredicate;
+import java.util.function.Predicate;
+
+import org.eu.zajc.ef.bipredicate.except.EObjBooleanPredicate;
 import org.eu.zajc.ef.predicate.except.EBooleanPredicate;
+import org.eu.zajc.ef.tripredicate.except.EObjObjBooleanPredicate;
 import org.eu.zajc.ef.unary.except.all.AEBooleanUnaryOperator;
 
 /**
- * A variant of {@link BooleanPredicate} capable of throwing an {@link Exception}.
+ * Represents a predicate (boolean-valued function) of one {@code boolean}-valued
+ * argument. This is the {@code boolean}-consuming primitive type specialization of
+ * {@link Predicate}.
  *
- * This is equivalent to {@link AEBooleanUnaryOperator}
+ * <p>
+ * This is equivalent to {@link AEBooleanUnaryOperator}.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(boolean)}.
+ *
+ * @see Predicate
+ * @see EObjBooleanPredicate
+ * @see EObjObjBooleanPredicate
  *
  * @author Marko Zajc
  */

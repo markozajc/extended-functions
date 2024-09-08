@@ -17,15 +17,25 @@
  */
 package org.eu.zajc.ef.unary.except.all;
 
-import org.eu.zajc.ef.predicate.except.all.AEBooleanPredicate;
-import org.eu.zajc.ef.unary.BooleanUnaryOperator;
+import java.util.function.UnaryOperator;
+
+import org.eu.zajc.ef.binary.except.all.AEBooleanBinaryOperator;
 import org.eu.zajc.ef.unary.except.EBooleanUnaryOperator;
 
 /**
- * A variant of {@link BooleanUnaryOperator} capable of throwing an
- * {@link Exception}.
+ * Represents an operation on a single {@code boolean}-valued operand that produces
+ * an {@code boolean}-valued result. This is the primitive type specialization of
+ * {@link AEUnaryOperator} for {@code boolean}.
  *
- * This is equivalent to {@link AEBooleanPredicate}
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyCheckedAsBoolean(boolean)}.
+ *
+ * @see UnaryOperator
+ * @see AEBooleanBinaryOperator
  *
  * @author Marko Zajc
  */

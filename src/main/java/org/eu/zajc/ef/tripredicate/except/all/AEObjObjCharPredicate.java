@@ -17,18 +17,33 @@
  */
 package org.eu.zajc.ef.tripredicate.except.all;
 
-import org.eu.zajc.ef.tripredicate.ObjObjCharPredicate;
+import org.eu.zajc.ef.bipredicate.except.all.AEObjCharPredicate;
+import org.eu.zajc.ef.predicate.except.all.AECharPredicate;
+import org.eu.zajc.ef.tripredicate.TriPredicate;
 import org.eu.zajc.ef.tripredicate.except.EObjObjCharPredicate;
 
 /**
- * A variant of {@link ObjObjCharPredicate} capable of throwing an {@link Exception}.
+ * Represents a predicate (boolean-valued function) of two object-valued and one
+ * {@code char}-valued arguments. This is the {@code (reference, reference, char)}
+ * specialization of {@link AETriPredicate}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(Object, Object, char)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
  * @param <U>
  *            the type of the second argument the predicate
+ *
+ * @see TriPredicate
+ * @see AECharPredicate
+ * @see AEObjCharPredicate
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEObjObjCharPredicate<T, U> extends EObjObjCharPredicate<T, U, Exception> {}

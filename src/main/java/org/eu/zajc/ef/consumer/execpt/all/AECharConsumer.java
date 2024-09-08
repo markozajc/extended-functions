@@ -17,11 +17,28 @@
  */
 package org.eu.zajc.ef.consumer.execpt.all;
 
-import org.eu.zajc.ef.consumer.CharConsumer;
+import java.util.function.Consumer;
+
+import org.eu.zajc.ef.biconsumer.except.all.AEObjCharConsumer;
 import org.eu.zajc.ef.consumer.execpt.ECharConsumer;
+import org.eu.zajc.ef.triconsumer.except.all.AEObjObjCharConsumer;
 
 /**
- * A variant of {@link CharConsumer} capable of throwing an {@link Exception}.
+ * Represents an operation that accepts a single {@code char}-valued argument and
+ * returns no result. This is the primitive type specialization of {@link AEConsumer}
+ * for {@code char}. Unlike most other functional interfaces, {@link AECharConsumer}
+ * is expected to operate via side-effects.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #acceptChecked(char)}.
+ *
+ * @see Consumer
+ * @see AEObjCharConsumer
+ * @see AEObjObjCharConsumer
  *
  * @author Marko Zajc
  */

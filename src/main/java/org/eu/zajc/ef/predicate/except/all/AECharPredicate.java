@@ -17,14 +17,27 @@
  */
 package org.eu.zajc.ef.predicate.except.all;
 
-import org.eu.zajc.ef.predicate.CharPredicate;
+import java.util.function.Predicate;
+
+import org.eu.zajc.ef.bipredicate.except.EObjCharPredicate;
 import org.eu.zajc.ef.predicate.except.ECharPredicate;
-import org.eu.zajc.ef.unary.except.all.AECharUnaryOperator;
+import org.eu.zajc.ef.tripredicate.except.EObjObjCharPredicate;
 
 /**
- * A variant of {@link CharPredicate} capable of throwing an {@link Exception}.
+ * Represents a predicate (boolean-valued function) of one {@code char}-valued
+ * argument. This is the {@code char}-consuming primitive type specialization of
+ * {@link Predicate}.
  *
- * This is equivalent to {@link AECharUnaryOperator}
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(char)}.
+ *
+ * @see Predicate
+ * @see EObjCharPredicate
+ * @see EObjObjCharPredicate
  *
  * @author Marko Zajc
  */

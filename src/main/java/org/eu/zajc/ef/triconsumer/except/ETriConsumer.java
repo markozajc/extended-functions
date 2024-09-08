@@ -19,12 +19,19 @@ package org.eu.zajc.ef.triconsumer.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
+import org.eu.zajc.ef.biconsumer.except.EBiConsumer;
+import org.eu.zajc.ef.consumer.execpt.EConsumer;
 import org.eu.zajc.ef.triconsumer.TriConsumer;
 
 /**
- * A variant of {@link TriConsumer} capable of throwing a generic {@link Throwable}.
+ * Represents an operation that accepts three input arguments and returns no result.
+ * This is the three-arity specialization of {@link EConsumer}. Unlike most other
+ * functional interfaces, {@link ETriConsumer} is expected to operate via
+ * side-effects.
  *
- * @author Marko Zajc
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #acceptChecked(Object, Object, Object)}.
  *
  * @param <T>
  *            the type of the first argument to the operation
@@ -34,6 +41,12 @@ import org.eu.zajc.ef.triconsumer.TriConsumer;
  *            the type of the third argument to the operation
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see TriConsumer
+ * @see EConsumer
+ * @see EBiConsumer
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface ETriConsumer<T, U, V, E extends Throwable> extends TriConsumer<T, U, V> {

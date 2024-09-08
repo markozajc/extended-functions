@@ -22,8 +22,20 @@ import java.util.function.Predicate;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.bipredicate.ObjCharPredicate;
+import org.eu.zajc.ef.tripredicate.ObjObjCharPredicate;
+
 /**
- * A variant of {@link Predicate} that takes a primitive {@code char}.
+ * Represents a predicate (boolean-valued function) of one {@code char}-valued
+ * argument. This is the {@code char}-consuming primitive type specialization of
+ * {@link Predicate}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is {@link #test(char)}.
+ *
+ * @see Predicate
+ * @see ObjCharPredicate
+ * @see ObjObjCharPredicate
  *
  * @author Marko Zajc
  */

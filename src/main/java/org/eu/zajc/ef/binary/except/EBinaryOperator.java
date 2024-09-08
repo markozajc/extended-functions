@@ -22,17 +22,30 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 import java.util.function.BinaryOperator;
 
 import org.eu.zajc.ef.bifunction.except.EBiFunction;
+import org.eu.zajc.ef.unary.except.EUnaryOperator;
 
 /**
- * A variant of {@link BinaryOperator} capable of throwing a generic
- * {@link Throwable}.
+ * Represents an operation upon two operands of the same type, producing a result of
+ * the same type as the operands. This is a specialization of {@link EBiFunction} for
+ * the case where the operands and the result are all of the same type.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyChecked(Object, Object)}.
  *
  * @param <T>
  *            the type of the operands and result of the operator
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see BinaryOperator
+ * @see EUnaryOperator
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EBinaryOperator<T, E extends Throwable> extends BinaryOperator<T>, EBiFunction<T, T, T, E> {

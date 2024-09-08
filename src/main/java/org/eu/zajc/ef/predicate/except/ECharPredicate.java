@@ -19,16 +19,33 @@ package org.eu.zajc.ef.predicate.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
+import java.util.function.Predicate;
+
+import org.eu.zajc.ef.bipredicate.except.EObjCharPredicate;
 import org.eu.zajc.ef.predicate.CharPredicate;
+import org.eu.zajc.ef.tripredicate.except.EObjObjCharPredicate;
 
 /**
- * A variant of {@link CharPredicate} capable of throwing a generic
- * {@link Throwable}.
+ * Represents a predicate (boolean-valued function) of one {@code char}-valued
+ * argument. This is the {@code char}-consuming primitive type specialization of
+ * {@link Predicate}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(char)}.
  *
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see Predicate
+ * @see EObjCharPredicate
+ * @see EObjObjCharPredicate
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface ECharPredicate<E extends Throwable> extends CharPredicate {

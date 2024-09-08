@@ -21,15 +21,30 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 
 import java.util.function.Predicate;
 
+import org.eu.zajc.ef.bipredicate.except.EBiPredicate;
+import org.eu.zajc.ef.tripredicate.except.ETriPredicate;
+
 /**
- * A variant of {@link Predicate} capable of throwing a generic {@link Throwable}.
+ * Represents a predicate (boolean-valued function) of one argument.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(Object)}.
  *
  * @param <T>
  *            the type of the input to the predicate
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see Predicate
+ * @see EBiPredicate
+ * @see ETriPredicate
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EPredicate<T, E extends Throwable> extends Predicate<T> {

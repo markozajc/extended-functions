@@ -19,13 +19,24 @@ package org.eu.zajc.ef.bifunction.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
+import java.util.function.BiFunction;
+
 import org.eu.zajc.ef.bifunction.ObjLongFunction;
+import org.eu.zajc.ef.function.except.ELongFunction;
+import org.eu.zajc.ef.trifunction.except.EObjObjLongFunction;
 
 /**
- * A variant of {@link ObjLongFunction} capable of throwing a generic
- * {@link Throwable}.
+ * Represents a function that accepts an object-valued and a {@code long}-valued
+ * argument, and produces a result. This is the {@code (reference, long)}
+ * specialization of {@link EBiFunction}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyChecked(Object, long)}.
  *
  * @param <T>
  *            the type of the first argument to the function
@@ -33,6 +44,12 @@ import org.eu.zajc.ef.bifunction.ObjLongFunction;
  *            the type of the result of the function
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see BiFunction
+ * @see ELongFunction
+ * @see EObjObjLongFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EObjLongFunction<T, R, E extends Throwable> extends ObjLongFunction<T, R> {

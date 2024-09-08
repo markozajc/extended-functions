@@ -17,13 +17,21 @@
  */
 package org.eu.zajc.ef.trifunction.except.all;
 
-import org.eu.zajc.ef.trifunction.ObjObjByteFunction;
+import org.eu.zajc.ef.function.except.EByteFunction;
+import org.eu.zajc.ef.trifunction.TriFunction;
 import org.eu.zajc.ef.trifunction.except.EObjObjByteFunction;
 
 /**
- * A variant of {@link ObjObjByteFunction} capable of throwing an {@link Exception}.
+ * Represents a function that accepts two object-valued and one {@code byte}-valued
+ * arguments, and produces a result. This is the {@code (reference, reference, byte)}
+ * specialization of {@link AETriFunction}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyChecked(Object, Object, byte)}.
  *
  * @param <T>
  *            the type of the first argument to the function
@@ -31,6 +39,12 @@ import org.eu.zajc.ef.trifunction.except.EObjObjByteFunction;
  *            the type of the second argument to the function
  * @param <R>
  *            the type of the result of the function
+ *
+ * @see TriFunction
+ * @see EByteFunction
+ * @see EObjObjByteFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEObjObjByteFunction<T, U, R> extends EObjObjByteFunction<T, U, R, Exception> {}

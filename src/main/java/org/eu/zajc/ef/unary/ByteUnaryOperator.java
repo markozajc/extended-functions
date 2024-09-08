@@ -22,8 +22,19 @@ import java.util.function.UnaryOperator;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.binary.ByteBinaryOperator;
+
 /**
- * A {@link UnaryOperator} variant that takes and returns a primitive {@code byte}.
+ * Represents an operation on a single {@code byte}-valued operand that produces an
+ * {@code byte}-valued result. This is the primitive type specialization of
+ * {@link UnaryOperator} for {@code byte}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyAsByte(byte)}.
+ *
+ * @see UnaryOperator
+ * @see ByteBinaryOperator
  *
  * @author Marko Zajc
  */

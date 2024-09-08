@@ -22,14 +22,24 @@ import java.util.function.Function;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.bifunction.ObjShortFunction;
+import org.eu.zajc.ef.trifunction.ObjObjShortFunction;
+
 /**
- * A {@link Function} variant that takes a primitive {@code short}, and returns a
- * generic type.
+ * Represents a function that accepts a short-valued argument and produces a result.
+ * This is the {@code short}-consuming primitive specialization for {@link Function}.
  *
- * @author Marko Zajc
+ * <p>
+ * This is a functional interface whose functional method is {@link #apply(short)}.
  *
  * @param <R>
  *            the type of the result of the function
+ *
+ * @see Function
+ * @see ObjShortFunction
+ * @see ObjObjShortFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface ShortFunction<R> {
@@ -38,7 +48,7 @@ public interface ShortFunction<R> {
 	 * Applies this function to the given arguments.
 	 *
 	 * @param p
-	 *            value the function argument
+	 *            the function argument
 	 *
 	 * @return the function result
 	 */

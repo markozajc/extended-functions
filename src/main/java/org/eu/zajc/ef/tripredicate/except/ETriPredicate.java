@@ -19,21 +19,36 @@ package org.eu.zajc.ef.tripredicate.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
+import org.eu.zajc.ef.bipredicate.except.EBiPredicate;
+import org.eu.zajc.ef.predicate.except.EPredicate;
 import org.eu.zajc.ef.tripredicate.TriPredicate;
 
 /**
- * A variant of {@link TriPredicate} capable of throwing a generic {@link Throwable}.
+ * Represents a predicate (boolean-valued function) of two arguments. This is the
+ * three-arity specialization of {@link EPredicate}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(Object, Object, Object)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
  * @param <U>
  *            the type of the second argument the predicate
  * @param <V>
- *            the type of the third argument the predicate
+ *            the type of the third argument to the predicate
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see TriPredicate
+ * @see EPredicate
+ * @see EBiPredicate
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface ETriPredicate<T, U, V, E extends Throwable> extends TriPredicate<T, U, V> {

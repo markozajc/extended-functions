@@ -21,14 +21,26 @@ import java.util.Objects;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.bipredicate.ObjBooleanPredicate;
+import org.eu.zajc.ef.predicate.BooleanPredicate;
+
 /**
- * A variant of {@link TriPredicate} that takes two generic types and a primitive
- * {@code boolean}.
+ * Represents a predicate (boolean-valued function) of two object-valued and one
+ * {@code boolean}-valued arguments. This is the
+ * {@code (reference, reference, boolean)} specialization of {@link TriPredicate}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #test(Object, Object, boolean)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
  * @param <U>
- *            the type of the second argument to the predicate
+ *            the type of the second argument the predicate
+ *
+ * @see TriPredicate
+ * @see BooleanPredicate
+ * @see ObjBooleanPredicate
  *
  * @author Marko Zajc
  */

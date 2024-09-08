@@ -18,14 +18,19 @@
 package org.eu.zajc.ef.triconsumer;
 
 import java.util.Objects;
-import java.util.function.Consumer;
+import java.util.function.*;
 
 import javax.annotation.Nonnull;
 
 /**
- * A {@link Consumer} variant that takes three generic types.
+ * Represents an operation that accepts three input arguments and returns no result.
+ * This is the three-arity specialization of {@link Consumer}. Unlike most other
+ * functional interfaces, {@link TriConsumer} is expected to operate via
+ * side-effects.
  *
- * @author Marko Zajc
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #accept(Object, Object, Object)}.
  *
  * @param <T>
  *            the type of the first argument to the operation
@@ -33,6 +38,11 @@ import javax.annotation.Nonnull;
  *            the type of the second argument to the operation
  * @param <V>
  *            the type of the third argument to the operation
+ *
+ * @see Consumer
+ * @see BiConsumer
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface TriConsumer<T, U, V> {

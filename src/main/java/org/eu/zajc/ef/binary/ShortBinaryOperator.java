@@ -22,18 +22,18 @@ import java.util.function.BinaryOperator;
 import org.eu.zajc.ef.unary.ShortUnaryOperator;
 
 /**
- * Represents an operation upon two {@code short}-valued operands and producing an
+ * Represents an operation upon two {@code short}-valued operands and producing a
  * {@code short}-valued result. This is the primitive type specialization of
  * {@link BinaryOperator} for {@code short}.
  *
  * <p>
- * This is a <a href="package-summary.html">functional interface</a> whose functional
- * method is {@link #applyAsShort(short, short)}.
+ * This is a functional interface whose functional method is
+ * {@link #applyAsShort(short, short)}.
  *
  * @see BinaryOperator
  * @see ShortUnaryOperator
  *
- * @since 1.8
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface ShortBinaryOperator {

@@ -17,16 +17,32 @@
  */
 package org.eu.zajc.ef.function.except.all;
 
-import org.eu.zajc.ef.function.ShortFunction;
+import java.util.function.Function;
+
+import org.eu.zajc.ef.bifunction.except.EObjShortFunction;
 import org.eu.zajc.ef.function.except.EShortFunction;
+import org.eu.zajc.ef.trifunction.except.EObjObjShortFunction;
 
 /**
- * A variant of {@link ShortFunction} capable of throwing an {@link Exception}.
+ * Represents a function that accepts a short-valued argument and produces a result.
+ * This is the {@code short}-consuming primitive specialization for
+ * {@link AEFunction}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyChecked(short)}.
  *
  * @param <R>
  *            the type of the result of the function
+ *
+ * @see Function
+ * @see EObjShortFunction
+ * @see EObjObjShortFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEShortFunction<R> extends EShortFunction<R, Exception> {}

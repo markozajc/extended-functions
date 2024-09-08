@@ -18,21 +18,29 @@
 package org.eu.zajc.ef.tripredicate;
 
 import java.util.Objects;
-import java.util.function.Predicate;
+import java.util.function.*;
 
 import javax.annotation.Nonnull;
 
 /**
- * A {@link Predicate} variant that takes three generic types.
+ * Represents a predicate (boolean-valued function) of two arguments. This is the
+ * three-arity specialization of {@link Predicate}.
  *
- * @author Marko Zajc
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #test(Object, Object, Object)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
  * @param <U>
  *            the type of the second argument the predicate
  * @param <V>
- *            the type of the third argument the predicate
+ *            the type of the third argument to the predicate
+ *
+ * @see Predicate
+ * @see BiPredicate
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface TriPredicate<T, U, V> {

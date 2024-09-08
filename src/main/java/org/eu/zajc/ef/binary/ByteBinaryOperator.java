@@ -22,18 +22,18 @@ import java.util.function.BinaryOperator;
 import org.eu.zajc.ef.unary.ByteUnaryOperator;
 
 /**
- * Represents an operation upon two {@code byte}-valued operands and producing an
+ * Represents an operation upon two {@code byte}-valued operands and producing a
  * {@code byte}-valued result. This is the primitive type specialization of
  * {@link BinaryOperator} for {@code byte}.
  *
  * <p>
- * This is a <a href="package-summary.html">functional interface</a> whose functional
- * method is {@link #applyAsByte(byte, byte)}.
+ * This is a functional interface whose functional method is
+ * {@link #applyAsByte(byte, byte)}.
  *
  * @see BinaryOperator
  * @see ByteUnaryOperator
  *
- * @since 1.8
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface ByteBinaryOperator {

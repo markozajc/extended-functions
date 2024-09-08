@@ -19,16 +19,31 @@ package org.eu.zajc.ef.binary.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
+import java.util.function.BinaryOperator;
+
 import org.eu.zajc.ef.binary.ShortBinaryOperator;
+import org.eu.zajc.ef.unary.except.EShortUnaryOperator;
 
 /**
- * A variant of {@link ShortBinaryOperator} capable of throwing a generic
- * {@link Throwable}.
+ * Represents an operation upon two {@code short}-valued operands and producing a
+ * {@code short}-valued result. This is the primitive type specialization of
+ * {@link EBinaryOperator} for {@code short}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyCheckedAsShort(short, short)}.
  *
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see BinaryOperator
+ * @see EShortUnaryOperator
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EShortBinaryOperator<E extends Throwable> extends ShortBinaryOperator {

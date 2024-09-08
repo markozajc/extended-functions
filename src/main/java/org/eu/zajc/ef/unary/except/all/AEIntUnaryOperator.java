@@ -17,12 +17,25 @@
  */
 package org.eu.zajc.ef.unary.except.all;
 
-import java.util.function.IntUnaryOperator;
+import java.util.function.UnaryOperator;
 
+import org.eu.zajc.ef.binary.except.all.AEIntBinaryOperator;
 import org.eu.zajc.ef.unary.except.EIntUnaryOperator;
 
 /**
- * A variant of {@link IntUnaryOperator} capable of throwing an {@link Exception}.
+ * Represents an operation on a single {@code int}-valued operand that produces an
+ * {@code int}-valued result. This is the primitive type specialization of
+ * {@link AEUnaryOperator} for {@code int}.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyCheckedAsInt(int)}.
+ *
+ * @see UnaryOperator
+ * @see AEIntBinaryOperator
  *
  * @author Marko Zajc
  */

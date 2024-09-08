@@ -22,8 +22,19 @@ import java.util.function.UnaryOperator;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.binary.CharBinaryOperator;
+
 /**
- * A {@link UnaryOperator} variant that takes and returns a primitive {@code char}.
+ * Represents an operation on a single {@code char}-valued operand that produces an
+ * {@code char}-valued result. This is the primitive type specialization of
+ * {@link UnaryOperator} for {@code char}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyAsChar(char)}.
+ *
+ * @see UnaryOperator
+ * @see CharBinaryOperator
  *
  * @author Marko Zajc
  */

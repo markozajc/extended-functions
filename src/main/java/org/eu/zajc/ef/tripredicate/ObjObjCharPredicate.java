@@ -21,14 +21,26 @@ import java.util.Objects;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.bipredicate.ObjCharPredicate;
+import org.eu.zajc.ef.predicate.CharPredicate;
+
 /**
- * A variant of {@link TriPredicate} that takes two generic types and a primitive
- * {@code char}.
+ * Represents a predicate (boolean-valued function) of two object-valued and one
+ * {@code char}-valued arguments. This is the {@code (reference, reference, char)}
+ * specialization of {@link TriPredicate}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #test(Object, Object, char)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
  * @param <U>
- *            the type of the second argument to the predicate
+ *            the type of the second argument the predicate
+ *
+ * @see TriPredicate
+ * @see CharPredicate
+ * @see ObjCharPredicate
  *
  * @author Marko Zajc
  */

@@ -21,10 +21,19 @@ import static org.eu.zajc.ef.Utilities.asUnchecked;
 
 import java.util.function.Function;
 
+import org.eu.zajc.ef.bifunction.except.EBiFunction;
+import org.eu.zajc.ef.trifunction.except.ETriFunction;
+
 /**
- * A variant of {@link Function} capable of throwing a generic {@link Throwable}.
+ * Represents a function that accepts one argument and produces a result.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyChecked(Object)}.
  *
  * @param <T>
  *            the type of the input to the function
@@ -32,6 +41,12 @@ import java.util.function.Function;
  *            the type of the result of the function
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see Function
+ * @see EBiFunction
+ * @see ETriFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EFunction<T, R, E extends Throwable> extends Function<T, R> {

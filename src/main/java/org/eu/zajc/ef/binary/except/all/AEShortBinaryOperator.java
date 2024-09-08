@@ -17,11 +17,25 @@
  */
 package org.eu.zajc.ef.binary.except.all;
 
-import org.eu.zajc.ef.binary.ShortBinaryOperator;
+import java.util.function.BinaryOperator;
+
 import org.eu.zajc.ef.binary.except.EShortBinaryOperator;
+import org.eu.zajc.ef.unary.except.all.AEShortUnaryOperator;
 
 /**
- * A variant of {@link ShortBinaryOperator} capable of throwing an {@link Exception}.
+ * Represents an operation upon two {@code short}-valued operands and producing a
+ * {@code short}-valued result. This is the primitive type specialization of
+ * {@link AEBinaryOperator} for {@code short}.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyCheckedAsShort(short, short)}.
+ *
+ * @see BinaryOperator
+ * @see AEShortUnaryOperator
  *
  * @author Marko Zajc
  */

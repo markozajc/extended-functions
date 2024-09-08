@@ -19,18 +19,34 @@ package org.eu.zajc.ef.bipredicate.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
+import java.util.function.*;
+
 import org.eu.zajc.ef.bipredicate.ObjIntPredicate;
+import org.eu.zajc.ef.tripredicate.ObjObjIntPredicate;
 
 /**
- * A variant of {@link ObjIntPredicate} capable of throwing a generic
- * {@link Throwable}.
+ * Represents a predicate (boolean-valued function) of an object-valued and a
+ * {@code int}-valued argument. This is the {@code (reference, int)} specialization
+ * of {@link EBiPredicate}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(Object, int)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see BiPredicate
+ * @see IntPredicate
+ * @see ObjObjIntPredicate
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EObjIntPredicate<T, E extends Throwable> extends ObjIntPredicate<T> {

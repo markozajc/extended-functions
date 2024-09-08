@@ -22,13 +22,19 @@ import java.util.function.UnaryOperator;
 
 import javax.annotation.Nonnull;
 
-import org.eu.zajc.ef.predicate.BooleanPredicate;
+import org.eu.zajc.ef.binary.BooleanBinaryOperator;
 
 /**
- * A {@link UnaryOperator} variant that takes and returns a primitive
- * {@code boolean}.
+ * Represents an operation on a single {@code boolean}-valued operand that produces
+ * an {@code boolean}-valued result. This is the primitive type specialization of
+ * {@link UnaryOperator} for {@code boolean}.
  *
- * This is equivalent to {@link BooleanPredicate}.
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyAsBoolean(boolean)}.
+ *
+ * @see UnaryOperator
+ * @see BooleanBinaryOperator
  *
  * @author Marko Zajc
  */

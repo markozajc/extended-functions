@@ -17,11 +17,28 @@
  */
 package org.eu.zajc.ef.consumer.execpt.all;
 
-import org.eu.zajc.ef.consumer.BooleanConsumer;
+import java.util.function.Consumer;
+
+import org.eu.zajc.ef.biconsumer.except.all.AEObjBooleanConsumer;
 import org.eu.zajc.ef.consumer.execpt.EBooleanConsumer;
+import org.eu.zajc.ef.triconsumer.except.all.AEObjObjBooleanConsumer;
 
 /**
- * A variant of {@link BooleanConsumer} capable of throwing an {@link Exception}.
+ * Represents an operation that accepts a single {@code boolean}-valued argument and
+ * returns no result. This is the primitive type specialization of {@link AEConsumer}
+ * for {@code boolean}. Unlike most other functional interfaces,
+ * {@link AEBooleanConsumer} is expected to operate via side-effects.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #acceptChecked(boolean)}.
+ *
+ * @see Consumer
+ * @see AEObjBooleanConsumer
+ * @see AEObjObjBooleanConsumer
  *
  * @author Marko Zajc
  */

@@ -19,15 +19,30 @@ package org.eu.zajc.ef.supplier.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
-import java.util.function.LongSupplier;
+import java.util.function.*;
 
 /**
- * A variant of {@link LongSupplier} capable of throwing a generic {@link Throwable}.
+ * Represents a supplier of {@code long}-valued results. This is the
+ * {@code long}-producing primitive specialization of {@link ESupplier}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * There is no requirement that a new or distinct result be returned each time the
+ * supplier is invoked.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #getCheckedAsLong()}.
  *
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see Supplier
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface ELongSupplier<E extends Throwable> extends LongSupplier {
@@ -35,7 +50,7 @@ public interface ELongSupplier<E extends Throwable> extends LongSupplier {
 	@Override
 	default long getAsLong() {
 		try {
-			return getChecked();
+			return getCheckedAsLong();
 		} catch (Throwable e) { // NOSONAR can't catch generic exceptions
 			throw asUnchecked(e);
 		}
@@ -49,6 +64,21 @@ public interface ELongSupplier<E extends Throwable> extends LongSupplier {
 	 * @throws E
 	 *             the defined exception type
 	 */
-	long getChecked() throws E;
+	long getCheckedAsLong() throws E;
+
+	/**
+	 * Same as {@link #getAsLong()}, but throws a checked exception.
+	 *
+	 * @return a result
+	 *
+	 * @throws E
+	 *             the defined exception type
+	 *
+	 * @deprecated Since 1.5, for removal. Use {@link #getCheckedAsLong()} instead
+	 */
+	@Deprecated
+	default long getChecked() throws E {
+		return getCheckedAsLong();
+	}
 
 }

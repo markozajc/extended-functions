@@ -18,16 +18,27 @@
 package org.eu.zajc.ef.bipredicate;
 
 import java.util.Objects;
-import java.util.function.BiPredicate;
+import java.util.function.*;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.tripredicate.ObjObjIntPredicate;
+
 /**
- * A variant of {@link BiPredicate} that takes a generic type and a primitive
- * {@code int}.
+ * Represents a predicate (boolean-valued function) of an object-valued and an
+ * {@code int}-valued argument. This is the {@code (reference, int)} specialization
+ * of {@link BiPredicate}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #test(Object, int)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
+ *
+ * @see BiPredicate
+ * @see IntPredicate
+ * @see ObjObjIntPredicate
  *
  * @author Marko Zajc
  */

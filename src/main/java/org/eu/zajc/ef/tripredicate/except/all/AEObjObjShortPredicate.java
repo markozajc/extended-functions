@@ -17,19 +17,33 @@
  */
 package org.eu.zajc.ef.tripredicate.except.all;
 
-import org.eu.zajc.ef.tripredicate.ObjObjShortPredicate;
+import org.eu.zajc.ef.bipredicate.except.all.AEObjShortPredicate;
+import org.eu.zajc.ef.predicate.except.all.AEShortPredicate;
+import org.eu.zajc.ef.tripredicate.TriPredicate;
 import org.eu.zajc.ef.tripredicate.except.EObjObjShortPredicate;
 
 /**
- * A variant of {@link ObjObjShortPredicate} capable of throwing an
- * {@link Exception}.
+ * Represents a predicate (boolean-valued function) of two object-valued and one
+ * {@code short}-valued arguments. This is the {@code (reference, reference, short)}
+ * specialization of {@link AETriPredicate}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(Object, Object, short)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
  * @param <U>
  *            the type of the second argument the predicate
+ *
+ * @see TriPredicate
+ * @see AEShortPredicate
+ * @see AEObjShortPredicate
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEObjObjShortPredicate<T, U> extends EObjObjShortPredicate<T, U, Exception> {}

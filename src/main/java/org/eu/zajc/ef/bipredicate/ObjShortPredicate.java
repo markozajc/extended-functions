@@ -22,12 +22,24 @@ import java.util.function.BiPredicate;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.predicate.ShortPredicate;
+import org.eu.zajc.ef.tripredicate.ObjObjShortPredicate;
+
 /**
- * A variant of {@link BiPredicate} that takes a generic type and a primitive
- * {@code short}.
+ * Represents a predicate (boolean-valued function) of an object-valued and a
+ * {@code short}-valued argument. This is the {@code (reference, short)}
+ * specialization of {@link BiPredicate}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #test(Object, short)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
+ *
+ * @see BiPredicate
+ * @see ShortPredicate
+ * @see ObjObjShortPredicate
  *
  * @author Marko Zajc
  */

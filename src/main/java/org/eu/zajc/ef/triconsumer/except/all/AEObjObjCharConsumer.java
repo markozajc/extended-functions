@@ -17,18 +17,38 @@
  */
 package org.eu.zajc.ef.triconsumer.except.all;
 
-import org.eu.zajc.ef.triconsumer.ObjObjCharConsumer;
+import org.eu.zajc.ef.biconsumer.except.all.AEObjCharConsumer;
+import org.eu.zajc.ef.consumer.execpt.all.AECharConsumer;
+import org.eu.zajc.ef.triconsumer.TriConsumer;
 import org.eu.zajc.ef.triconsumer.except.EObjObjCharConsumer;
 
 /**
- * A variant of {@link ObjObjCharConsumer} capable of throwing an {@link Exception}.
+ * Represents an operation that accepts two object-valued and one {@code char}-valued
+ * argument, and returns no result. This is the {@code (reference, reference, char)}
+ * specialization of {@link AETriConsumer}. Unlike most other functional interfaces,
+ * {@link AEObjObjCharConsumer} is expected to operate via side-effects.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #acceptChecked(Object, Object, char)}.
  *
  * @param <T>
- *            the type of the first argument to the operation
+ *            the type of the object argument to the operation
  * @param <U>
  *            the type of the second argument to the operation
+ *
+ * @see TriConsumer
+ * @see AECharConsumer
+ * @see AEObjCharConsumer
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEObjObjCharConsumer<T, U> extends EObjObjCharConsumer<T, U, Exception> {}

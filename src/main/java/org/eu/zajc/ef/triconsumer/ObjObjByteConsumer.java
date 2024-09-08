@@ -21,16 +21,29 @@ import java.util.Objects;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.biconsumer.ObjByteConsumer;
+import org.eu.zajc.ef.consumer.ByteConsumer;
+
 /**
- * A {@link TriConsumer} variant that takes two generic types and a primitive
- * {@code byte}.
+ * Represents an operation that accepts two object-valued and one {@code byte}-valued
+ * argument, and returns no result. This is the {@code (reference, reference, byte)}
+ * specialization of {@link TriConsumer}. Unlike most other functional interfaces,
+ * {@link ObjObjByteConsumer} is expected to operate via side-effects.
  *
- * @author Marko Zajc
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #accept(Object, Object, byte)}.
  *
  * @param <T>
- *            the type of the first argument to the operation
+ *            the type of the object argument to the operation
  * @param <U>
  *            the type of the second argument to the operation
+ *
+ * @see TriConsumer
+ * @see ByteConsumer
+ * @see ObjByteConsumer
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface ObjObjByteConsumer<T, U> {

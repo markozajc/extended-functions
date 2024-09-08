@@ -22,8 +22,22 @@ import java.util.function.Consumer;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.biconsumer.ObjBooleanConsumer;
+import org.eu.zajc.ef.triconsumer.ObjObjBooleanConsumer;
+
 /**
- * A {@link Consumer} variant that takes a primitive {@code boolean} type.
+ * Represents an operation that accepts a single {@code boolean}-valued argument and
+ * returns no result. This is the primitive type specialization of {@link Consumer}
+ * for {@code boolean}. Unlike most other functional interfaces,
+ * {@link BooleanConsumer} is expected to operate via side-effects.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #accept(boolean)}.
+ *
+ * @see Consumer
+ * @see ObjBooleanConsumer
+ * @see ObjObjBooleanConsumer
  *
  * @author Marko Zajc
  */

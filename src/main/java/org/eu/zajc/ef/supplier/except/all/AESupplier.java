@@ -17,17 +17,33 @@
  */
 package org.eu.zajc.ef.supplier.except.all;
 
+import java.util.concurrent.Callable;
 import java.util.function.Supplier;
 
 import org.eu.zajc.ef.supplier.except.ESupplier;
 
 /**
- * A variant of {@link Supplier} capable of throwing an {@link Exception}.
+ * Represents a supplier of results.
  *
- * @author Marko Zajc
+ * <p>
+ * This is equivalent to {@link Callable}.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * There is no requirement that a new or distinct result be returned each time the
+ * supplier is invoked.
+ *
+ * <p>
+ * This is a functional interface whose functional method is {@link #getChecked()}.
  *
  * @param <T>
  *            the type of results supplied by this supplier
+ *
+ * @see Supplier
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AESupplier<T> extends ESupplier<T, Exception> {}

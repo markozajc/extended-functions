@@ -17,14 +17,28 @@
  */
 package org.eu.zajc.ef.supplier.except.all;
 
-import org.eu.zajc.ef.supplier.ShortSupplier;
+import java.util.function.Supplier;
+
 import org.eu.zajc.ef.supplier.except.EShortSupplier;
 
 /**
- * A variant of {@link ShortSupplier} capable of throwing an {@link Exception}.
+ * Represents a supplier of {@code short}-valued results. This is the
+ * {@code short}-producing primitive specialization of {@link AESupplier}.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * There is no requirement that a new or distinct result be returned each time the
+ * supplier is invoked.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #getCheckedAsShort()}.
+ *
+ * @see Supplier
  *
  * @author Marko Zajc
- *
  */
 @FunctionalInterface
 public interface AEShortSupplier extends EShortSupplier<Exception> {}

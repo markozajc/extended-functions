@@ -17,18 +17,34 @@
  */
 package org.eu.zajc.ef.bifunction.except.all;
 
-import org.eu.zajc.ef.bifunction.ObjByteFunction;
+import java.util.function.BiFunction;
+
 import org.eu.zajc.ef.bifunction.except.EObjByteFunction;
+import org.eu.zajc.ef.function.except.all.AEByteFunction;
+import org.eu.zajc.ef.trifunction.except.all.AEObjObjByteFunction;
 
 /**
- * A variant of {@link ObjByteFunction} capable of throwing an {@link Exception}.
+ * Represents a function that accepts an object-valued and a {@code byte}-valued
+ * argument, and produces a result. This is the {@code (reference, byte)}
+ * specialization of {@link AEBiFunction}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyChecked(Object, byte)}.
  *
  * @param <T>
  *            the type of the first argument to the function
  * @param <R>
  *            the type of the result of the function
+ *
+ * @see BiFunction
+ * @see AEByteFunction
+ * @see AEObjObjByteFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEObjByteFunction<T, R> extends EObjByteFunction<T, R, Exception> {}

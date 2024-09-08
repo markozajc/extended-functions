@@ -17,11 +17,28 @@
  */
 package org.eu.zajc.ef.consumer.execpt.all;
 
-import org.eu.zajc.ef.consumer.ShortConsumer;
+import java.util.function.Consumer;
+
+import org.eu.zajc.ef.biconsumer.except.all.AEObjShortConsumer;
 import org.eu.zajc.ef.consumer.execpt.EShortConsumer;
+import org.eu.zajc.ef.triconsumer.except.all.AEObjObjShortConsumer;
 
 /**
- * A variant of {@link ShortConsumer} capable of throwing an {@link Exception}.
+ * Represents an operation that accepts a single {@code short}-valued argument and
+ * returns no result. This is the primitive type specialization of {@link AEConsumer}
+ * for {@code short}. Unlike most other functional interfaces,
+ * {@link AEShortConsumer} is expected to operate via side-effects.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #acceptChecked(short)}.
+ *
+ * @see Consumer
+ * @see AEObjShortConsumer
+ * @see AEObjObjShortConsumer
  *
  * @author Marko Zajc
  */

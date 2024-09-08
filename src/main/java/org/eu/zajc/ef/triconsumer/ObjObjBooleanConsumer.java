@@ -21,16 +21,30 @@ import java.util.Objects;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.biconsumer.ObjBooleanConsumer;
+import org.eu.zajc.ef.consumer.BooleanConsumer;
+
 /**
- * A {@link TriConsumer} variant that takes two generic types and a primitive
- * {@code boolean}.
+ * Represents an operation that accepts two object-valued and one
+ * {@code boolean}-valued argument, and returns no result. This is the
+ * {@code (reference, reference, boolean)} specialization of {@link TriConsumer}.
+ * Unlike most other functional interfaces, {@link ObjObjBooleanConsumer} is expected
+ * to operate via side-effects.
  *
- * @author Marko Zajc
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #accept(Object, Object, boolean)}.
  *
  * @param <T>
- *            the type of the first argument to the operation
+ *            the type of the object argument to the operation
  * @param <U>
  *            the type of the second argument to the operation
+ *
+ * @see TriConsumer
+ * @see BooleanConsumer
+ * @see ObjBooleanConsumer
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface ObjObjBooleanConsumer<T, U> {

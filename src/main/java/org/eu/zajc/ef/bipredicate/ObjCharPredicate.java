@@ -22,12 +22,24 @@ import java.util.function.BiPredicate;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.predicate.CharPredicate;
+import org.eu.zajc.ef.tripredicate.ObjObjCharPredicate;
+
 /**
- * A variant of {@link BiPredicate} that takes a generic type and a primitive
- * {@code char}.
+ * Represents a predicate (boolean-valued function) of an object-valued and a
+ * {@code char}-valued argument. This is the {@code (reference, char)} specialization
+ * of {@link BiPredicate}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #test(Object, char)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
+ *
+ * @see BiPredicate
+ * @see CharPredicate
+ * @see ObjObjCharPredicate
  *
  * @author Marko Zajc
  */

@@ -19,18 +19,36 @@ package org.eu.zajc.ef.biconsumer.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
+import java.util.function.BiConsumer;
+
 import org.eu.zajc.ef.biconsumer.ObjCharConsumer;
+import org.eu.zajc.ef.consumer.execpt.ECharConsumer;
+import org.eu.zajc.ef.triconsumer.except.EObjObjCharConsumer;
 
 /**
- * A variant of {@link ObjCharConsumer} capable of throwing a generic
- * {@link Throwable}.
+ * Represents an operation that accepts an object-valued and a {@code char}-valued
+ * argument, and returns no result. This is the {@code (reference, char)}
+ * specialization of {@link EBiConsumer}. Unlike most other functional interfaces,
+ * {@link EObjCharConsumer} is expected to operate via side-effects.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #acceptChecked(Object, char)}.
  *
  * @param <T>
- *            the type of the first argument to the operation
+ *            the type of the object argument to the operation
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see BiConsumer
+ * @see ECharConsumer
+ * @see EObjObjCharConsumer
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EObjCharConsumer<T, E extends Throwable> extends ObjCharConsumer<T> {

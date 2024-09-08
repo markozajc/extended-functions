@@ -19,13 +19,24 @@ package org.eu.zajc.ef.bifunction.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
+import java.util.function.BiFunction;
+
 import org.eu.zajc.ef.bifunction.ObjIntFunction;
+import org.eu.zajc.ef.function.except.EIntFunction;
+import org.eu.zajc.ef.trifunction.except.EObjObjIntFunction;
 
 /**
- * A variant of {@link ObjIntFunction} capable of throwing a generic
- * {@link Throwable}.
+ * Represents a function that accepts an object-valued and an {@code int}-valued
+ * argument, and produces a result. This is the {@code (reference, int)}
+ * specialization of {@link EBiFunction}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyChecked(Object, int)}.
  *
  * @param <T>
  *            the type of the first argument to the function
@@ -33,6 +44,12 @@ import org.eu.zajc.ef.bifunction.ObjIntFunction;
  *            the type of the result of the function
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see BiFunction
+ * @see EIntFunction
+ * @see EObjObjIntFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EObjIntFunction<T, R, E extends Throwable> extends ObjIntFunction<T, R> {

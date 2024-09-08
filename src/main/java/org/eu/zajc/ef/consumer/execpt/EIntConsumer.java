@@ -19,15 +19,33 @@ package org.eu.zajc.ef.consumer.execpt;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
-import java.util.function.IntConsumer;
+import java.util.function.*;
+
+import org.eu.zajc.ef.biconsumer.except.EObjIntConsumer;
+import org.eu.zajc.ef.triconsumer.except.EObjObjIntConsumer;
 
 /**
- * A variant of {@link IntConsumer} capable of throwing a generic {@link Throwable}.
+ * Represents an operation that accepts a single {@code int}-valued argument and
+ * returns no result. This is the primitive type specialization of {@link EConsumer}
+ * for {@code int}. Unlike most other functional interfaces, {@link EIntConsumer} is
+ * expected to operate via side-effects.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #acceptChecked(int)}.
  *
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see Consumer
+ * @see EObjIntConsumer
+ * @see EObjObjIntConsumer
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EIntConsumer<E extends Throwable> extends IntConsumer {

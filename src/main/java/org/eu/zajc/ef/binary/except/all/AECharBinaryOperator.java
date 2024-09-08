@@ -17,11 +17,25 @@
  */
 package org.eu.zajc.ef.binary.except.all;
 
-import org.eu.zajc.ef.binary.CharBinaryOperator;
+import java.util.function.BinaryOperator;
+
 import org.eu.zajc.ef.binary.except.ECharBinaryOperator;
+import org.eu.zajc.ef.unary.except.all.AECharUnaryOperator;
 
 /**
- * A variant of {@link CharBinaryOperator} capable of throwing an {@link Exception}.
+ * Represents an operation upon two {@code char}-valued operands and producing a
+ * {@code char}-valued result. This is the primitive type specialization of
+ * {@link AEBinaryOperator} for {@code char}.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyCheckedAsChar(char, char)}.
+ *
+ * @see BinaryOperator
+ * @see AECharUnaryOperator
  *
  * @author Marko Zajc
  */

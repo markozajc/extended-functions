@@ -19,16 +19,32 @@ package org.eu.zajc.ef.predicate.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
-import java.util.function.LongPredicate;
+import java.util.function.*;
+
+import org.eu.zajc.ef.bipredicate.except.EObjLongPredicate;
+import org.eu.zajc.ef.tripredicate.except.EObjObjLongPredicate;
 
 /**
- * A variant of {@link LongPredicate} capable of throwing a generic
- * {@link Throwable}.
+ * Represents a predicate (boolean-valued function) of one {@code long}-valued
+ * argument. This is the {@code long}-consuming primitive type specialization of
+ * {@link Predicate}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(long)}.
  *
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see Predicate
+ * @see EObjLongPredicate
+ * @see EObjObjLongPredicate
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface ELongPredicate<E extends Throwable> extends LongPredicate {

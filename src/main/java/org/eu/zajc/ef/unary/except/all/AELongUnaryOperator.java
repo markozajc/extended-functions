@@ -17,12 +17,25 @@
  */
 package org.eu.zajc.ef.unary.except.all;
 
-import java.util.function.LongUnaryOperator;
+import java.util.function.UnaryOperator;
 
+import org.eu.zajc.ef.binary.except.all.AELongBinaryOperator;
 import org.eu.zajc.ef.unary.except.ELongUnaryOperator;
 
 /**
- * A variant of {@link LongUnaryOperator} capable of throwing an {@link Exception}.
+ * Represents an operation on a single {@code long}-valued operand that produces an
+ * {@code long}-valued result. This is the primitive type specialization of
+ * {@link AEUnaryOperator} for {@code long}.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyCheckedAsLong(long)}.
+ *
+ * @see UnaryOperator
+ * @see AELongBinaryOperator
  *
  * @author Marko Zajc
  */

@@ -20,11 +20,19 @@ package org.eu.zajc.ef.bifunction.except.all;
 import java.util.function.BiFunction;
 
 import org.eu.zajc.ef.bifunction.except.EBiFunction;
+import org.eu.zajc.ef.function.except.all.AEFunction;
+import org.eu.zajc.ef.trifunction.except.all.AETriFunction;
 
 /**
- * A variant of {@link BiFunction} capable of throwing an {@link Exception}.
+ * Represents a function that accepts two arguments and produces a result. This is
+ * the two-arity specialization of {@link AEFunction}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #applyChecked(Object, Object)}.
  *
  * @param <T>
  *            the type of the first argument to the function
@@ -32,6 +40,12 @@ import org.eu.zajc.ef.bifunction.except.EBiFunction;
  *            the type of the second argument to the function
  * @param <R>
  *            the type of the result of the function
+ *
+ * @see BiFunction
+ * @see AEFunction
+ * @see AETriFunction
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEBiFunction<T, U, R> extends EBiFunction<T, U, R, Exception> {}

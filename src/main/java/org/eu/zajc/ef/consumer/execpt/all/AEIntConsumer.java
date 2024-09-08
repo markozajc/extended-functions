@@ -17,12 +17,28 @@
  */
 package org.eu.zajc.ef.consumer.execpt.all;
 
-import java.util.function.IntConsumer;
+import java.util.function.Consumer;
 
+import org.eu.zajc.ef.biconsumer.except.all.AEObjIntConsumer;
 import org.eu.zajc.ef.consumer.execpt.EIntConsumer;
+import org.eu.zajc.ef.triconsumer.except.all.AEObjObjIntConsumer;
 
 /**
- * A variant of {@link IntConsumer} capable of throwing an {@link Exception}.
+ * Represents an operation that accepts a single {@code int}-valued argument and
+ * returns no result. This is the primitive type specialization of {@link AEConsumer}
+ * for {@code int}. Unlike most other functional interfaces, {@link AEIntConsumer} is
+ * expected to operate via side-effects.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #acceptChecked(int)}.
+ *
+ * @see Consumer
+ * @see AEObjIntConsumer
+ * @see AEObjObjIntConsumer
  *
  * @author Marko Zajc
  */

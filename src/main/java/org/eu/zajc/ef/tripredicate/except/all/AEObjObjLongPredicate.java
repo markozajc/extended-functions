@@ -17,18 +17,33 @@
  */
 package org.eu.zajc.ef.tripredicate.except.all;
 
-import org.eu.zajc.ef.tripredicate.ObjObjLongPredicate;
+import org.eu.zajc.ef.bipredicate.except.all.AEObjLongPredicate;
+import org.eu.zajc.ef.predicate.except.all.AELongPredicate;
+import org.eu.zajc.ef.tripredicate.TriPredicate;
 import org.eu.zajc.ef.tripredicate.except.EObjObjLongPredicate;
 
 /**
- * A variant of {@link ObjObjLongPredicate} capable of throwing an {@link Exception}.
+ * Represents a predicate (boolean-valued function) of two object-valued and one
+ * {@code long}-valued arguments. This is the {@code (reference, reference, long)}
+ * specialization of {@link AETriPredicate}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(Object, Object, long)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
  * @param <U>
  *            the type of the second argument the predicate
+ *
+ * @see TriPredicate
+ * @see AELongPredicate
+ * @see AEObjLongPredicate
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEObjObjLongPredicate<T, U> extends EObjObjLongPredicate<T, U, Exception> {}

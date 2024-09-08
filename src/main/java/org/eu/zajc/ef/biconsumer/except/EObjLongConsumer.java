@@ -19,18 +19,35 @@ package org.eu.zajc.ef.biconsumer.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
-import java.util.function.ObjLongConsumer;
+import java.util.function.*;
+
+import org.eu.zajc.ef.consumer.execpt.ELongConsumer;
+import org.eu.zajc.ef.triconsumer.except.EObjObjLongConsumer;
 
 /**
- * A variant of {@link ObjLongConsumer} capable of throwing a generic
- * {@link Throwable}.
+ * Represents an operation that accepts an object-valued and a {@code long}-valued
+ * argument, and returns no result. This is the {@code (reference, long)}
+ * specialization of {@link EBiConsumer}. Unlike most other functional interfaces,
+ * {@link EObjLongConsumer} is expected to operate via side-effects.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #acceptChecked(Object, long)}.
  *
  * @param <T>
- *            the type of the first argument to the operation
+ *            the type of the object argument to the operation
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see BiConsumer
+ * @see ELongConsumer
+ * @see EObjObjLongConsumer
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EObjLongConsumer<T, E extends Throwable> extends ObjLongConsumer<T> {

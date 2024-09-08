@@ -18,19 +18,30 @@
 package org.eu.zajc.ef.triconsumer;
 
 import java.util.Objects;
+import java.util.function.*;
 
 import javax.annotation.Nonnull;
 
 /**
- * A {@link TriConsumer} variant that takes two generic types and a primitive
- * {@code long}.
+ * Represents an operation that accepts two object-valued and one {@code long}-valued
+ * argument, and returns no result. This is the {@code (reference, reference, long)}
+ * specialization of {@link TriConsumer}. Unlike most other functional interfaces,
+ * {@link ObjObjLongConsumer} is expected to operate via side-effects.
  *
- * @author Marko Zajc
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #accept(Object, Object, long)}.
  *
  * @param <T>
- *            the type of the first argument to the operation
+ *            the type of the object argument to the operation
  * @param <U>
  *            the type of the second argument to the operation
+ *
+ * @see TriConsumer
+ * @see LongConsumer
+ * @see ObjLongConsumer
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface ObjObjLongConsumer<T, U> {

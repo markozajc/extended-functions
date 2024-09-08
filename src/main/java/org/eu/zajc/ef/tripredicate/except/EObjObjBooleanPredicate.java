@@ -19,13 +19,22 @@ package org.eu.zajc.ef.tripredicate.except;
 
 import static org.eu.zajc.ef.Utilities.asUnchecked;
 
-import org.eu.zajc.ef.tripredicate.ObjObjBooleanPredicate;
+import org.eu.zajc.ef.bipredicate.except.EObjBooleanPredicate;
+import org.eu.zajc.ef.predicate.except.EBooleanPredicate;
+import org.eu.zajc.ef.tripredicate.*;
 
 /**
- * A variant of {@link ObjObjBooleanPredicate} capable of throwing a generic
- * {@link Throwable}.
+ * Represents a predicate (boolean-valued function) of two object-valued and one
+ * {@code boolean}-valued arguments. This is the
+ * {@code (reference, reference, boolean)} specialization of {@link ETriPredicate}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw a generic
+ * {@link Throwable} of type {@code E}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(Object, Object, boolean)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
@@ -33,6 +42,12 @@ import org.eu.zajc.ef.tripredicate.ObjObjBooleanPredicate;
  *            the type of the second argument the predicate
  * @param <E>
  *            {@link Throwable} type
+ *
+ * @see TriPredicate
+ * @see EBooleanPredicate
+ * @see EObjBooleanPredicate
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface EObjObjBooleanPredicate<T, U, E extends Throwable> extends ObjObjBooleanPredicate<T, U> {

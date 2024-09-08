@@ -20,16 +20,32 @@ package org.eu.zajc.ef.biconsumer.except.all;
 import java.util.function.BiConsumer;
 
 import org.eu.zajc.ef.biconsumer.except.EBiConsumer;
+import org.eu.zajc.ef.consumer.execpt.all.AEConsumer;
+import org.eu.zajc.ef.triconsumer.except.all.AETriConsumer;
 
 /**
- * A variant of {@link BiConsumer} capable of throwing an {@link Exception}.
+ * Represents an operation that accepts two input arguments and returns no result.
+ * This is the two-arity specialization of {@link AEConsumer}. Unlike most other
+ * functional interfaces, {@link AEBiConsumer} is expected to operate via
+ * side-effects.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #acceptChecked(Object, Object)}.
  *
  * @param <T>
  *            the type of the first argument to the operation
  * @param <U>
  *            the type of the second argument to the operation
+ *
+ * @see BiConsumer
+ * @see AEConsumer
+ * @see AETriConsumer
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEBiConsumer<T, U> extends EBiConsumer<T, U, Exception> {}

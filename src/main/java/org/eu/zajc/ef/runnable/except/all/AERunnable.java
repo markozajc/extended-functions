@@ -20,7 +20,13 @@ package org.eu.zajc.ef.runnable.except.all;
 import org.eu.zajc.ef.runnable.except.ERunnable;
 
 /**
- * A variant of {@link Runnable} capable of throwing an {@link Exception}.
+ * A variant of {@link Runnable} whose functional method is allowed to throw an
+ * {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is {@link #runChecked()}.
+ *
+ * @see Runnable
  *
  * @author Marko Zajc
  */

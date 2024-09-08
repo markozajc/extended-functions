@@ -22,14 +22,27 @@ import java.util.function.BiConsumer;
 
 import javax.annotation.Nonnull;
 
+import org.eu.zajc.ef.consumer.CharConsumer;
+import org.eu.zajc.ef.triconsumer.ObjObjCharConsumer;
+
 /**
- * A {@link BiConsumer} variant that takes a generic type and a primitive
- * {@code char}.
+ * Represents an operation that accepts an object-valued and a {@code char}-valued
+ * argument, and returns no result. This is the {@code (reference, char)}
+ * specialization of {@link BiConsumer}. Unlike most other functional interfaces,
+ * {@link ObjCharConsumer} is expected to operate via side-effects.
  *
- * @author Marko Zajc
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #accept(Object, char)}.
  *
  * @param <T>
- *            the type of the first argument to the operation
+ *            the type of the object argument to the operation
+ *
+ * @see BiConsumer
+ * @see CharConsumer
+ * @see ObjObjCharConsumer
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface ObjCharConsumer<T> {

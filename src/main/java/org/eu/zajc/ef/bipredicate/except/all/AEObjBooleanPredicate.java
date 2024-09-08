@@ -17,16 +17,32 @@
  */
 package org.eu.zajc.ef.bipredicate.except.all;
 
-import org.eu.zajc.ef.bipredicate.ObjBooleanPredicate;
+import java.util.function.BiPredicate;
+
 import org.eu.zajc.ef.bipredicate.except.EObjBooleanPredicate;
+import org.eu.zajc.ef.predicate.BooleanPredicate;
+import org.eu.zajc.ef.tripredicate.ObjObjBooleanPredicate;
 
 /**
- * A variant of {@link ObjBooleanPredicate} capable of throwing an {@link Exception}.
+ * Represents a predicate (boolean-valued function) of an object-valued and a
+ * {@code boolean}-valued argument. This is the {@code (reference, boolean)}
+ * specialization of {@link AEBiPredicate}.
  *
- * @author Marko Zajc
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(Object, boolean)}.
  *
  * @param <T>
  *            the type of the first argument to the predicate
+ *
+ * @see BiPredicate
+ * @see BooleanPredicate
+ * @see ObjObjBooleanPredicate
+ *
+ * @author Marko Zajc
  */
 @FunctionalInterface
 public interface AEObjBooleanPredicate<T> extends EObjBooleanPredicate<T, Exception> {}

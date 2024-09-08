@@ -17,12 +17,27 @@
  */
 package org.eu.zajc.ef.predicate.except.all;
 
-import java.util.function.IntPredicate;
+import java.util.function.Predicate;
 
+import org.eu.zajc.ef.bipredicate.except.EObjIntPredicate;
 import org.eu.zajc.ef.predicate.except.EIntPredicate;
+import org.eu.zajc.ef.tripredicate.except.EObjObjIntPredicate;
 
 /**
- * A variant of {@link IntPredicate} capable of throwing an {@link Exception}.
+ * Represents a predicate (boolean-valued function) of one {@code int}-valued
+ * argument. This is the {@code int}-consuming primitive type specialization of
+ * {@link Predicate}.
+ *
+ * <p>
+ * Additionally, the functional method is allowed to throw an {@link Exception}.
+ *
+ * <p>
+ * This is a functional interface whose functional method is
+ * {@link #testChecked(int)}.
+ *
+ * @see Predicate
+ * @see EObjIntPredicate
+ * @see EObjObjIntPredicate
  *
  * @author Marko Zajc
  */
